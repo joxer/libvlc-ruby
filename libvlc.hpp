@@ -9,11 +9,13 @@
 #ifndef LIBVLC_HPP
 #define LIBVLC_HPP
 class LibVLC{
-
+  
+  libvlc_log_t *log;
   libvlc_instance_t * instance;
 
 public:
-  LibVLC(int = 0, const char *const * = NULL);
+
+  LibVLC(int = 0, const char *const * = NULL, bool = false);
   ~LibVLC();
   void setUserAgent(const char* , const char* );
   const char* getVersion();

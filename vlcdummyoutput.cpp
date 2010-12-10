@@ -44,9 +44,9 @@ void display(void *data, void *id){
 
 VLCDummyOutput::VLCDummyOutput(libvlc_media_t* media){
 
-  chroma = "RV16";
-  width = 640;
-  height = 480;
+  chroma = "RV32";
+  width = 1024;
+  height = 768;
   pitch = width*2;
 
   current_media = media;
@@ -60,8 +60,8 @@ VLCDummyOutput::VLCDummyOutput(libvlc_media_t* media){
       printf("cannot initialize SDL\n");
     }
   
-  // empty = SDL_CreateRGBSurface(SDL_SWSURFACE, 640, 480,
-  //32, 0, 0, 0, 0);
+  empty = SDL_CreateRGBSurface(SDL_SWSURFACE, 640, 480,
+  32, 0, 0, 0, 0);
 
 }
 void VLCDummyOutput::playMedia(){
@@ -136,6 +136,7 @@ void VLCDummyOutput::playMedia(){
       SDL_BlitSurface(empty, NULL, screen, &rect);
       
     }
+      libvlc_media_player_stop(mp);
 }
 
 
@@ -150,6 +151,8 @@ void VLCDummyOutput::setOption(const char* cchroma, int w,int h,int p){
 
 
 VLCDummyOutput::~VLCDummyOutput(){
-
-
+  libvlc_media_player_release(mp);
+  SDL_DestroyMutex(ctx.mutex);
+  SDL_FreeSurface(ctx.surf);
+  SDL_FreeSurface(empty);
 }

@@ -9,12 +9,13 @@
 
 class VLCMediaList{
 
+  bool create_instance;
   libvlc_media_list_t *current_list;
-  libvlc_instance_t *current_instance;
+  libvlc_instance_t * instance;
 public:
   
-  VLCMediaList(libvlc_instance_t* );
-  virtual ~VLCMediaList();
+  VLCMediaList(libvlc_instance_t* = NULL);
+  ~VLCMediaList();
   void addMedia(const char*);
   void removeMedia(int);
   VLCMedia getMedia(int);

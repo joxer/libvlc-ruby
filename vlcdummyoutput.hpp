@@ -40,7 +40,7 @@ class VLCDummyOutput {
  public:
   
   VLCDummyOutput(libvlc_media_t*);
-  virtual ~VLCDummyOutput();
+ ~VLCDummyOutput();
   void playMedia();
   void setOption(const char*, int,int,int);
 private:

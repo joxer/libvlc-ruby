@@ -1,3 +1,6 @@
+
+
+
 %module libvlc
 %include "typemaps.i"
 
@@ -15,48 +18,59 @@
 #include <cstdlib>
 #include <exception>
 %}
+
+
+
 class LibVLC{
 
+  libvlc_log_t *log;
   libvlc_instance_t * instance;
-  libvlc_exception_t vlcexcep;
+
  public:
-  LibVLC(int = 0,const char *const * = NULL);
-  virtual ~LibVLC();
+  LibVLC(int = 0,const char *const * = NULL, bool = NULL);
+  ~LibVLC();
   void setUserAgent(const char* , const char* );
   const char* getVersion();
   VLCMedia addMedia(const char* path);
   VLCMediaList createPlayList();
 };
 
-
 class VLCMedia{
 
+  const char* chroma;
+  int width,height,pitch;
+  
+
+  bool create_instance;
+  libvlc_instance_t * instance;
+  VLCDummyOutput *dummy;
   libvlc_media_t *current_media;
-  VLCDummyOutput* dummy;
+  libvlc_media_player_t *current_player;
+
 public:
-  VLCMedia(libvlc_media_t *);
-  virtual ~VLCMedia();
+  VLCMedia(  libvlc_instance_t * = NULL, libvlc_media_t * = NULL);
+  ~VLCMedia();
   
   void setVideoFormat(const char*, int,int,int);
   void pauseMedia();
   void playMedia();
-  const char* getTitleMedia();
-  const char* getArtistMedia();
-  const char* getDescriptionMedia();
-  const char* getUrl();
+  void setMedia(const char*);
 
+  const char* getMeta(const char*);
   
 };
 
 
-class VLCMediaList{
 
+class VLCMediaList{
+  bool create_instance;
   libvlc_media_list_t *current_list;
-  libvlc_instance_t *current_instance;
+  libvlc_instance_t * instance;
+
 public:
   
-  VLCMediaList(libvlc_instance_t* );
-  virtual ~VLCMediaList();
+  VLCMediaList(libvlc_instance_t* = NULL);
+  ~VLCMediaList();
 
   void addMedia(const char*);
   void removeMedia(int);
@@ -74,7 +88,9 @@ struct Ctx
 
 class VLCDummyOutput {
 
-
+const char* chroma;
+  int width, height, pitch;
+  
 
   SDL_Surface *screen, *empty;
   SDL_Event event;
@@ -87,7 +103,7 @@ class VLCDummyOutput {
  public:
   
   VLCDummyOutput(libvlc_media_t*);
-  virtual ~VLCDummyOutput();
+   ~VLCDummyOutput();
   void playMedia();
   void setOption(const char*,int,int,int);
   //  void pauseMedia();
