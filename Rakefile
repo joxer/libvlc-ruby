@@ -27,7 +27,9 @@ g++ -c vlcdummyoutput.cpp -fPIC -I #{headers} -lvlc `sdl-config --cflags --libs`
 g++ -c libvlc.cpp -fPIC -I #{headers} -lvlc 
 g++ -c vlcmedia.cpp -fPIC -I #{headers} -lvlc 
 g++ -c vlcmedialist.cpp -fPIC -I #{headers} -lvlc
-g++ -shared vlcdummyoutput.o vlcmedialist.o vlcmedia.o libvlc.o libvlc_wrap.o -o libvlc.so -lvlc `sdl-config --cflags --libs`
+g++ -c vlcmediaplayer.cpp -fPIC -I #{headers} -lvlc
+
+g++ -shared vlcmediaplayer.o vlcdummyoutput.o vlcmedialist.o vlcmedia.o libvlc.o libvlc_wrap.o -o libvlc.so -lvlc `sdl-config --cflags --libs`
 }
     
 

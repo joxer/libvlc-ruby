@@ -6,6 +6,8 @@ VLCMedia::VLCMedia(  libvlc_instance_t * _instance,libvlc_media_t *media){
   width = -1;
   height = -1;
   pitch = -1;
+  drawable_xwindow = -1;
+
   
   create_instance = false;
 
@@ -21,9 +23,9 @@ VLCMedia::VLCMedia(  libvlc_instance_t * _instance,libvlc_media_t *media){
     instance = _instance;
   }
 
-
   current_media = media;
   if(media != NULL){
+    
     libvlc_media_parse(current_media);
   }
   current_player = NULL;
@@ -43,12 +45,12 @@ void VLCMedia::setMedia(const char* path){
 
   libvlc_media_t *media = libvlc_media_new_path(instance, path);
   
-  if(fopen (path,"r") == NULL){
+  if(media == NULL || fopen (path,"r") == NULL){
     static VALUE vlcerror = rb_define_class("VLCException", rb_eStandardError);
 										 rb_raise(vlcerror, "media doesn't exist");
     
   }
-  
+
   current_media = media;
 
 }
@@ -60,9 +62,10 @@ void VLCMedia::playMedia(){
 
   if(current_media != NULL){
 
-        VLCDummyOutput* dummy = new VLCDummyOutput(current_media);
-	  dummy->playMedia();
-	  delete(dummy);
+    VLCDummyOutput* dummy = new VLCDummyOutput(current_media);
+    dummy->playMedia();
+    delete(dummy);
+
   }
 
 }
@@ -108,3 +111,13 @@ const char* VLCMedia::getMeta(const char* type){
   }
 }
 
+VLCMediaPlayer VLCMedia::getPlayer(){
+  if(current_media != NULL)
+    {
+
+      return VLCMediaPlayer(instance, current_media);    
+    }
+  static VALUE vlcerror = rb_define_class("VLCException", rb_eStandardError);
+  rb_raise(vlcerror, "media is not initialitiated");
+
+}

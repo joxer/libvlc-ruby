@@ -1,6 +1,6 @@
 require './libvlc'
 
-b = Libvlc::VLCMediaList.new()
-b.addMedia("example.avi")
-b.addMedia("example.avi")
-b.getMedia(1).playMedia
+a = Libvlc::VLCMedia.new
+a.setMedia("example.avi")
+b = a.getPlayer
+

@@ -1,6 +1,4 @@
 
-
-
 %module libvlc
 %include "typemaps.i"
 
@@ -12,6 +10,8 @@
 #include "vlcmedia.hpp"
 #include "vlcmedialist.hpp"
 #include "vlcdummyoutput.hpp"
+#include "vlcmediaplayer.hpp"
+
 #include "exception.hpp"
 
 #include <vlc/vlc.h>
@@ -55,7 +55,7 @@ public:
   void pauseMedia();
   void playMedia();
   void setMedia(const char*);
-
+  VLCMediaPlayer getPlayer();
   const char* getMeta(const char*);
   
 };
@@ -113,4 +113,22 @@ const char* chroma;
 };
 
 
+class VLCMediaPlayer{
 
+  bool create_instance;
+  libvlc_instance_t* instance;
+  libvlc_media_player_t* current_player;
+
+ public:
+  VLCMediaPlayer(libvlc_instance_t*, libvlc_media_t*);
+  ~VLCMediaPlayer();
+
+  void setXWindow(int);
+  void play();
+  void pause();
+  void stop();
+  void setChapter(int);
+  void setPosition(float);
+  float getFps();
+
+};

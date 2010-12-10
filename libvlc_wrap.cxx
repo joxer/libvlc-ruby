@@ -1817,12 +1817,13 @@ int SWIG_Ruby_arity( VALUE proc, int minimal )
 #define SWIGTYPE_p_VLCDummyOutput swig_types[4]
 #define SWIGTYPE_p_VLCMedia swig_types[5]
 #define SWIGTYPE_p_VLCMediaList swig_types[6]
-#define SWIGTYPE_p_char swig_types[7]
-#define SWIGTYPE_p_libvlc_instance_t swig_types[8]
-#define SWIGTYPE_p_libvlc_media_t swig_types[9]
-#define SWIGTYPE_p_p_char swig_types[10]
-static swig_type_info *swig_types[12];
-static swig_module_info swig_module = {swig_types, 11, 0, 0, 0, 0};
+#define SWIGTYPE_p_VLCMediaPlayer swig_types[7]
+#define SWIGTYPE_p_char swig_types[8]
+#define SWIGTYPE_p_libvlc_instance_t swig_types[9]
+#define SWIGTYPE_p_libvlc_media_t swig_types[10]
+#define SWIGTYPE_p_p_char swig_types[11]
+static swig_type_info *swig_types[13];
+static swig_module_info swig_module = {swig_types, 12, 0, 0, 0, 0};
 #define SWIG_TypeQuery(name) SWIG_TypeQueryModule(&swig_module, &swig_module, name)
 #define SWIG_MangledTypeQuery(name) SWIG_MangledTypeQueryModule(&swig_module, &swig_module, name)
 
@@ -1883,6 +1884,8 @@ struct timeval rb_time_timeval(VALUE);
 #include "vlcmedia.hpp"
 #include "vlcmedialist.hpp"
 #include "vlcdummyoutput.hpp"
+#include "vlcmediaplayer.hpp"
+
 #include "exception.hpp"
 
 #include <vlc/vlc.h>
@@ -2057,6 +2060,64 @@ SWIGINTERNINLINE VALUE
 SWIG_From_int  (int value)
 {    
   return SWIG_From_long  (value);
+}
+
+
+#include <float.h>
+
+
+/*@SWIG:/usr/share/swig1.3/ruby/rubyprimtypes.swg,23,%ruby_aux_method@*/
+SWIGINTERN VALUE SWIG_AUX_NUM2DBL(VALUE *args)
+{
+  VALUE obj = args[0];
+  VALUE type = TYPE(obj);
+  double *res = (double *)(args[1]);
+  *res = NUM2DBL(obj);
+  return obj;
+}
+/*@SWIG@*/
+
+SWIGINTERN int
+SWIG_AsVal_double (VALUE obj, double *val)
+{
+  VALUE type = TYPE(obj);
+  if ((type == T_FLOAT) || (type == T_FIXNUM) || (type == T_BIGNUM)) {
+    double v;
+    VALUE a[2];
+    a[0] = obj;
+    a[1] = (VALUE)(&v);
+    if (rb_rescue(RUBY_METHOD_FUNC(SWIG_AUX_NUM2DBL), (VALUE)a, RUBY_METHOD_FUNC(SWIG_ruby_failed), 0) != Qnil) {
+      if (val) *val = v;
+      return SWIG_OK;
+    }
+  }
+  return SWIG_TypeError;
+}
+
+
+SWIGINTERN int
+SWIG_AsVal_float (VALUE obj, float *val)
+{
+  double v;
+  int res = SWIG_AsVal_double (obj, &v);
+  if (SWIG_IsOK(res)) {
+    if ((v < -FLT_MAX || v > FLT_MAX)) {
+      return SWIG_OverflowError;
+    } else {
+      if (val) *val = static_cast< float >(v);
+    }
+  }  
+  return res;
+}
+
+
+  #define SWIG_From_double   rb_float_new 
+
+
+SWIGINTERNINLINE VALUE
+SWIG_From_float  (float value)
+{    
+  return SWIG_From_double  (value);
 }
 
 swig_class SwigClassLibVLC;
@@ -2659,6 +2720,30 @@ fail:
 
 
 SWIGINTERN VALUE
+_wrap_VLCMedia_getPlayer(int argc, VALUE *argv, VALUE self) {
+  VLCMedia *arg1 = (VLCMedia *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  SwigValueWrapper< VLCMediaPlayer > result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_VLCMedia, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "VLCMedia *","getPlayer", 1, self )); 
+  }
+  arg1 = reinterpret_cast< VLCMedia * >(argp1);
+  result = (arg1)->getPlayer();
+  vresult = SWIG_NewPointerObj((new VLCMediaPlayer(static_cast< const VLCMediaPlayer& >(result))), SWIGTYPE_p_VLCMediaPlayer, SWIG_POINTER_OWN |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
 _wrap_VLCMedia_getMeta(int argc, VALUE *argv, VALUE self) {
   VLCMedia *arg1 = (VLCMedia *) 0 ;
   char *arg2 = (char *) 0 ;
@@ -3173,6 +3258,235 @@ fail:
 }
 
 
+swig_class SwigClassVLCMediaPlayer;
+
+#ifdef HAVE_RB_DEFINE_ALLOC_FUNC
+SWIGINTERN VALUE
+_wrap_VLCMediaPlayer_allocate(VALUE self) {
+#else
+  SWIGINTERN VALUE
+  _wrap_VLCMediaPlayer_allocate(int argc, VALUE *argv, VALUE self) {
+#endif
+    
+    
+    VALUE vresult = SWIG_NewClassInstance(self, SWIGTYPE_p_VLCMediaPlayer);
+#ifndef HAVE_RB_DEFINE_ALLOC_FUNC
+    rb_obj_call_init(vresult, argc, argv);
+#endif
+    return vresult;
+  }
+  
+
+SWIGINTERN VALUE
+_wrap_new_VLCMediaPlayer(int argc, VALUE *argv, VALUE self) {
+  libvlc_instance_t *arg1 = (libvlc_instance_t *) 0 ;
+  libvlc_media_t *arg2 = (libvlc_media_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  VLCMediaPlayer *result = 0 ;
+  
+  if ((argc < 2) || (argc > 2)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_libvlc_instance_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "libvlc_instance_t *","VLCMediaPlayer", 1, argv[0] )); 
+  }
+  arg1 = reinterpret_cast< libvlc_instance_t * >(argp1);
+  res2 = SWIG_ConvertPtr(argv[1], &argp2,SWIGTYPE_p_libvlc_media_t, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "libvlc_media_t *","VLCMediaPlayer", 2, argv[1] )); 
+  }
+  arg2 = reinterpret_cast< libvlc_media_t * >(argp2);
+  result = (VLCMediaPlayer *)new VLCMediaPlayer(arg1,arg2);
+  DATA_PTR(self) = result;
+  return self;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN void
+free_VLCMediaPlayer(VLCMediaPlayer *arg1) {
+    delete arg1;
+}
+
+SWIGINTERN VALUE
+_wrap_VLCMediaPlayer_setXWindow(int argc, VALUE *argv, VALUE self) {
+  VLCMediaPlayer *arg1 = (VLCMediaPlayer *) 0 ;
+  int arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_VLCMediaPlayer, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "VLCMediaPlayer *","setXWindow", 1, self )); 
+  }
+  arg1 = reinterpret_cast< VLCMediaPlayer * >(argp1);
+  ecode2 = SWIG_AsVal_int(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "int","setXWindow", 2, argv[0] ));
+  } 
+  arg2 = static_cast< int >(val2);
+  (arg1)->setXWindow(arg2);
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_VLCMediaPlayer_play(int argc, VALUE *argv, VALUE self) {
+  VLCMediaPlayer *arg1 = (VLCMediaPlayer *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_VLCMediaPlayer, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "VLCMediaPlayer *","play", 1, self )); 
+  }
+  arg1 = reinterpret_cast< VLCMediaPlayer * >(argp1);
+  (arg1)->play();
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_VLCMediaPlayer_pause(int argc, VALUE *argv, VALUE self) {
+  VLCMediaPlayer *arg1 = (VLCMediaPlayer *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_VLCMediaPlayer, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "VLCMediaPlayer *","pause", 1, self )); 
+  }
+  arg1 = reinterpret_cast< VLCMediaPlayer * >(argp1);
+  (arg1)->pause();
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_VLCMediaPlayer_stop(int argc, VALUE *argv, VALUE self) {
+  VLCMediaPlayer *arg1 = (VLCMediaPlayer *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_VLCMediaPlayer, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "VLCMediaPlayer *","stop", 1, self )); 
+  }
+  arg1 = reinterpret_cast< VLCMediaPlayer * >(argp1);
+  (arg1)->stop();
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_VLCMediaPlayer_setChapter(int argc, VALUE *argv, VALUE self) {
+  VLCMediaPlayer *arg1 = (VLCMediaPlayer *) 0 ;
+  int arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_VLCMediaPlayer, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "VLCMediaPlayer *","setChapter", 1, self )); 
+  }
+  arg1 = reinterpret_cast< VLCMediaPlayer * >(argp1);
+  ecode2 = SWIG_AsVal_int(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "int","setChapter", 2, argv[0] ));
+  } 
+  arg2 = static_cast< int >(val2);
+  (arg1)->setChapter(arg2);
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_VLCMediaPlayer_setPosition(int argc, VALUE *argv, VALUE self) {
+  VLCMediaPlayer *arg1 = (VLCMediaPlayer *) 0 ;
+  float arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_VLCMediaPlayer, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "VLCMediaPlayer *","setPosition", 1, self )); 
+  }
+  arg1 = reinterpret_cast< VLCMediaPlayer * >(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "float","setPosition", 2, argv[0] ));
+  } 
+  arg2 = static_cast< float >(val2);
+  (arg1)->setPosition(arg2);
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_VLCMediaPlayer_getFps(int argc, VALUE *argv, VALUE self) {
+  VLCMediaPlayer *arg1 = (VLCMediaPlayer *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_VLCMediaPlayer, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "VLCMediaPlayer *","getFps", 1, self )); 
+  }
+  arg1 = reinterpret_cast< VLCMediaPlayer * >(argp1);
+  result = (float)(arg1)->getFps();
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
 
 /* -------- TYPE CONVERSION AND EQUIVALENCE RULES (BEGIN) -------- */
 
@@ -3183,6 +3497,7 @@ static swig_type_info _swigt__p_SDL_mutex = {"_p_SDL_mutex", "SDL_mutex *", 0, 0
 static swig_type_info _swigt__p_VLCDummyOutput = {"_p_VLCDummyOutput", "VLCDummyOutput *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_VLCMedia = {"_p_VLCMedia", "VLCMedia *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_VLCMediaList = {"_p_VLCMediaList", "VLCMediaList *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_VLCMediaPlayer = {"_p_VLCMediaPlayer", "VLCMediaPlayer *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_char = {"_p_char", "char *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_libvlc_instance_t = {"_p_libvlc_instance_t", "libvlc_instance_t *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_libvlc_media_t = {"_p_libvlc_media_t", "libvlc_media_t *", 0, 0, (void*)0, 0};
@@ -3196,6 +3511,7 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_VLCDummyOutput,
   &_swigt__p_VLCMedia,
   &_swigt__p_VLCMediaList,
+  &_swigt__p_VLCMediaPlayer,
   &_swigt__p_char,
   &_swigt__p_libvlc_instance_t,
   &_swigt__p_libvlc_media_t,
@@ -3209,6 +3525,7 @@ static swig_cast_info _swigc__p_SDL_mutex[] = {  {&_swigt__p_SDL_mutex, 0, 0, 0}
 static swig_cast_info _swigc__p_VLCDummyOutput[] = {  {&_swigt__p_VLCDummyOutput, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_VLCMedia[] = {  {&_swigt__p_VLCMedia, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_VLCMediaList[] = {  {&_swigt__p_VLCMediaList, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_VLCMediaPlayer[] = {  {&_swigt__p_VLCMediaPlayer, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_char[] = {  {&_swigt__p_char, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_libvlc_instance_t[] = {  {&_swigt__p_libvlc_instance_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_libvlc_media_t[] = {  {&_swigt__p_libvlc_media_t, 0, 0, 0},{0, 0, 0, 0}};
@@ -3222,6 +3539,7 @@ static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_VLCDummyOutput,
   _swigc__p_VLCMedia,
   _swigc__p_VLCMediaList,
+  _swigc__p_VLCMediaPlayer,
   _swigc__p_char,
   _swigc__p_libvlc_instance_t,
   _swigc__p_libvlc_media_t,
@@ -3507,6 +3825,7 @@ SWIGEXPORT void Init_libvlc(void) {
   rb_define_method(SwigClassVLCMedia.klass, "pauseMedia", VALUEFUNC(_wrap_VLCMedia_pauseMedia), -1);
   rb_define_method(SwigClassVLCMedia.klass, "playMedia", VALUEFUNC(_wrap_VLCMedia_playMedia), -1);
   rb_define_method(SwigClassVLCMedia.klass, "setMedia", VALUEFUNC(_wrap_VLCMedia_setMedia), -1);
+  rb_define_method(SwigClassVLCMedia.klass, "getPlayer", VALUEFUNC(_wrap_VLCMedia_getPlayer), -1);
   rb_define_method(SwigClassVLCMedia.klass, "getMeta", VALUEFUNC(_wrap_VLCMedia_getMeta), -1);
   SwigClassVLCMedia.mark = 0;
   SwigClassVLCMedia.destroy = (void (*)(void *)) free_VLCMedia;
@@ -3545,5 +3864,20 @@ SWIGEXPORT void Init_libvlc(void) {
   SwigClassVLCDummyOutput.mark = 0;
   SwigClassVLCDummyOutput.destroy = (void (*)(void *)) free_VLCDummyOutput;
   SwigClassVLCDummyOutput.trackObjects = 0;
+  
+  SwigClassVLCMediaPlayer.klass = rb_define_class_under(mLibvlc, "VLCMediaPlayer", rb_cObject);
+  SWIG_TypeClientData(SWIGTYPE_p_VLCMediaPlayer, (void *) &SwigClassVLCMediaPlayer);
+  rb_define_alloc_func(SwigClassVLCMediaPlayer.klass, _wrap_VLCMediaPlayer_allocate);
+  rb_define_method(SwigClassVLCMediaPlayer.klass, "initialize", VALUEFUNC(_wrap_new_VLCMediaPlayer), -1);
+  rb_define_method(SwigClassVLCMediaPlayer.klass, "setXWindow", VALUEFUNC(_wrap_VLCMediaPlayer_setXWindow), -1);
+  rb_define_method(SwigClassVLCMediaPlayer.klass, "play", VALUEFUNC(_wrap_VLCMediaPlayer_play), -1);
+  rb_define_method(SwigClassVLCMediaPlayer.klass, "pause", VALUEFUNC(_wrap_VLCMediaPlayer_pause), -1);
+  rb_define_method(SwigClassVLCMediaPlayer.klass, "stop", VALUEFUNC(_wrap_VLCMediaPlayer_stop), -1);
+  rb_define_method(SwigClassVLCMediaPlayer.klass, "setChapter", VALUEFUNC(_wrap_VLCMediaPlayer_setChapter), -1);
+  rb_define_method(SwigClassVLCMediaPlayer.klass, "setPosition", VALUEFUNC(_wrap_VLCMediaPlayer_setPosition), -1);
+  rb_define_method(SwigClassVLCMediaPlayer.klass, "getFps", VALUEFUNC(_wrap_VLCMediaPlayer_getFps), -1);
+  SwigClassVLCMediaPlayer.mark = 0;
+  SwigClassVLCMediaPlayer.destroy = (void (*)(void *)) free_VLCMediaPlayer;
+  SwigClassVLCMediaPlayer.trackObjects = 0;
 }
 
