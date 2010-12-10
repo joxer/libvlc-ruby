@@ -52,7 +52,7 @@ public:
   ~VLCMedia();
   
   void setVideoFormat(const char*, int,int,int);
-  void pauseMedia();
+
   void playMedia();
   void setMedia(const char*);
   VLCMediaPlayer getPlayer();

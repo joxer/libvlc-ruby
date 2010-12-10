@@ -1,0 +1,610 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>File: libvlc.so</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href=".././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+  <div id="fileHeader">
+    <h1>libvlc.so</h1>
+    <table class="header-table">
+    <tr class="top-aligned-row">
+      <td><strong>Path:</strong></td>
+      <td>libvlc.so
+      </td>
+    </tr>
+    <tr class="top-aligned-row">
+      <td><strong>Last Update:</strong></td>
+      <td>Fri Dec 10 23:21:19 +0100 2010</td>
+    </tr>
+    </table>
+  </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+ELF&gt;ÀJ@H@8@33 ÐÐ!Ð!P¨   !
+!ÐÐÈÈÈ$$PåtdˆëˆëˆëÄÄQåtdRåtdÐÐ!Ð!00GNU¶DÆIÈÊ·´]o‚Ûè’êI/¤e%‰
+†BD( „I±†,º¤P1#@À
+@‘ã€ž@HA%€-$@A‡)‰ŠŒ’–šŸ ¨¬®±²³´¶·¸º»¼¾ÀÂÅÆ¼|îþrõòÛñk;kêÓï‰®“á*&#8217;~`°’eE{õ
+›]OÄ=º´*kìÍ%óB®Zõùâ‡/¤¤‘µcÏ‘xs°šäli³÷Jìß0Oy?£:+«…ò“ZÀ|$‰x ²âäÔ
+°Zm«&lt;6I˜ÿP`‹1}àd¤5œ »Ð®{ÇÔy”e6át‰
+j@LX¢Bx¿Jú°€=z[óëJ˜‘ÂÔšl¶zÙqX»ã’|aŸ]OšTûÔáŽÈ23DÑ4§žPP¸J¦’CEÕì´Êín‘·.ÊnVõùc ‘µœÅwI ‘ášž&amp;~¹ñTPX¢z¡dƒÂ æéßÑ;
+ø@!vó q &#8217;c•ú +  znÆÂÒ x žÂÉ
+4p °¡A&#8217;µùŸ “Î×À2NT»®è¶¸
+_dpY“è[ ,
+÷ŠŸ&quot;ËkõÇ&gt;™­ Þ‹£Yä
+„‡¨€s9%!KpØ Øƒ L‚©¼h% b
+’÷áþµe¯$ë/ñ¥¤ i @HÍíä
+ß_0‚ØÀ?Ù1W·ˆ£
+`â`:\FÜ¬O&amp;qaèàÒOÈ&quot;ßòÌ]nÔ!(sÂZ9ÛTX
+ cnY•
+¨h9ÍÀbMZWN{¨PPˆP£øPná@!(þRP(&quot;à€r\û:¨`:&gt;
+vj3B
+@eåCÖvNŒKÕ¾À!(ïžQÛBzP.¼,P&amp;½:_n(WAèÞbAƒ&quot;JàdNT\ÄrO9àfQ8:zRÛbVSÂ§,b“Ÿ@!(EbMÕñÿ
+!#ñÿx!CˆZ9€ –gÄ i1C&quot;0àù€!(ô&quot;Pß0ñÿ
+!‰üZRðOµ âh9†¨WN[ „fú Ni1&quot;0ß
+ø@8O9¶€!(&amp;
+bi]&quot;€ß<em>gmon_start</em>_init_fini__cxa_finalize_Jv_RegisterClasses_Unwind_Resume_ZN14VLCMediaPlayerC2EP17libvlc_instance_tP14libvlc_media_tlibvlc_new__cxa_guard_acquirerb_eStandardErrorrb_define_class__cxa_guard_release__cxa_guard_abortrb_raiselibvlc_media_player_newlibvlc_media_player_set_media__gxx_personality_v0_ZN14VLCMediaPlayerC1EP17libvlc_instance_tP14libvlc_media_t_ZN14VLCMediaPlayerD2Evlibvlc_media_player_releaselibvlc_release_ZN14VLCMediaPlayerD1Ev_ZN14VLCMediaPlayer10setXWindowEilibvlc_media_player_set_xwindow_ZN14VLCMediaPlayer4playEvlibvlc_media_player_play_ZN14VLCMediaPlayer5pauseEvlibvlc_media_player_pause_ZN14VLCMediaPlayer4stopEvlibvlc_media_player_stop_ZN14VLCMediaPlayer10setChapterEilibvlc_media_player_set_chapter_ZN14VLCMediaPlayer11setPositionEflibvlc_media_player_set_position_ZN14VLCMediaPlayer6getFpsEvlibvlc_media_player_get_fps_Z4lockPvPS_SDL_mutexPSDL_LockSurface_Z6unlockPvS_PKS_SDL_UnlockSurfaceSDL_mutexV__assert_fail_Z7displayPvS__ZN14VLCDummyOutputC2EP14libvlc_media_tSDL_InitputsSDL_CreateRGBSurface_ZN14VLCDummyOutputC1EP14libvlc_media_t_ZN14VLCDummyOutput9playMediaEvlibvlc_media_player_new_from_medialibvlc_video_set_callbackslibvlc_video_set_formatSDL_CreateMutexSDL_SetVideoModeSDL_PollEventSDL_UpperBlitSDL_FlipSDL_Delay_ZN14VLCDummyOutput9setOptionEPKciii_ZN14VLCDummyOutputD2EvSDL_DestroyMutexSDL_FreeSurface_ZN14VLCDummyOutputD1Ev_ZNSt8ios_base4InitC1Ev_ZNSt8ios_base4InitD1Ev__cxa_atexit_ZN12VLCMediaListC2EP17libvlc_instance_tlibvlc_media_list_new_ZN12VLCMediaListC1EP17libvlc_instance_t_ZN12VLCMediaListD2Evlibvlc_media_list_release_ZN12VLCMediaListD1Ev_ZN12VLCMediaList8addMediaEPKclibvlc_media_new_locationlibvlc_media_list_locklibvlc_media_list_add_medialibvlc_media_list_unlock_ZN12VLCMediaList11removeMediaEilibvlc_media_list_remove_index_ZN12VLCMediaList5countEvlibvlc_media_list_count_ZN12VLCMediaList8getMediaEilibvlc_media_list_item_at_index_ZN8VLCMediaC1EP17libvlc_instance_tP14libvlc_media_t_ZN8VLCMediaC2EP17libvlc_instance_tP14libvlc_media_tlibvlc_media_parse_ZN8VLCMediaD2Evlibvlc_media_release_ZN8VLCMediaD1Ev_ZN8VLCMedia8setMediaEPKclibvlc_media_new_pathfopen_ZN8VLCMedia9playMediaEv_Znwm_ZdlPv_ZN8VLCMedia10pauseMediaEv_ZN8VLCMedia14setVideoFormatEPKciii_ZN8VLCMedia7getMetaEPKcstrcmplibvlc_media_get_meta_ZN8VLCMedia9getPlayerEv_ZN6LibVLCC2EiPKPKcblibvlc_log_open_ZN6LibVLCC1EiPKPKcb_ZN6LibVLCD2Evlibvlc_log_close_ZN6LibVLCD1Ev_ZN6LibVLC12setUserAgentEPKcS1_libvlc_set_user_agent_ZN6LibVLC10getVersionEvlibvlc_get_version_ZN6LibVLC8addMediaEPKc_ZN6LibVLC14createPlayListEvstrlenstrcpystrncpymemsetrb_cFixnumrb_cNilClassrb_cFalseClassrb_cTrueClassrb_cSymbolrb_eRuntimeErrorrb_eNoMemErrorrb_eIOErrorrb_eIndexErrorrb_eTypeErrorrb_eZeroDivErrorrb_eRangeErrorrb_eSyntaxErrorrb_eArgErrorrb_eFatalrb_str_new2rb_str_newrb_str_cat2sprintfrb_obj_classnamerb_inspectrb_string_value_ptrrb_str_catrb_str_append__stack_chk_failrb_internrb_gv_getrb_gv_setrb_ivar_getrb_hash_newrb_ivar_setrb_int2inumrb_num2longrb_hash_asetrb_hash_arefrb_funcallrb_ary_newrb_ary_pushrb_const_getrb_obj_is_kind_ofrb_obj_as_stringrb_exc_new3rb_define_modulemallocrb_cObjectrb_define_class_underrb_undef_methodfreerb_iv_getrb_data_object_allocrb_iv_setrb_check_typerb_define_readonly_variablerb_respond_torb_fix2intrb_num2intrb_big2longrb_rescue_Znammemcpyrb_num2dblrb_float_newSwigClassLibVLC_ZdaPvSwigClassVLCMedia_ZN16SwigValueWrapperI14VLCMediaPlayerED1Ev_ZN16SwigValueWrapperI14VLCMediaPlayerE15SwigMovePointerD1Ev_ZN16SwigValueWrapperI14VLCMediaPlayerEC1Ev_ZN16SwigValueWrapperI14VLCMediaPlayerEaSERKS0__ZNK16SwigValueWrapperI14VLCMediaPlayerEcvRS0_EvSwigClassVLCMediaListSwigClassCtxSwigClassVLCDummyOutputSwigClassVLCMediaPlayerInit_libvlcrb_define_alloc_funcrb_define_method_ZN16SwigValueWrapperI14VLCMediaPlayerE15SwigMovePointerC1EPS0__ZN16SwigValueWrapperI14VLCMediaPlayerE15SwigMovePointeraSERS2_libvlc.so.5libSDL-1.2.so.0libstdc++.so.6libm.so.6libgcc_s.so.1libc.so.6_edata__bss_start_endGCC_3.0GLIBCXX_3.4CXXABI_1.3GLIBC_2.4GLIBC_2.2.5ø
+P&amp;y(ß0t)’0Ó¯k&lt;iiGui
+QØ!&gt;Xà!µ]è!mfð!ñjø!ß€!à!à!à! !À!`!êh!jé !
+ê¨!†çà!*êè!pé !9ê(!„é`!Fêh!Ÿé !Xê¨!žèà!dêè!;é
+!tê(!Ôé`!;æh!†ê !ê¨!Èçà!¢êè!Üç
+!´ê(!¾ê`!`!h! !p!à!x! !€!`!ˆ! !!à!˜!
+! !`!¨! !°!à!¸! !À!`!! !@!à!€!
+!À!`!! !@!à!€! !À!`!! !@!à!€!
+!À!À!È!!Ð!@!Ø!€!à!À!è!!ð!@!ø!€!!À!!!!@!!€!ð!ø!!!!!»
+!(!0!&quot;8!³@!.H!/P!3X!¯`!&gt;h!Çp!Fx!Hˆ!¥!‘˜!X !Z¨!^°!›¸!yÀ!™È!ƒÐ!œØ!…à!ˆè!}!¨!!Š!
+!Œ(!0!8!’@!H!®P! X!À`!
+h!p!¡x!€!ˆ!!˜!Ã !¨!¢°!¸!´À!È!Ð!Ø!¸à!è!ð!ø!!Ä!!!
+!!(!#0!8!$@!%H!&amp;P!”X!Ž`!&#8217;h!(p!)x!*€!+ˆ!,!-˜!0 !1¨!‹°!2¸!4À!•È!5Ð!±Ø!6à!Ÿè!7ð!8ø!9!¼!:!;!
+!&lt;(!=0!©8!&gt;@!?H!@P!AX!B`!Ch!šp!Dx!E€!Gˆ!°!²˜!‰ !I¨!J°!K¸!LÀ!MÈ!NÐ!OØ!Pà!Qè!Rð!Sø!T!U!V!W!¾
+!Y(!¿0![8!\@!]H!_P!`X!¬`!ah!¹p!bx!È€!cˆ!d!e˜!f !g¨!h°!i¸!jÀ!kÈ!ªÐ!lØ!mà!nè!oð!­ø!p!q!—!r!ž
+!º(!s0!t8!u@!ÉH!vP!wX!x`!Áh!zp!{x!«€!|ˆ!~!˜!€ !¨!‚°!„¸!†À!§È!‡Hƒìè¿
+èZ è¥ŸHƒÄÃÿ5ÚÎ ÿ%ÜÎ @ÿ%ÚÎ héàÿÿÿÿ%ÒÎ héÐÿÿÿÿ%ÊÎ héÀÿÿÿÿ%ÂÎ hé°ÿÿÿÿ%ºÎ
+hé ÿÿÿÿ%²Î héÿÿÿÿ%ªÎ hé€ÿÿÿÿ%¢Î hépÿÿÿÿ%šÎ hé`ÿÿÿÿ%’Î h éPÿÿÿÿ%ŠÎ h
+é@ÿÿÿÿ%‚Î hé0ÿÿÿÿ%zÎ hé ÿÿÿÿ%rÎ héÿÿÿÿ%jÎ héÿÿÿÿ%bÎ héðþÿÿÿ%ZÎ
+héàþÿÿÿ%RÎ héÐþÿÿÿ%JÎ héÀþÿÿÿ%BÎ hé°þÿÿÿ%:Î hé þÿÿÿ%2Î héþÿÿÿ%*Î
+hé€þÿÿÿ%&quot;Î hépþÿÿÿ%Î hé`þÿÿÿ%Î héPþÿÿÿ% Î hé@þÿÿÿ%Î
+hé0þÿÿÿ%úÍ hé þÿÿÿ%òÍ héþÿÿÿ%êÍ héþÿÿÿ%âÍ héðýÿÿÿ%ÚÍ h éàýÿÿÿ%ÒÍ
+h!éÐýÿÿÿ%ÊÍ h&quot;éÀýÿÿÿ%ÂÍ h#é°ýÿÿÿ%ºÍ h$é ýÿÿÿ%²Í h%éýÿÿÿ%ªÍ
+h&amp;é€ýÿÿÿ%¢Í h&#8217;épýÿÿÿ%šÍ h(é`ýÿÿÿ%’Í h)éPýÿÿÿ%ŠÍ h*é@ýÿÿÿ%‚Í
+h+é0ýÿÿÿ%zÍ h,é ýÿÿÿ%rÍ h-éýÿÿÿ%jÍ h.éýÿÿÿ%bÍ h/éðüÿÿÿ%ZÍ h0éàüÿÿÿ%RÍ
+h1éÐüÿÿÿ%JÍ h2éÀüÿÿÿ%BÍ h3é°üÿÿÿ%:Í h4é üÿÿÿ%2Í h5éüÿÿÿ%*Í
+h6é€üÿÿÿ%&quot;Í h7épüÿÿÿ%Í h8é`üÿÿÿ%Í h9éPüÿÿÿ% Í h:é@üÿÿÿ%Í
+h;é0üÿÿÿ%úÌ h&lt;é üÿÿÿ%òÌ h=éüÿÿÿ%êÌ h&gt;éüÿÿÿ%âÌ h?éðûÿÿÿ%ÚÌ
+h@éàûÿÿÿ%ÒÌ hAéÐûÿÿÿ%ÊÌ hBéÀûÿÿÿ%ÂÌ hCé°ûÿÿÿ%ºÌ hDé ûÿÿÿ%²Ì hEéûÿÿÿ%ªÌ
+hFé€ûÿÿÿ%¢Ì hGépûÿÿÿ%šÌ hHé`ûÿÿÿ%’Ì hIéPûÿÿÿ%ŠÌ hJé@ûÿÿÿ%‚Ì hKé0ûÿÿÿ%zÌ hLé
+ûÿÿÿ%rÌ hMéûÿÿÿ%jÌ hNéûÿÿÿ%bÌ hOéðúÿÿÿ%ZÌ hPéàúÿÿÿ%RÌ hQéÐúÿÿÿ%JÌ
+hRéÀúÿÿÿ%BÌ hSé°úÿÿÿ%:Ì hTé úÿÿÿ%2Ì hUéúÿÿÿ%*Ì hVé€úÿÿÿ%&quot;Ì
+hWépúÿÿÿ%Ì hXé`úÿÿÿ%Ì hYéPúÿÿÿ% Ì hZé@úÿÿÿ%Ì h[é0úÿÿÿ%úË h\é úÿÿÿ%òË
+h]éúÿÿÿ%êË h^éúÿÿÿ%âË h_éðùÿÿÿ%ÚË h`éàùÿÿÿ%ÒË haéÐùÿÿÿ%ÊË hbéÀùÿÿÿ%ÂË
+hcé°ùÿÿÿ%ºË hdé ùÿÿÿ%²Ë heéùÿÿÿ%ªË hfé€ùÿÿÿ%¢Ë hgépùÿÿÿ%šË hhé`ùÿÿÿ%’Ë
+hiéPùÿÿÿ%ŠË hjé@ùÿÿÿ%‚Ë hké0ùÿÿÿ%zË hlé ùÿÿÿ%rË hméùÿÿÿ%jË hnéùÿÿÿ%bË
+hoéðøÿÿÿ%ZË hpéàøÿÿÿ%RË hqéÐøÿÿÿ%JË hréÀøÿÿÿ%BË hsé°øÿÿÿ%:Ë hté øÿÿÿ%2Ë
+huéøÿÿÿ%*Ë hvé€øÿÿÿ%&quot;Ë hwépøÿÿÿ%Ë hxé`øÿÿÿ%Ë hyéPøÿÿÿ% Ë
+hzé@øÿÿÿ%Ë h{é0øÿÿÿ%úÊ h|é øÿÿÿ%òÊ h}éøÿÿÿ%êÊ h~éøÿÿÿ%âÊ héð÷ÿÿÿ%ÚÊ
+h€éà÷ÿÿÿ%ÒÊ héÐ÷ÿÿÿ%ÊÊ h‚éÀ÷ÿÿÿ%ÂÊ hƒé°÷ÿÿÿ%ºÊ h„é ÷ÿÿÿ%²Ê h…é÷ÿÿÿ%ªÊ
+h†é€÷ÿÿÿ%¢Ê h‡ép÷ÿÿÿ%šÊ hˆé`÷ÿÿÿ%’Ê h‰éP÷ÿÿÿ%ŠÊ hŠé@÷ÿÿÿ%‚Ê h‹é0÷ÿÿÿ%zÊ hŒé
+÷ÿÿÿ%rÊ hé÷ÿÿÿ%jÊ hŽé÷ÿÿÿ%bÊ héðöÿÿÿ%ZÊ héàöÿÿÿ%RÊ h‘éÐöÿÿÿ%JÊ
+h’éÀöÿÿÿ%BÊ h“é°öÿÿÿ%:Ê h”é öÿÿÿ%2Ê h•éöÿÿÿ%*Ê h–é€öÿÿÿ%&quot;Ê
+h—épöÿÿÿ%Ê h˜é`öÿÿÿ%Ê h™éPöÿÿHƒìH‹=Ä H…ÀtÿÐHƒÄÃU€=8Ñ
+H‰åATSubHƒ=hÄ tH‹=ßÉ èŠúÿÿHÂ L%ôÁ H‹Ñ L)ãHÁûHƒëH9Øs ëHƒÀH‰íÐ
+AÿÄH‹âÐ H9ØråÆÎÐ [A\ÉÃëUHƒ=¯Á H‰åtH‹›Ã H…ÀtH=—Á
+ÉÿàëÉÃUH‰åAUATSHƒì(H‰}ØH‰uÐH‰UÈH‹EØÆHƒ}Ð…ÄH‹EØÆ¾¿ècùÿÿH‹UØH‰BH‹EØH‹@H…À…¡HCÐ
+¶„ÀulH=5Ð èàõÿÿ…À•À„ÀtW»H‹“Ã H‹H‰ÆH=Þ”èù÷ÿÿH‰Ð H=ûÏ
+è–ùÿÿë$A‰ÔI‰Å„ÛuH=ãÏ è®ýÿÿL‰èIcÔH‰ÇèþÿÿH‹ÙÏ
+H5Ÿ”H‰Ç¸èeüÿÿH‹EØH‹UÐH‰PHƒ}È…•HŸÏ ¶„ÀulH=‘Ï è4õÿÿ…À•À„ÀtW»H‹çÂ
+H‹H‰ÆH=2”èM÷ÿÿH‰nÏ H=WÏ èêøÿÿë$A‰ÔI‰Å„ÛuH=?Ï èýÿÿL‰èIcÔH‰ÇèTýÿÿH‹5Ï
+H5”H‰Ç¸è¹ûÿÿH‹EØH‹@H‰Çè¹ôÿÿH‹UØH‰BH‹EØH‹@H‹UÈH‰ÖH‰ÇèŠöÿÿHƒÄ([A\A]ÉÃUH‰åAUATSHƒì(H‰}ØH‰uÐH‰UÈH‹EØÆHƒ}Ð…ÄH‹EØÆ¾¿è÷ÿÿH‹UØH‰BH‹EØH‹@H…À…¡HmÎ
+¶„ÀulH=_Î è ôÿÿ…À•À„ÀtW»H‹½Á H‹H‰ÆH=“è#öÿÿH‰&lt;Î H=%Î
+èÀ÷ÿÿë$A‰ÔI‰Å„ÛuH=Î èØûÿÿL‰èIcÔH‰Çè*üÿÿH‹Î
+H5É’H‰Ç¸èúÿÿH‹EØH‹UÐH‰PHƒ}È…•HÉÍ ¶„ÀulH=»Í è^óÿÿ…À•À„ÀtW»H‹Á
+H‹H‰ÆH=\’èwõÿÿH‰˜Í H=Í è÷ÿÿë$A‰ÔI‰Å„ÛuH=iÍ è,ûÿÿL‰èIcÔH‰Çè~ûÿÿH‹_Í
+H52’H‰Ç¸èãùÿÿH‹EØH‹@H‰ÇèãòÿÿH‹UØH‰BH‹EØH‹@H‹UÈH‰ÖH‰Çè´ôÿÿHƒÄ([A\A]ÉÃUH‰åHƒìH‰}øH‹EøH‹@H‰ÇèÌöÿÿH‹Eø¶„ÀtH‹EøH‹@H‰ÇèñøÿÿÉÃUH‰åHƒìH‰}øH‹EøH‹@H‰Çè’öÿÿH‹Eø¶„ÀtH‹EøH‹@H‰Çè·øÿÿÉÃUH‰åHƒìH‰}ø‰uô‹UôH‹EøH‹@‰ÖH‰Çè€øÿÿÉÃUH‰åHƒìH‰}øH‹EøH‹@H‰Çè÷ÿÿÉÃUH‰åHƒìH‰}øH‹EøH‹@H‰Çè$òÿÿÉÃUH‰åHƒìH‰}øH‹EøH‹@H‰Çè†úÿÿÉÃUH‰åHƒìH‰}ø‰uôH‹EøH‹@‹Uô‰ÖH‰ÇèöÿÿÉÃUH‰åHƒìH‰}øóEôH‹EøH‹@óEôH‰Çè¨öÿÿÉÃUH‰åHƒì
+H‰}øH‹EøH‹@H‰ÇèŠùÿÿóEì‹Eì‰EìóEìÉÃUH‰åHƒì
+H‰}èH‰uàH‹EèH‰EøH‹EøH‹@H‰ÇèÀùÿÿH‹EøH‹H‰Çè‘òÿÿH‹EøH‹H‹P
+H‹EàH‰¸ÉÃUH‰åHƒì@H‰}ØH‰uÐH‰UÈH‹EØH‰EðH‹EÈH‹H‰EèH‹EðH‹H‰Çè&quot;òÿÿH‹EðH‹@H‰ÇèÒôÿÿHƒ}ÐtH”º
+H5èH=ôèñÿÿÉÃUH‰åHƒìH‰}øH‰uðHƒ}ðtH&lt;º(H5°H=¼èäðÿÿÉÃUH‰åHƒì
+H‰}øH‰uðH‹EøH§H‰H‹EøÇ@H‹EøÇ@H‹Eø‹@H‹Eø‰PH‹EøH‹UðH‰PpH‹EøÇ@HH‹EøÇ@LH‹EøÇ@PH‹EøÇ@T¿
+è‹óÿÿƒøÿ”À„ÀtH=/èÕïÿÿÇD$Ç$A¹A¸¹ ºà¾€¿è¡ôÿÿH‹UøH‰B ÉÃUH‰åHƒì
+H‰}øH‰uðH‹EøHËŽH‰H‹EøÇ@H‹EøÇ@H‹Eø‹@H‹Eø‰PH‹EøH‹UðH‰PpH‹EøÇ@HH‹EøÇ@LH‹EøÇ@PH‹EøÇ@T¿
+è¯òÿÿƒøÿ”À„ÀtH=SŽèùîÿÿÇD$Ç$A¹A¸¹ ºà¾€¿èÅóÿÿH‹UøH‰B
+ÉÃUH‰åAUATSHƒì(H‰}ØH‹EØH‹@pH‰Çè¹öÿÿH‹UØH‰BhH‹EØH‹@hH…À…•HÁÈ ¶„ÀulH=³È
+è6îÿÿ…À•À„ÀtW»H‹é» H‹H‰ÆH=¯èOðÿÿH‰È H=yÈ èìñÿÿë$A‰ÔI‰Å„ÛuH=aÈ
+èöÿÿL‰èIcÔH‰ÇèVöÿÿH‹WÈ H5pH‰Ç¸è»ôÿÿH‹EØHPXH‹EØH‹@hI‰ÐH‹» H‰ÑH‹g»
+H‹p» H‰ÞH‰Çè•ôÿÿH‹EØ‹@‰ÃH‹EØ‹@‰ÁH‹EØ‹@‰ÂH‹EØH‹@hA‰ØH5H‰Çè
+ïÿÿH‹EØH‹@hH‰Çè`òÿÿƒøÿ”À„À„•H«Ç ¶„ÀulH=Ç èíÿÿ…À•À„ÀtW»H‹Ëº
+H‹H‰ÆH=‘Œè1ïÿÿH‰zÇ H=cÇ èÎðÿÿë$A‰ÔI‰Å„ÛuH=KÇ èæôÿÿL‰èIcÔH‰Çè8õÿÿH‹AÇ
+H5RŒH‰Ç¸èóÿÿH‹EØ‹PH‹EØ‹@ÇD$Ç$øA¹àA¸¹‰Æ¿è“ñÿÿH‹UØH‰BXèÖñÿÿH‹UØH‰B`H‹EØ‹XH‹EØ‹@¹Pº‰Þ‰ÇèîÿÿH‹UØH‰BH‹EØH‹@H…À…H=Í‹è8ìÿÿéH‹EØÇ@Lë2H‹EØ¶@(¶ÀƒøtƒøuH‹EØÇ@HëH‹EØ‹@0‰ÂH‹EØ‰PLH‹EØHƒÀ(H‰Çè4íÿÿ…À•À„ÀuµH‹EØ‹@Lƒøt
+ƒø
+tƒøëH‹EØÇ@HëH‹EØH‹@hH‰ÇèÈëÿÿH‹EØH‹@`H‰ÇèôÿÿH‹EØH‹PH‹EØH‹@X¹¾H‰ÇèïÿÿH‹EØH‹@`H‰ÇèfïÿÿH‹EØH‹@H‰ÇèÖòÿÿ¿
+è|òÿÿH‹EØHH@H‹EØH‹PH‹EØH‹@
+¾H‰Çè·îÿÿH‹EØ‹@H…À”À„À…àþÿÿH‹EØH‹@hH‰Çè£óÿÿHƒÄ([A\A]ÉÃUH‰åH‰}øH‰uð‰Uì‰MèD‰EäH‹EøH‹UðH‰H‹Eø‹Uì‰PH‹Eø‹Uè‰PH‹Eø‹Uä‰PÉÃUH‰åHƒìH‰}øH‹EøH‹@hH‰ÇèªîÿÿH‹EøH‹@`H‰ÇèêðÿÿH‹EøH‹@XH‰ÇèšéÿÿH‹EøH‹@
+H‰ÇèŠéÿÿÉÃUH‰åHƒìH‰}øH‹EøH‹@hH‰Çè\îÿÿH‹EøH‹@`H‰ÇèœðÿÿH‹EøH‹@XH‰ÇèLéÿÿH‹EøH‹@
+H‰Çè&lt;éÿÿÉÃUH‰åHƒì‰}ü‰uøƒ}üu2}øÿÿu)H=6Ä è‘êÿÿH‹· H‹S· H5Ä
+H‰ÇèTëÿÿÉÃUH‰å¾ÿÿ¿è¥ÿÿÿÉÃUH‰åAUATSHƒìH‰}ØH‰uÐH‹EØÆHƒ}Ð…ÄH‹EØÆ¾¿èŸìÿÿH‹UØH‰BH‹EØH‹@H…À…¡HÏÃ
+¶„ÀulH=ÁÃ èéÿÿ…À•À„ÀtW»H‹Ï¶ H‹H‰ÆH=&quot;‰è5ëÿÿH‰¶Ã H=‡Ã
+èÒìÿÿë$A‰ÔI‰Å„ÛuH=oÃ èêðÿÿL‰èIcÔH‰Çè&lt;ñÿÿH‹}Ã
+H5ãˆH‰Ç¸è¡ïÿÿH‹EØH‹UÐH‰PH‹EØH‹@H‰Çè•ðÿÿH‹UØH‰BHƒÄ[A\A]ÉÃUH‰åAUATSHƒìH‰}ØH‰uÐH‹EØÆHƒ}Ð…ÄH‹EØÆ¾¿è…ëÿÿH‹UØH‰BH‹EØH‹@H…À…¡HµÂ
+¶„ÀulH=§Â èèÿÿ…À•À„ÀtW»H‹µµ H‹H‰ÆH=ˆèêÿÿH‰œÂ H=mÂ
+è¸ëÿÿë$A‰ÔI‰Å„ÛuH=UÂ èÐïÿÿL‰èIcÔH‰Çè&quot;ðÿÿH‹cÂ
+H5É‡H‰Ç¸è‡îÿÿH‹EØH‹UÐH‰PH‹EØH‹@H‰Çè{ïÿÿH‹UØH‰BHƒÄ[A\A]ÉÃUH‰åHƒìH‰}øH‹EøH‹@H‰ÇèìéÿÿH‹Eø¶„ÀtH‹EøH‹@H‰Çè¡íÿÿÉÃUH‰åHƒìH‰}øH‹EøH‹@H‰Çè²éÿÿH‹Eø¶„ÀtH‹EøH‹@H‰ÇègíÿÿÉÃUH‰åAUATSHƒì(H‰}ÈH‰uÀH‹EÈH‹@H‹UÀH‰ÖH‰Çè¨ëÿÿH‰EØHƒ}Ø…•HJÁ
+¶„ÀulH=&lt;Á èæÿÿ…À•À„ÀtW»H‹B´ H‹H‰ÆH=•†è¨èÿÿH‰!Á H=Á
+èEêÿÿë$A‰ÔI‰Å„ÛuH=êÀ è]îÿÿL‰èIcÔH‰Çè¯îÿÿH‹èÀ
+H5k†H‰Ç¸èíÿÿH‹EÈH‹@H‰ÇèäæÿÿH‹EÈH‹@H‹UØH‰ÖH‰Çè}îÿÿH‹EÈH‹@H‰ÇèýéÿÿHƒÄ([A\A]ÉÃUH‰åHƒìH‰}ø‰uôH‹EøH‹@H‰Çè“æÿÿH‹EøH‹@‹Uô‰ÖH‰ÇèŽìÿÿH‹EøH‹@H‰Çè®éÿÿÉÃUH‰åHƒìH‰}øH‹EøH‹@H‰ÇèPëÿÿÉÃUH‰åAUATSHƒì(H‰ûH‰uÈ‰UÄH‹EÈH‹@‹UÄ‰ÖH‰Çè&quot;éÿÿH‰EØHƒ}Ø…•HÜ¿
+¶„ÀulH=Î¿ èåÿÿ…À•À„ÀtW»H‹Ì² H‹H‰ÆH=…è2çÿÿH‰£¿ H=”¿
+èÏèÿÿë$A‰ÔI‰Å„ÛuH=|¿ èçìÿÿL‰èIcÔH‰Çè9íÿÿH‹j¿ H5
+…H‰Ç¸èžëÿÿH‰ØH‹UÈH‹JH‹UØH‰ÎH‰Çè$èÿÿH‰ØH‰ØHƒÄ([A\A]ÉÃUH‰åHƒì‰}ü‰uøƒ}üu2}øÿÿu)H=ç¾
+èåÿÿH‹£± H‹Ü± H5Í¾
+H‰ÇèÝåÿÿÉÃUH‰å¾ÿÿ¿è¥ÿÿÿÉÃUH‰åAUATSHƒì(H‰}ØH‰uÐH‰UÈH‹EØHÇH‹EØÇ@ÿÿÿÿH‹EØÇ@ÿÿÿÿH‹EØÇ@ÿÿÿÿH‹EØÇ@8ÿÿÿÿH‹EØÆ@Hƒ}Ð…ÅH‹EØÆ@¾¿èêæÿÿH‹UØH‰BH‹EØH‹@H…À…¡HR¾
+¶„ÀulH=D¾ ègãÿÿ…À•À„ÀtW»H‹± H‹H‰ÆH=¿ƒè€åÿÿH‰Y¾ H= ¾
+èçÿÿë$A‰ÔI‰Å„ÛuH=ò½ è5ëÿÿL‰èIcÔH‰Çè‡ëÿÿH‹ ¾
+H5€ƒH‰Ç¸èìéÿÿH‹EØH‹UÐH‰PH‹EØH‹UÈH‰P(Hƒ}ÈtH‹EØH‹@(H‰Çè}âÿÿH‹EØHÇ@0HƒÄ([A\A]ÉÃUH‰åAUATSHƒì(H‰}ØH‰uÐH‰UÈH‹EØHÇH‹EØÇ@ÿÿÿÿH‹EØÇ@ÿÿÿÿH‹EØÇ@ÿÿÿÿH‹EØÇ@8ÿÿÿÿH‹EØÆ@Hƒ}Ð…ÅH‹EØÆ@¾¿è|åÿÿH‹UØH‰BH‹EØH‹@H…À…¡Hä¼
+¶„ÀulH=Ö¼ èùáÿÿ…À•À„ÀtW»H‹¬¯ H‹H‰ÆH=Q‚èäÿÿH‰ë¼ H=œ¼
+è¯åÿÿë$A‰ÔI‰Å„ÛuH=„¼ èÇéÿÿL‰èIcÔH‰ÇèêÿÿH‹²¼
+H5‚H‰Ç¸è~èÿÿH‹EØH‹UÐH‰PH‹EØH‹UÈH‰P(Hƒ}ÈtH‹EØH‹@(H‰ÇèáÿÿH‹EØHÇ@0HƒÄ([A\A]ÉÃUH‰åHƒìH‰}øH‹Eø¶@„Àt
+H‹EøH‹@H‰ÇèçÿÿH‹EøH‹@(H‰ÇèPæÿÿÉÃUH‰åHƒìH‰}øH‹Eø¶@„Àt
+H‹EøH‹@H‰ÇèVçÿÿH‹EøH‹@(H‰ÇèæÿÿÉÃUH‰åAUATSHƒì(H‰}ÈH‰uÀH‹EÈH‹@H‹UÀH‰ÖH‰Çè(åÿÿH‰EØHƒ}ØtH‹EÀH5H‰ÇèªáÿÿH…Àu¸ë¸„À„•H:»
+¶„ÀulH=,» èGàÿÿ…À•À„ÀtW»H‹ú­ H‹H‰ÆH=Ÿ€è`âÿÿH‰1» H=òº
+èýãÿÿë$A‰ÔI‰Å„ÛuH=Úº èèÿÿL‰èIcÔH‰ÇègèÿÿH‹øº
+H5w€H‰Ç¸èÌæÿÿH‹EÈH‹UØH‰P(HƒÄ([A\A]ÉÃUH‰åAUATSHƒì(H‰}ÈH‹EÈH‹@(H…Àtj¿xèüçÿÿH‰ÃH‹EÈH‹P(H‰ØH‰ÖH‰ÇèÃãÿÿëA‰ÔI‰ÅH‰ßèÃßÿÿL‰èIcÔH‰ÇèÕçÿÿH‰]ØH‹EØH‰Çè%âÿÿH‹]ØH…ÛtH‰ßè4çÿÿH‰ßèŒßÿÿHƒÄ([A\A]ÉÃUH‰åHƒìH‰}øH‹EøH‹@0H‰ÇèTßÿÿÉÃUH‰åH‰}øH‰uð‰Uì‰MèD‰EäH‹EøH‹UðH‰H‹Eø‹Uì‰PH‹Eø‹Uè‰PH‹Eø‹Uä‰PÉÃUH‰åAUATSHƒìH‰}ØH‰uÐH‹EØH‹@(H…À„YH‹EÐH5AH‰Çè‡äÿÿ…ÀtH‹EØH‹@(¾H‰ÇèŽáÿÿé½H‹EÐH5H‰ÇèVäÿÿ…ÀtH‹EØH‹@(¾H‰Çè]áÿÿéŒH‹EÐH5ì~H‰Çè%äÿÿ…ÀtH‹EØH‹@(¾H‰Çè,áÿÿé[H‹EÐH5Ç~H‰Çèôãÿÿ…ÀtH‹EØH‹@(¾
+H‰Çèûàÿÿé*H·¸ ¶„ÀulH=©¸ è¼Ýÿÿ…À•À„ÀtW»H‹o« H‹H‰ÆH=~èÕßÿÿH‰–¸
+H=o¸ èráÿÿë$A‰ÔI‰Å„ÛuH=W¸ èŠåÿÿL‰èIcÔH‰ÇèÜåÿÿH‹]¸ H5~H‰Ç¸èAäÿÿH*¸
+¶„ÀulH=¸ è&#8217;Ýÿÿ…À•À„ÀtW»H‹Úª H‹H‰ÆH=}è@ßÿÿH‰ ¸ H=â·
+èÝàÿÿë$A‰ÔI‰Å„ÛuH=Ê· èõäÿÿL‰èIcÔH‰ÇèGåÿÿH‹Ð·
+H5—}H‰Ç¸è¬ãÿÿHƒÄ[A\A]ÉÃUH‰åAUATSHƒìH‰ûH‰uØH‹EØH‹@(H…Àt/H‰ØH‹UØH‹R(H‹MØH‹IH‰ÎH‰ÇèÝÿÿH‰ØH‰ØHƒÄ[A\A]ÉÃHA·
+¶„ÀulH=3· è6Üÿÿ…À•À„ÀtW»H‹é© H‹H‰ÆH=Ž|èOÞÿÿH‰· H=ù¶
+èìßÿÿë$A‰ÔI‰Å„ÛuH=á¶ èäÿÿL‰èIcÔH‰ÇèVäÿÿH‹Ï¶
+H5¦|H‰Ç¸è»âÿÿUH‰åHƒì‰}ü‰uøƒ}üu2}øÿÿu)H=g¶ èbÜÿÿH‹ë¨ H‹$© H5M¶
+H‰Çè%ÝÿÿÉÃUH‰å¾ÿÿ¿è¥ÿÿÿÉÃUH‰åAUATSHƒì(H‰}Ø‰uÔH‰UÈ‰ÈˆEÄH‹UÈ‹EÔH‰Ö‰Çè~ÞÿÿH‹UØH‰BH‹EØH‹@H…À…•H&gt;¶
+¶„ÀulH=0¶ èûÚÿÿ…À•À„ÀtW»H‹®¨ H‹H‰ÆH=Ó{èÝÿÿH‰¶ H=öµ
+è±Þÿÿë$A‰ÔI‰Å„ÛuH=Þµ èÉâÿÿL‰èIcÔH‰ÇèãÿÿH‹Üµ
+H5”{H‰Ç¸è€áÿÿ€}ÄtH‹EØH‹@H‰ÇèzÛÿÿH‹UØH‰ëH‹EØHÇHƒÄ([A\A]ÉÃUH‰åAUATSHƒì(H‰}Ø‰uÔH‰UÈ‰ÈˆEÄH‹UÈ‹EÔH‰Ö‰ÇèlÝÿÿH‹UØH‰BH‹EØH‹@H…À…•H,µ
+¶„ÀulH=µ èéÙÿÿ…À•À„ÀtW»H‹œ§ H‹H‰ÆH=ÁzèÜÿÿH‰µ H=ä´
+èŸÝÿÿë$A‰ÔI‰Å„ÛuH=Ì´ è·áÿÿL‰èIcÔH‰Çè âÿÿH‹Ê´
+H5‚zH‰Ç¸ènàÿÿ€}ÄtH‹EØH‹@H‰ÇèhÚÿÿH‹UØH‰ëH‹EØHÇHƒÄ([A\A]ÉÃUH‰åHƒìH‰}øH‹EøH‹@H‰ÇèœßÿÿH‹EøH‹H…ÀtH‹EøH‹H‰Çè1àÿÿÉÃUH‰åHƒìH‰}øH‹EøH‹@H‰ÇèbßÿÿH‹EøH‹H…ÀtH‹EøH‹H‰Çè÷ßÿÿÉÃUH‰åHƒì
+H‰}øH‰uðH‰UèH‹EøH‹@H‹UèH‹MðH‰ÎH‰ÇèUÝÿÿÉÃUH‰åHƒìH‰}øèAÙÿÿÉÃUH‰åAUATSHƒì(H‰ûH‰uÈH‰UÀH‹EÈH‹@H‹UÀH‰ÖH‰ÇèßÜÿÿH‰EØH‹EÀH5\yH‰ÇèhÙÿÿH…À”À„À„•H[³
+¶„ÀulH=M³ èØÿÿ…À•À„ÀtW»H‹Ã¥ H‹H‰ÆH=èxè)ÚÿÿH‰&quot;³ H=³
+èÆÛÿÿë$A‰ÔI‰Å„ÛuH=û² èÞßÿÿL‰èIcÔH‰Çè0àÿÿH‹é²
+H5ÀxH‰Ç¸è•ÞÿÿH‰ØH‹UÈH‹JH‹UØH‰ÎH‰ÇèÛÿÿH‰ØH‰ØHƒÄ([A\A]ÉÃUH‰åSHƒìH‰ûH‰uèH‰ØH‹UèH‹RH‰ÖH‰ÇèÚÿÿH‰ØH‰ØHƒÄ[ÉÃUH‰åHƒì‰}ü‰uøƒ}üu2}øÿÿu)H=;²
+èÞ×ÿÿH‹g¤ H‹ ¤ H5!²
+H‰Çè¡ØÿÿÉÃUH‰å¾ÿÿ¿è¥ÿÿÿÉÃUH‰åSH‰}ðH‰uèH‰UàH‰MØé’HƒEðH‹Eð¶&lt;
+uH‹EðH;Eèt¸ë¸„ÀuÖëHƒEàH‹Eà¶&lt;
+uH‹EàH;EØt¸ë¸„ÀuÖH‹Eð¶H‹Eà¶8Ât
+H‹Eð¶H‹Eà¶8Â~¸ë¸ÿÿÿÿëSHƒEðHƒEàH‹EðH;EètH‹EàH;EØt¸ë¸„À…KÿÿÿH‹Eè‰ÂH‹Eð‰Ñ)ÁH‹Eà‰ÂH‹EØ‰Ó)Ã‰Ø[ÉÃUH‰åSHƒì8H‰}ÈH‰uÀÇEìH‹EÀH‰ÇèÌØÿÿHEÀH‰EàH‹EÈH‰EØëkH‹EØH‰EÈëH‹EØ¶&lt;|tHƒEØH‹EØ¶„À•À„ÀuàëH‹MàH‹UÀH‹]ØH‹EÈH‰ÞH‰ÇèŠþÿÿ…Àu¸ë¸‰EìH‹EØ¶„ÀtHƒEØƒ}ìuH‹EØ¶„Àt¸ë¸„À…pÿÿÿ‹EìHƒÄ8[ÉÃUH‰åSHƒì8H‰}ÈH‰uÀÇEìH‹EÀH‰Çèü×ÿÿHEÀH‰EàH‹EÈH‰EØëkH‹EØH‰EÈëH‹EØ¶&lt;|tHƒEØH‹EØ¶„À•À„ÀuàëH‹MàH‹UÀH‹]ØH‹EÈH‰ÞH‰Çèºýÿÿ…Àu¸ë¸‰EìH‹EØ¶„ÀtHƒEØƒ}ìuH‹EØ¶„Àt¸ë¸„À…pÿÿÿ‹EìHƒÄ8[ÉÃUH‰åHƒì
+H‰}èH‰uàHƒ}à„åH‹EàH‹@H‰EøéÄH‹EøH‹H‹H‹UèH‰ÖH‰ÇèûÙÿÿ…À…—H‹EàH‹@H;Eøu
+H‹Eøé¡H‹EøH‹@H‹UøH‹RH‰PH‹EøH‹@H…ÀtH‹EøH‹@H‹UøH‹RH‰PH‹EàH‹PH‹EøH‰PH‹EøHÇ@H‹EàH‹@H…ÀtH‹EàH‹@H‹UøH‰PH‹EàH‹UøH‰PH‹Eøë!H‹EøH‹@H‰EøHƒ}ø•À„À…,ÿÿÿ¸ÉÃUH‰åH‰}èH‰uàHƒ}à„ÕH‹EàH‹@H‰Eøé´H‹EøH‹H;Eè…—H‹EàH‹@H;Eøu
+H‹Eøé¡H‹EøH‹@H‹UøH‹RH‰PH‹EøH‹@H…ÀtH‹EøH‹@H‹UøH‹RH‰PH‹EàH‹PH‹EøH‰PH‹EøHÇ@H‹EàH‹@H…ÀtH‹EàH‹@H‹UøH‰PH‹EàH‹UøH‰PH‹Eøë!H‹EøH‹@H‰EøHƒ}ø•À„À…&lt;ÿÿÿ¸ÉÃUH‰åHƒì
+H‰}øH‰uðH‰UèHƒ}øt&#8216;H‹EøH‹@H…ÀtH‹EøH‹HH‹UèH‹EðH‰ÖH‰ÇÿÑëH‹EðÉÃUH‰åHƒì
+H‰}èH‰uàH‹EèH‰EøHƒ}ètH‹EèH‹@H…Àu*H‹EèëLH‹EèH‹PH‹EàH‰ÇÿÒH‰EèHƒ}ètH‹EèH‰EøHƒ}ètH‹EèH‹@H…Àt¸ë¸„Àu¸H‹EøÉÃUH‰åH‰}èHƒ}èu¸ë`H‹EèH‹@H…ÀtLH‹EèH‹@H‰EøH‹EèH‹@H‰EðëH‹Eð¶&lt;|uH‹EðHƒÀH‰EøHƒEðH‹Eð¶„À•À„ÀuÔH‹EøëH‹EèH‹ÉÃUH‰åHƒì
+H‰}èH‰uàH‹EèH‹@H‰EøH‹EèH‹UàH‰P ëDH‹EøH‹@H…Àu+H‹EøH‹H‰EðH‹EðH‹@
+H…ÀuH‹UàH‹EðH‰ÖH‰ÇèžÿÿÿH‹EøH‹@H‰EøHƒ}ø•À„Àu°ÉÃUH‰åHƒìH‰}øH‰uðH‹UðH‹EøH‰ÖH‰ÇèaÿÿÿH‹EøÇ@(ÉÃUH‰åAVAUATSHƒì0H‰}ÈH‰uÀH‰U¸H‹EÈH‰EØH‹EØH‹@H…À„ A½H‹EØH‹@LpÿKD5H‰ÃHÑëH‹EØH‹HÝHH‹H‹H‰EÐHƒ}Ðt[H‹UÐH‹E¸H‰ÖH‰ÇèÒÕÿÿA‰ÄE…äuH‹EØH‹HÝHÐH‹ëQE…äyH…Ût&quot;Lsÿë
+E…ä~LkM9õ–À„À…xÿÿÿëëH‹EØH‹@H‰EØH‹EØH;EÀ•À„À…0ÿÿÿ¸HƒÄ0[A\A]A^ÉÃUH‰åSHƒì8H‰}ØH‰uÐH‰UÈH‹UÈH‹MÐH‹EØH‰ÎH‰ÇèÏþÿÿH‰EèHƒ}èt
+H‹EèéÀH‹EØH‰Eà»ëwH‹EàH‹HÝHH‹H‹@H…Àt4H‹EàH‹HÝHH‹H‹@H‹UÈH‰ÖH‰ÇèÞøÿÿ…Àt¸ë¸„ÀtH‹EàH‹HÝHÐH‹ë&gt;HƒÃH‹EàH‹@H9Ø—À„À…sÿÿÿH‹EàH‹@H‰EàH‹EàH;EÐ•À„À…Mÿÿÿ¸HƒÄ8[ÉÃUH‰åAUATSH‰}àH‰uØH‰UÐH‹]ØI‰ÝLmÐëJD¶D‰àÀè¶ÀHcÐH•w¶H‹EàˆHƒEàA¶ÄƒàHcÐHuw¶H‹EàˆHƒEàHƒÃL9ë•À„Àu¬H‹Eà[A\A]ÉÃUH‰åAVAUATSH‰}ØH‰uÐH‰UÈL‹mÐM‰îLuÈé–H‹EØ¶HƒEØ€û/~€û9‰Øƒè0‰ÂÁâA‰Ôë
+€û`~€ûf‰ØƒèW‰ÂÁâA‰Ôë¸ëcH‹EØ¶HƒEØ€û/~€û9‰Øƒè0‰ÂD‰à
+ÐA‰Äë&quot;€û`~€ûf‰ØƒèW‰ÂD‰à
+ÐA‰Äë¸ëEˆeIƒÅM9õ•À„À…\ÿÿÿH‹EØ[A\A]A^ÉÃUH‰åSHƒì8H‰}ØH‰uÐH‰UÈH‰MÀH‹EØH‰EèHƒ}Àw¸ëpH‹EèÆ_HƒEèHMÐH‹EèºH‰ÎH‰ÇèTþÿÿH‰EèH‹EÈH‰Çè¢ÏÿÿHHH‹UØH‹EèH‰ÓH)ÃH‰ØHEÀH9Áv¸ëH‹UÈH‹EèH‰ÖH‰ÇèzÒÿÿH‹EØHƒÄ8[ÉÃUH‰åHƒì
+H‰}øH‰uðH‰UèH‹Eø¶&lt;_t/H‹EøH5emH‰ÇèÒÿÿ…ÀuH‹EðHÇH‹Eèë$¸ëHƒEøH‹MðH‹EøºH‰ÎH‰ÇèþÿÿÉÃUH‰åHƒì@H‰}èH‰uàH‰UØH‰MÐL‰EÈH‹EèH‰EøHƒ}ÐtH‹EÐH‰Çè»Îÿÿë¸H‰EðH‹EØHƒÀHÀHEðH;EÈv¸ëVH‹EøÆ_HƒEøH‹UØH‹MàH‹EøH‰ÎH‰ÇèýÿÿH‰EøHƒ}ðtH‹EðHPH‹MÐH‹EøH‰ÎH‰Çè{ÒÿÿëH‹EøÆH‹EèÉÃUH‰åHƒì
+H‰}øH‰uðH‰UèH‰MàH‹Eø¶&lt;_t9H‹EøH5&gt;lH‰ÇèöÐÿÿ…ÀuH‹UèH‹Eð¾H‰ÇèmÊÿÿH‹Eàë#¸ëHƒEøH‹UèH‹MðH‹EøH‰ÎH‰ÇèçüÿÿÉÃUH‰åH‰}øH‹Eøƒà„ÀtH‹Ø—
+H‹ë\Hƒ}øuH‹E˜ H‹ëIHƒ}øuH‹r˜ H‹ë6Hƒ}øuH‹¯— H‹ëH‹Eø%ÿHƒøuH‹Ü—
+H‹ëH‹EøH‹@ÉÃUH‰åH‰}øH‹Eøƒà„Àt¸ ëXHƒ}øu¸ëJHƒ}øu¸!ë&lt;Hƒ}øu¸
+ë.Hƒ}øu¸&lt;ë H‹Eø%ÿHƒøu¸$ë H‹EøH‹ƒà?ÉÃUH‰å‹?§ …Àu*Ç1§ H‹ —
+H‹H‰ÆH=ÚjèÐËÿÿH‰§ H‹§ ÉÃUH‰å‹î¦ …Àu*Çà¦ H‹É– H‹H‰ÆH=¬jèËÿÿH‰È¦
+H‹Á¦ ÉÃUH‰åHƒì ‰}ì‹EìƒÀdƒøc‡‰ÀH…H„j‹HcÐHwjHÿàH‹B–
+H‹H‰EøéãH‹Ÿ– H‹H‰EøéÐH‹&lt;– H‹H‰Eøé½H‹™– H‹H‰EøéªH‹Æ• H‹H‰Eøé—H‹–
+H‹H‰Eøé„H‹¨• H‹H‰EøëtH‹ˆ• H‹H‰EøëdH‹P– H‹H‰EøëTH‹è• H‹H‰EøëDH‹°•
+H‹H‰Eøë4èyþÿÿH‰Eøë)è¯þÿÿH‰EøëH‹Š• H‹H‰EøëH‹z•
+H‹H‰EøH‹EøÉÃUH‰åHìÐH‰½XÿÿÿH‰µPÿÿÿH‰•Hÿÿÿ‰DÿÿÿL‰…8ÿÿÿdH‹%(H‰Eø1ÀHƒ½Xÿÿÿt&amp;H‹…Xÿÿÿ¶„ÀtH‹…XÿÿÿH‰ÇèBÏÿÿH‰…hÿÿÿë¾¿èºÉÿÿH‰…hÿÿÿH‹…hÿÿÿH5ujH‰ÇèÝÉÿÿH‰…hÿÿÿ‹…DÿÿÿPÿH…pÿÿÿH5bjH‰Ç¸èBËÿÿH‹…hÿÿÿH•pÿÿÿH‰ÖH‰Çè™ÉÿÿH‰…hÿÿÿH‹…hÿÿÿH‹•PÿÿÿH‰ÖH‰ÇèyÉÿÿH‰…hÿÿÿH‹…hÿÿÿH5jH‰Çè\ÉÿÿH‰…hÿÿÿH‹…8ÿÿÿH‰ÇèæËÿÿH‰ÂH‹…hÿÿÿH‰ÖH‰Çè1ÉÿÿH‰…hÿÿÿH‹…hÿÿÿH5ÖiH‰ÇèÉÿÿH‰…hÿÿÿH‹…8ÿÿÿH‰Çè^ËÿÿH‰…`ÿÿÿH‹…`ÿÿÿH‹@Hƒø~OH…`ÿÿÿH‰Çè÷ÉÿÿH‰ÁH‹…hÿÿÿºH‰ÎH‰ÇèíÊÿÿH‰…hÿÿÿH‹…hÿÿÿH5diH‰Çè ÈÿÿH‰…hÿÿÿë
+H‹•`ÿÿÿH‹…hÿÿÿH‰ÖH‰Çè^ÈÿÿH‰…hÿÿÿHƒ½HÿÿÿtZH‹…hÿÿÿH5iH‰ÇèWÈÿÿH‰…hÿÿÿH‹…hÿÿÿH‹•HÿÿÿH‰ÖH‰Çè7ÈÿÿH‰…hÿÿÿH‹…hÿÿÿH5õhH‰ÇèÈÿÿH‰…hÿÿÿH…hÿÿÿH‰Çè$ÉÿÿH‹UødH3%(tèPËÿÿÉÃUH‰åSHƒì8‰}Ü‰uØH‰UÐH‰MÈH¥hH‰Eè‹EÜ;EØH§hH‰EèH‹*“
+H‹H‹]ÈH‹MÐH‹UèI‰ØH5™hH‰Ç¸èÌÿÿUH‰åHƒìH=¾hèØÌÿÿH‰EøH=½hè¸ÆÿÿH‰Eð¾H=¨hèCËÿÿH‹ì—
+H‹UøH‰ÖH‰Çè­ËÿÿH‰Þ— H‹EðH‰ÆH=xhèËÿÿH‹Ä— Hƒøu)èÑÇÿÿH‰²— H‹«— H‹œ—
+H‹MøH‰ÎH‰ÇèíÃÿÿH=&gt;hèAÌÿÿH‰2¡
+ÉÃUH‰åHƒìH‰}øH‹EøH‰Çè°ÇÿÿÉÃUH‰åHƒìH‰}øH‹EøH‰Çè–ÇÿÿÉÃUH‰åHƒìH‰}øH‹Eøƒà„Àt
+H‹EøHÑøëH‹EøH‰Çè¨ÉÿÿÉÃUH‰åHƒì
+H‰}èH‰uàH‹EèH‰Çè‚ÿÿÿH‰EøH‹EàH‰ÇèŒÿÿÿH‰EðH‹ç– H‹UðH‹MøH‰ÎH‰ÇèÅÿÿÉÃUH‰åHƒì
+H‰}èH‹EèH‰Çè:ÿÿÿH‰EøH‹¯–
+H‹UøH‰ÖH‰ÇèˆÄÿÿH‰EðHƒ}ðu¸ëH‹EðH‰Çè6ÿÿÿÉÃUH‰åSHƒì(H‰}ØH‹EØH‰ÇèçþÿÿH‰EèH‹ 
+H‹U– H‹UèH‰ÑºH‰ÞH‰Ç¸èqÄÿÿHƒÄ([ÉÃUH‰åHƒì H‰}èH‹EèH‰ÇèHÿÿÿH‰EøHƒ}øtH‹EøHÇ@
+ÉÃUH‰åHƒì H‰}èH‰uàHƒ}èu H‹EàH‰EèëMH‹EèH‰Çè‡øÿÿƒø
+•À„Àt$H‹EèH‰EøèUÈÿÿH‰EèH‹UøH‹EèH‰ÖH‰Çè.ËÿÿH‹UàH‹EèH‰ÖH‰ÇèËÿÿH‹EèÉÃUH‰å‹ÓŸ
+…Àu2ÇÅŸ H=%fè!ÊÿÿH‰ÂH‹W• H‰ÖH‰ÇèÂÿÿH‰¥Ÿ H‹žŸ ÉÃUH‰åHƒì
+H‰}èH‰uàè¢ÿÿÿH‰EøH‹UøH‹EàH‰ÖH‰Çè`ÇÿÿH…À•À„ÀtH‹Eàë$H‹EàH‰Çè¤ÇÿÿH‰ÂH‹B
+H‹H‰ÖH‰ÇèœÄÿÿÉÃUH‰åH‹Ï” Hƒøu9H=‹eè-ÅÿÿH‰¶” H=}eèjÉÿÿH‰kž
+H=oeèWÉÿÿH‰Pž ÉÃUH‰åHƒì
+H‰}èH‹EèH‹H‰ÇèsÄÿÿHƒÀH‰ÇèwÂÿÿH‰EðH‹EèH‹H‹EðH5*eH‰Ç¸è4ÅÿÿH‹M” HƒøuEH‹
+H‹H‹&amp;” H5ÿdH‰Çè‡ÁÿÿH‰ ” H‹” H‰Çè?öÿÿH5âdH‰ÇèBÉÿÿH‹û“ H‹ä“
+H‹MðH‰ÎH‰ÇèEÁÿÿH‰EøH‹EðH‰Çè¥ÃÿÿÉÃUH‰åSHƒìhH‰}¨H‰u ‰Uœ‹Eœƒà‰EìHƒ}¨u
+¸é«H‹E H‹@ H…À„áH‹E H‹@ H‰EØH‹EØ‹@
+‰Eèƒ}èt]H‹E¨H‰Çè’üÿÿH‰EÈHƒ}ÈtFH‹EÈH52dH‰ÇèÈÿÿH‰EÀH‹EÀH‹@H‰E¸H‹E H‹H‹U¸H‰ÖH‰ÇèÆÿÿ…Àu
+H‹EÈé!ƒ}ìt H‹EØH‹@ëƒ}èt Hvüÿÿë¸H‹UØH‹RH‹MØH‹H‹u¨H‰ÁH‰ßè
+ÆÿÿH‰EÈƒ}è„¨H‹UÈH‹E¨H‰ÖH‰Çè’ûÿÿéH‹E H‹H‰Çè”ÂÿÿHƒÀH‰Çè˜ÀÿÿH‰EàH‹E H‹H‹EàH5KcH‰Ç¸èUÃÿÿH‹EàH‰ÇèÇÿÿH‰ÂH‹O’
+H‰ÖH‰Çè¿ÿÿH‰EÐH‹EàH‰ÇèÂÿÿH‹]¨H‹EÐ¹ºH‰ÞH‰ÇèWÅÿÿH‰EÈH‹E H‹H‰Çè”ÆÿÿH‰ÂH‹EÈH5âbH‰Çè~¾ÿÿH‹EÈHƒÄh[ÉÃUH‰åHƒì
+H‰}èH‰uàH‹EàH‹@
+H‰EðH‹EðH‹HH‹EðH‹PH‹Eè¾H‰ÇèæÄÿÿH‰EøH‹EàH‹H‰Çè#ÆÿÿH‰ÂH‹EøH5qbH‰Çè¾ÿÿH‹EøÉÃUH‰åHƒì
+H‰}èH‹EèH5LbH‰Çè(ÆÿÿH‰EøHEøH‰ÇèÈÁÿÿÉÃUH‰åH‰}èH‰uàHƒ}ètH‹EèH‹@H‰EøH‹EèH‹UàH‰PH‹Eøë¸ÉÃUH‰åHƒì`H‰}ÈH‰uÀH‰U¸‰M´L‰E¨HÇEàHƒ}ÈuH‹EÀHÇ¸é¹H‹EÈH‰Çè~óÿÿƒø&quot;•À„Àt
+¸ÿÿÿÿé™H‹EÈ¾&quot;H‰Çè~ÅÿÿH‹EÈH‹@
+H‰EàHƒ}¨tH‹EÈH‹PH‹E¨H‰‹E´ƒà„ÀtTÇEüHƒ}¸t#H‹E¸H‹@ H…ÀtH‹E¸H‹@ H‰EØH‹EØ‹@
+‰Eüƒ}ütH‹EÈH¸ùÿÿH‰PëH‹EÈHÇ@Hƒ}¸„íH‹E¸H‹@ H…ÀtJH‹E¸H‹@
+H‹H‹EÈH‰ÖH‰Çè&lt;ÂÿÿH…À•À„Àt&amp;Hƒ}àu
+¸œÿÿÿé»H‹EÀH‹UàH‰¸é¦H‹EÈH‰Çè9þÿÿH‰EðHƒ}ð”À„Àt
+¸ÿÿÿÿé€H‹U¸H‹EðH‰ÖH‰Çè3èÿÿH‰EèHƒ}èu¸ÿÿÿÿë[ÇEøHUøH‹MàH‹EèH‰ÎH‰ÇèýéÿÿH‹UÀH‰‹Eø…Àt*HNeº’H5,`H=5`è¶¼ÿÿH‹EÀH‹UàH‰¸ÉÃUH‰åSHìHH‰½Èûÿÿ‰µÄûÿÿH‰•¸ûÿÿdH‹%(H‰Eè1ÀH…àûÿÿH‰…Øûÿÿ‹…ÄûÿÿÀƒÀHcØH‹…¸ûÿÿH‹H‰Çè·¾ÿÿHH=èv¸ëfH‹…ØûÿÿÆ_Hƒ…Øûÿÿ‹…ÄûÿÿHcÐH‹ÈûÿÿH‹…ØûÿÿH‰ÎH‰ÇèíÿÿH‰…ØûÿÿH‹…¸ûÿÿH‹H‹…ØûÿÿH‰ÖH‰Çè]ÁÿÿH…àûÿÿH‰ÇèÎÂÿÿH‹UèdH3%(tèêÀÿÿHÄH[ÉÃUH‰åHƒì0H‰}èH‰uà‰UÜH‰MÐH‹EèH‰Çè¸ðÿÿƒø•À„ÀuiHEèH‰Çèg¾ÿÿH‰EðH‹Eð¶&lt;_uQHƒEð‹EÜHcÐH‹MàH‹EðH‰ÎH‰ÇèÝìÿÿH‰EðHƒ}ÐtH‹UÐH‹EðH‰ÖH‰ÇèLæÿÿH‰EøHƒ}øt¸ëëë¸ÿÿÿÿÉÃUH‰åHƒì
+HÇEðH=^è¼ÿÿH‰Eè¾H=^è›ÀÿÿH=\^èï»ÿÿH‰EøHƒ}øtH‹Eø¾&quot;H‰ÇèÂÿÿH‹EøH‹@
+H‰EðH‹EèH‰ÆH=¹]èTÀÿÿH‹EðÉÃUH‰åSHƒì(H‰}ØH‹Ò‡
+H‹H‰ÆH=^è¼ÿÿH‰EèH‹]ØH‹Eè¹ºH‰ÞH‰Çè÷¿ÿÿH‰ÈŒ H5ÁŒ
+H=º]è=ÀÿÿHƒÄ([ÉÃUH‰åHƒìH‰}øH‹K– H‹EøH‰ÖH‰ÇèôÀÿÿƒø”À„Àt¸ë¸ÉÃUH‰åHƒì
+H‰}è‰uäH‹– H‹EèH‰ÖH‰Çè·Àÿÿƒø”À„Àt~H‹æ•
+H‹EèºH‰ÎH‰Ç¸èMºÿÿH‰EðH‹Eðƒà„ÀtH‹EðH‰Çè»ÿÿëH‹EðH‰Çè„½ÿÿ‰Eüƒ}üy‹EüP‹Eä÷Ø9Â}¸ë‹Eü;Eäu¸ë¸ë¸ÉÃUH‰å¸ÉÃUH‰åHƒì0H‰}ØH‹EØH‹H‰EøH‹EøH‰Çè5îÿÿH˜H‰EðH‹EØHƒÀH‹H‰EèHƒ}ð
+u&quot;H‹Eøƒà„Àt
+H‹EøHÑøëH‹EøH‰ÇèÎ½ÿÿëH‹EøH‰Çè ºÿÿH‹UèH‰H‹EøÉÃUH‰åSHƒì8H‰}ÈH‰uÀH‹EÈH‰ÇèÁíÿÿH˜H‰EèHƒ}è
+tHƒ}èuVH‹EÈH‰EÐHEàH‰EØH3ÿÿÿH]ÐH3ÿÿÿ¹H‰ÞH‰ÇèPºÿÿHƒø•À„ÀtHƒ}ÀtH‹UàH‹EÀH‰¸ë¸ûÿÿÿHƒÄ8[ÉÃUH‰åHƒì
+H‰}èH‰uàHUðH‹EèH‰ÖH‰ÇèJÿÿÿ‰Eüƒ}üx2H‹EðH=€|H‹EðH=ÿÿÿ~¸ùÿÿÿëHƒ}àtH‹Eð‰ÂH‹Eà‰‹EüÉÃUH‰åHƒì
+H‰}èH‰uàHƒ}èuHƒ}àtH‹EàÆ¸ë`Hƒ}èuHƒ}àtH‹EàÆ¸ëDÇEüHUüH‹EèH‰ÖH‰Çè;ÿÿÿ…À”À„ÀtHƒ}àt‹Eü…À•ÂH‹Eàˆ¸ë¸ûÿÿÿÉÃUH‰å‹Ý“
+…Àu+HÕZH5³‰ H=¬‰ èçÿÿH‰À“ Ç®“ H‹¯“
+ÉÃUH‰åSHƒìHH‰}ÈH‰uÀH‰U¸H‰M°H‹EÈH‰Çèóëÿÿƒø”À„À„—HEÈH‰Çèž¹ÿÿH‰EèH‹EÈH‹@HƒÀH‰EàHƒ}ÀtTHƒ}°tMH‹E°‹=u+H‹EàH‰Çè¶ÿÿH‹UàH‹MèH‰ÎH‰ÇèÀºÿÿH‰ÂH‹EÀH‰ëH‹EÀH‹UèH‰H‹E°ÇHƒ}¸tH‹E¸H‹UàH‰¸é§èïþÿÿH‰EØHƒ}Ø„ŽHÇEÐH‹EÈH‹UØH]ÐA¸¹H‰ÞH‰ÇèG÷ÿÿ…À”À„Àt[Hƒ}ÀtH‹EÐH‰ÂH‹EÀH‰Hƒ}¸t&#8216;H‹EÐH…ÀtH‹EÐH‰Çè¸ÿÿHƒÀë¸H‹U¸H‰Hƒ}°t
+H‹E°Ç¸ë¸ûÿÿÿHƒÄH[ÉÃUH‰åHƒì
+H‰}èH‰uàHƒ}ètOH‹EàH…Ày1è!þÿÿH‰EøHƒ}øtH‹MøH‹EèºH‰ÎH‰ÇèÚóÿÿë¸ëH‹UàH‹EèH‰ÖH‰Çè¡¶ÿÿë¸ÉÃUH‰åHƒìH‰}øHƒ}øtH‹EøH‰ÇèY·ÿÿë¸H‹UøH‰ÆH‰×è^ÿÿÿÉÃUH‰åHƒì‰}ü‹EüH˜H‰Çèy·ÿÿÉÃUH‰åHƒì0H‰}ØH‹EØH‹H‰EøH‹EøH‰Çè¿éÿÿH˜H‰EðH‹EØHƒÀH‹H‰EèH‹EøH‰Çè³¸ÿÿH‹EèòH‹EøÉÃUH‰åSHƒì8H‰}ÈH‰uÀH‹EÈH‰ÇèséÿÿH˜H‰EèHƒ}ètHƒ}è
+tHƒ}èuVH‹EÈH‰EÐHEàH‰EØHÞúÿÿH]ÐHTÿÿÿ¹H‰ÞH‰ÇèûµÿÿHƒø•À„ÀtHƒ}ÀtH‹UàH‹EÀH‰¸ë¸ûÿÿÿHƒÄ8[ÉÃUH‰åHƒì
+H‰}èH‰uàHUðH‹EèH‰ÖH‰ÇèCÿÿÿ‰Eüƒ}üxOòMðòŠ\f.Á—À„ÀuòEðf.z\—À„Àt¸ùÿÿÿëHƒ}àtòEðfÀfZÀH‹Eàó‹EüÉÃUH‰åHƒìóEüóEüZÀèÑ¸ÿÿÉÃUH‰åAUATSHƒìX‰}¬H‰u H‰U˜HÇEÀÇEÐHÇE¸ÇEÌÇEÈHÇE°ƒ}¬~ƒ}¬~!H‹€
+H‹‹U¬H5’VH‰Ç¸è¹ÿÿH‹E H‹HUÔH‰ÖH‰Çè‡úÿÿ‰EÐƒ}ÐySH‹E H‹I‰À¹HoVH5oVH=lVèÐéÿÿH‰Ãƒ}Ðÿt‹EÐë¸ûÿÿÿ‰Çè|èÿÿH‰ÞH‰Ç¸è«¸ÿÿ‹EÔ‰EØH‹ÖŽ
+H‹E HƒÀH‹H]¸A¸¹H‰ÞH‰Çè{óÿÿ‰EÌƒ}ÌyWH‹E HƒÀH‹I‰À¹HÝUH5âUH=ÚUè&gt;éÿÿH‰Ãƒ}Ìÿt‹EÌë¸ûÿÿÿ‰ÇèêçÿÿH‰ÞH‰Ç¸è¸ÿÿH‹E¸H‰EÀH‹E HƒÀH‹HUÞH‰ÖH‰ÇèÚùÿÿ‰EÈƒ}ÈyWH‹E HƒÀH‹I‰À¹H[UH5tUH=XUè¼èÿÿH‰Ãƒ}Èÿt‹EÈë¸ûÿÿÿ‰ÇèhçÿÿH‰ÞH‰Ç¸è—·ÿÿ¶EÞˆEß¿èö¸ÿÿH‰Ã¶MßH‰ØH‹UÀ‹uØH‰Çè]±ÿÿëA‰ÔI‰ÅH‰ßè½°ÿÿL‰èIcÔH‰ÇèÏ¸ÿÿH‰]°H‹E˜H‹U°H‰P
+H‹E˜HƒÄX[A\A]ÉÃUH‰åAUATSHƒìX‰}¬H‰u H‰U˜HÇEÈÇEÔHÇEÀÇEÐHÇE¸ƒ}¬~ƒ}¬~!H‹Ç}
+H‹‹U¬H5‚TH‰Ç¸èÅ¶ÿÿH‹E H‹HUØH‰ÖH‰Çè/øÿÿ‰EÔƒ}ÔySH‹E H‹I‰À¹HTH5TH=TèxçÿÿH‰Ãƒ}Ôÿt‹EÔë¸ûÿÿÿ‰Çè$æÿÿH‰ÞH‰Ç¸èS¶ÿÿ‹EØ‰EÜH‹~Œ
+H‹E HƒÀH‹H]ÀA¸¹H‰ÞH‰Çè#ñÿÿ‰EÐƒ}ÐyWH‹E HƒÀH‹I‰À¹H…SH5ŠSH=‚SèææÿÿH‰Ãƒ}Ðÿt‹EÐë¸ûÿÿÿ‰Çè’åÿÿH‰ÞH‰Ç¸èÁµÿÿH‹EÀH‰EÈ¿è·ÿÿH‰ÃH‰ØH‹UÈ‹uÜ¹H‰Çè…¯ÿÿëA‰ÔI‰ÅH‰ßèå®ÿÿL‰èIcÔH‰Çè÷¶ÿÿH‰]¸H‹E˜H‹U¸H‰P
+H‹E˜HƒÄX[A\A]ÉÃUH‰åAUATSHƒìH‰}¼H‰u°H‰U¨ÇEÔHÇEÈƒ}¼~ƒ}¼~!H‹|
+H‹‹U¼H5áRH‰Ç¸èµÿÿH‹E°H‹HUØH‰ÖH‰Çènöÿÿ‰EÔƒ}ÔySH‹E°H‹I‰À¹HVRH5VRH=SRè·åÿÿH‰Ãƒ}Ôÿt‹EÔë¸ûÿÿÿ‰ÇècäÿÿH‰ÞH‰Ç¸è’´ÿÿ‹EØ‰EÜ¿èòµÿÿH‰ÃH‰Ø‹uÜ¹ºH‰ÇèW®ÿÿëA‰ÔI‰ÅH‰ßè·­ÿÿL‰èIcÔH‰ÇèÉµÿÿH‰]ÈH‹E¨H‹UÈH‰P
+H‹E¨HƒÄH[A\A]ÉÃUH‰åHƒì H‰}èH‹ÿ‰
+H‹EèH‰ÖH‰Çè5îÿÿH‰EøH‹EøÉÃUH‰åAUATSHƒì8‰}ÌH‰uÀH‰U¸HÇEØƒ}Ìxƒ}Ì~!H‹³z
+H‹‹UÌH5®QH‰Ç¸è±³ÿÿ¿èµÿÿH‰ÃH‰Ø¹º¾H‰Çèz­ÿÿëA‰ÔI‰ÅH‰ßèÚ¬ÿÿL‰èIcÔH‰Çèì´ÿÿH‰]ØH‹E¸H‹UØH‰P
+H‹E¸HƒÄ8[A\A]ÉÃUH‰åSHƒìx‰}œH‰uH‰Uˆ‹Eœ‰Eìƒ}ìÇEèë‹Mè‹EèH˜HÁàHEH‹HcÁH‰TÅ ƒEè‹Eè;EìœÀ„ÀuÔƒ}ìuH‹UˆH‹M‹EœH‰Î‰ÇèÛþÿÿéÞƒ}ìuIH‹E ¾H‰Çè=ôÿÿ‰Eàƒ}àx¸ë¸‰Eäƒ}ätH‹UˆH‹M‹EœH‰Î‰Çè2ýÿÿéƒ}ì…”H‹E ¾H‰Çèêóÿÿ‰EØƒ}Øx¸ë¸‰EÜƒ}ÜteHÇE¸H‹uˆ
+H‹E¨H]¸A¸¹H‰ÞH‰Çè!íÿÿ‰EÔƒ}Ôx¸ë¸‰EÜƒ}ÜtH‹UˆH‹M‹EœH‰Î‰Çè¼úÿÿéñƒ}ì…ÅH‹E ¾H‰ÇèLóÿÿ‰EÌƒ}Ìx¸ë¸‰EÐƒ}Ð„’HÇE¸H‹Ó‡
+H‹E¨H]¸A¸¹H‰ÞH‰Çèìÿÿ‰EÈƒ}Èx¸ë¸‰EÐƒ}ÐtGH‹E°¾H‰Çè1óÿÿ‰EÄƒ}Äx¸ë¸‰EÐƒ}ÐtH‹UˆH‹M‹EœH‰Î‰ÇèŒ÷ÿÿë#‹EìHOH•O¾‰Çè}äÿÿ¸HƒÄx[ÉÃUH‰åSHƒìH‰}èH‹]èH…ÛtH‰ßèÁ©ÿÿH‰ßè)ªÿÿHƒÄ[ÉÃUH‰åSHƒìx‰}œH‰uH‰UˆHÇEÐHÇEÈHÇEÀHÇE¸ÇEìHÇE°ÇEäHÇE¨ÇEÜƒ}œ~ƒ}œ~!H‹&gt;w
+H‹‹UœH5ùMH‰Ç¸è&lt;°ÿÿH‹†
+H]¸H‹EˆA¸¹H‰ÞH‰Çèëÿÿ‰Eìƒ}ìyPH‹EˆI‰À¹H”NH5šNH=MèãàÿÿH‰Ãƒ}ìÿt‹Eìë¸ûÿÿÿ‰ÇèßÿÿH‰ÞH‰Ç¸è¾¯ÿÿH‹E¸H‰EÐH‹EH‹HUäH]°H‰ÑºH‰ÞH‰ÇèGòÿÿ‰Eèƒ}èySH‹EH‹I‰À¹HNH5NH=ùLè]àÿÿH‰Ãƒ}èÿt‹Eèë¸ûÿÿÿ‰Çè
+ßÿÿH‰ÞH‰Ç¸è8¯ÿÿH‹E°H‰EÈH‹EHƒÀH‹HUÜH]¨H‰ÑºH‰ÞH‰Çè½ñÿÿ‰Eàƒ}àyWH‹EHƒÀH‹I‰À¹H€MH5MH=kLèÏßÿÿH‰Ãƒ}àÿt‹Eàë¸ûÿÿÿ‰Çè{ÞÿÿH‰ÞH‰Ç¸èª®ÿÿH‹E¨H‰EÀH‹UÀH‹MÈH‹EÐH‰ÎH‰Çè›­ÿÿ‹Eä=uH‹E°H…ÀtH‹E°H‰Çè®ÿÿ‹EÜ=uH‹E¨H…ÀtH‹E¨H‰Çèí­ÿÿ¸HƒÄx[ÉÃUH‰åSHƒìX‰}¼H‰u°H‰U¨HÇEàHÇEØÇEìHÇEÐHÇEÈƒ}¼xƒ}¼~!H‹Ût
+H‹‹U¼H5ÖKH‰Ç¸èÙ­ÿÿH‹ºƒ
+H]ØH‹E¨A¸¹H‰ÞH‰Çè¶èÿÿ‰Eìƒ}ìyPH‹E¨I‰À¹HTLH57LH=Kè€ÞÿÿH‰Ãƒ}ìÿt‹Eìë¸ûÿÿÿ‰Çè,ÝÿÿH‰ÞH‰Ç¸è[­ÿÿH‹EØH‰EàH‹EàH‰Çè·¦ÿÿH‰EÐH‹EÐH‰ÇèÏñÿÿH‰EÈH‹EÈHƒÄX[ÉÃUH‰åATSHìà‰½,ÿÿÿH‰µ
+ÿÿÿH‰•ÿÿÿHÇEØHÇEÐHÇEÈÇEìHÇEÀÇEäH…pÿÿÿº¾H‰Çè_©ÿÿHÇE¸ƒ½,ÿÿÿ~ ƒ½,ÿÿÿ~$H‹†s
+H‹‹•,ÿÿÿH5^JH‰Ç¸è¬ÿÿH‹b‚
+H]ÈH‹…ÿÿÿA¸¹H‰ÞH‰Çè[çÿÿ‰Eìƒ}ìySH‹…ÿÿÿI‰À¹HKH5ÙJH=¾Iè&quot;ÝÿÿH‰Ãƒ}ìÿt‹Eìë¸ûÿÿÿ‰ÇèÎÛÿÿH‰ÞH‰Ç¸èý«ÿÿH‹EÈH‰EØH‹…
+ÿÿÿH‹HUäH]ÀH‰ÑºH‰ÞH‰Çèƒîÿÿ‰Eèƒ}èyVH‹…
+ÿÿÿH‹I‰À¹HuJH5VJH=2Iè–ÜÿÿH‰Ãƒ}èÿt‹Eèë¸ûÿÿÿ‰ÇèBÛÿÿH‰ÞH‰Ç¸èq«ÿÿH‹EÀH‰EÐH…0ÿÿÿH‹UÐH‹MØH‰ÎH‰ÇèªÿÿH…0ÿÿÿH•pÿÿÿH9ÂtHpÿÿÿº&lt;H‰ÆH‰Ïè%©ÿÿH…0ÿÿÿH‰Çè†¨ÿÿH‹
+¿@èu¬ÿÿH‰ÂH‰ÐH‹pÿÿÿH‰H‹xÿÿÿH‰HH‹M€H‰HH‹MˆH‰HH‹MH‰H
+H‹M˜H‰H(H‹M H‰H0‹M¨‰H8H‰ÐºH‰ÞH‰ÇèöâÿÿH‰E¸‹Eä=uH‹EÀH…ÀtH‹EÀH‰Çè&amp;ªÿÿH‹]¸H…pÿÿÿH‰Çèã§ÿÿH‰ØHÄà[A\ÉÃ‰ÓI‰ÄH…pÿÿÿH‰ÇèÀ§ÿÿL‰àHcÓH‰ÇèÂ«ÿÿUH‰åATSHƒÄ€‰}ŒH‰u€H‰•xÿÿÿHÇEàHÇEØÇEìHE°¾H‰ÇèÁ¥ÿÿHÇEÐƒ}Œxƒ}Œ~!H‹Îp
+H‹‹UŒH5ÉGH‰Ç¸èÌ©ÿÿH‹­
+H]ØH‹…xÿÿÿA¸¹H‰ÞH‰Çè¦äÿÿ‰Eìƒ}ìySH‹…xÿÿÿI‰À¹HUHH5$HH=
+GèmÚÿÿH‰Ãƒ}ìÿt‹Eìë¸ûÿÿÿ‰ÇèÙÿÿH‰ÞH‰Ç¸èH©ÿÿH‹EØH‰EàHEH‹UàH‰ÖH‰ÇèM¢ÿÿH‹EH‰E°H‹E˜H‰E¸H‹E H‰EÀHEH‰Çè¹¡ÿÿH‹
+¿èhªÿÿH‰ÂH‰ÐH‹M°H‰H‹M¸H‰HH‹MÀH‰HH‰ÐºH‰ÞH‰ÇèáÿÿH‰EÐH‹]ÐHE°H‰Çèd¡ÿÿH‰ØHƒì€[A\ÉÃ‰ÓI‰ÄHE°H‰ÇèG¡ÿÿL‰àHcÓH‰Çè
+ªÿÿUH‰åAUATSHƒìX‰}¬H‰u H‰U˜HÇEÐHÇEÈHÇEÀÇEÜHÇE¸ÇEØHÇE°ƒ}¬~ƒ}¬~!H‹o
+H‹‹U¬H5ËEH‰Ç¸è¨ÿÿH‹/~
+H‹E H‹H]ÀA¸¹H‰ÞH‰Çèèâÿÿ‰EÜƒ}ÜySH‹E H‹I‰À¹H¦FH5¨FH=KEè¯ØÿÿH‰Ãƒ}Üÿt‹EÜë¸ûÿÿÿ‰Çè[×ÿÿH‰ÞH‰Ç¸èŠ§ÿÿH‹EÀH‰EÐH‹«}
+H‹E HƒÀH‹H]¸A¸¹H‰ÞH‰ÇèXâÿÿ‰EØƒ}ØyWH‹E HƒÀH‹I‰À¹HFH5(FH=·DèØÿÿH‰Ãƒ}Øÿt‹EØë¸ûÿÿÿ‰ÇèÇÖÿÿH‰ÞH‰Ç¸èö¦ÿÿH‹E¸H‰EÈ¿@èT¨ÿÿH‰ÃH‰ØH‹UÈH‹MÐH‰ÎH‰Çèk£ÿÿëA‰ÔI‰ÅH‰ßè ÿÿL‰èIcÔH‰Çè-¨ÿÿH‰]°H‹E˜H‹U°H‰P
+H‹E˜HƒÄX[A\A]ÉÃUH‰åAUATSHƒìH‰}¼H‰u°H‰U¨HÇEÐHÇEÈÇEÜHÇEÀƒ}¼~ƒ}¼~!H‹,m
+H‹‹U¼H5DH‰Ç¸è*¦ÿÿH‹K|
+H‹E°H‹H]ÈA¸¹H‰ÞH‰Çèáÿÿ‰EÜƒ}ÜySH‹E°H‹I‰À¹HÂDH5ÄDH=gCèËÖÿÿH‰Ãƒ}Üÿt‹EÜë¸ûÿÿÿ‰ÇèwÕÿÿH‰ÞH‰Ç¸è¦¥ÿÿH‹EÈH‰EÐ¿@è§ÿÿH‰ÃH‰ØH‹MÐºH‰ÎH‰Çè¢ÿÿëA‰ÔI‰ÅH‰ßèÊžÿÿL‰èIcÔH‰ÇèÜ¦ÿÿH‰]ÀH‹E¨H‹UÀH‰P
+H‹E¨HƒÄH[A\A]ÉÃUH‰åHƒì H‰}èH‹2{
+H‹EèH‰ÖH‰ÇèHßÿÿH‰EøH‹EøÉÃUH‰åAUATSHƒì8‰}ÌH‰uÀH‰U¸HÇEØƒ}Ìxƒ}Ì~!H‹Æk
+H‹‹UÌH5ÁBH‰Ç¸èÄ¤ÿÿ¿@è*¦ÿÿH‰ÃH‰Øº¾H‰ÇèB¡ÿÿëA‰ÔI‰ÅH‰ßèòÿÿL‰èIcÔH‰Çè¦ÿÿH‰]ØH‹E¸H‹UØH‰P
+H‹E¸HƒÄ8[A\A]ÉÃUH‰åSHƒìh‰}¬H‰u H‰U˜‹E¬‰Eìƒ}ìwÇEèë‹Mè‹EèH˜HÁàHE H‹HcÁH‰TÅ°ƒEè‹Eè;EìœÀ„ÀuÔƒ}ìuH‹U˜H‹M ‹E¬H‰Î‰ÇèàþÿÿéEƒ}ìueHÇEÈH‹ÿy
+H‹E°H]ÈA¸¹H‰ÞH‰Çè»Þÿÿ‰Eàƒ}àx¸ë¸‰Eäƒ}ätH‹U˜H‹M ‹E¬H‰Î‰ÇèøüÿÿéÚƒ}ì…®HÇEÈH‹y
+H‹E°H]ÈA¸¹H‰ÞH‰ÇèLÞÿÿ‰EØƒ}Øx¸ë¸‰EÜƒ}ÜtcHÇEÀH‹My
+H‹E¸H]ÀA¸¹H‰ÞH‰ÇèÞÿÿ‰EÔƒ}Ôx¸ë¸‰EÜƒ}ÜtH‹U˜H‹M ‹E¬H‰Î‰ÇèCúÿÿë#‹EìHÏAH:B¾‰Çè.Öÿÿ¸HƒÄh[ÉÃUH‰åSHƒìH‰}èH‹]èH…ÛtH‰ßèòŸÿÿH‰ßèÚ›ÿÿHƒÄ[ÉÃUH‰åSHƒìx‰}œH‰uH‰UˆHÇE¸HÇE°HÇE¨ÇEàHÇE ÇEØÇEÐÇEÈÇEÀƒ}œ~ƒ}œ~!H‹ñh
+H‹‹UœH5ŒAH‰Ç¸èï¡ÿÿH‹ðw
+H]¨H‹EˆA¸¹H‰ÞH‰ÇèÌÜÿÿ‰Eàƒ}àyPH‹EˆI‰À¹H]AH5eAH=2?è–ÒÿÿH‰Ãƒ}àÿt‹Eàë¸ûÿÿÿ‰ÇèBÑÿÿH‰ÞH‰Ç¸èq¡ÿÿH‹E¨H‰E¸H‹EH‹HUØH] H‰ÑºH‰ÞH‰Çèúãÿÿ‰EÜƒ}ÜySH‹EH‹I‰À¹H×@H5Ð?H=¬&gt;èÒÿÿH‰Ãƒ}Üÿt‹EÜë¸ûÿÿÿ‰Çè¼ÐÿÿH‰ÞH‰Ç¸èë ÿÿH‹E H‰E°H‹EHƒÀH‹HUÔH‰ÖH‰ÇèIâÿÿ‰EÐƒ}ÐyWH‹EHƒÀH‹I‰À¹HU@H5-&gt;H=*&gt;èŽÑÿÿH‰Ãƒ}Ðÿt‹EÐë¸ûÿÿÿ‰Çè:ÐÿÿH‰ÞH‰Ç¸èi ÿÿ‹EÔ‰EìH‹EHƒÀH‹HUÌH‰ÖH‰ÇèÉáÿÿ‰EÈƒ}ÈyWH‹EHƒÀH‹I‰À¹HÕ?H5­=H=ª=èÑÿÿH‰Ãƒ}Èÿt‹EÈë¸ûÿÿÿ‰ÇèºÏÿÿH‰ÞH‰Ç¸èéŸÿÿ‹EÌ‰EèH‹EHƒÀH‹HUÄH‰ÖH‰ÇèIáÿÿ‰EÀƒ}ÀyWH‹EHƒÀH‹I‰À¹HU?H5-=H=*=èŽÐÿÿH‰Ãƒ}Àÿt‹EÀë¸ûÿÿÿ‰Çè:ÏÿÿH‰ÞH‰Ç¸èiŸÿÿ‹EÄ‰Eä‹uä‹Mè‹UìH‹]°H‹E¸A‰ðH‰ÞH‰Çèt ÿÿ‹EØ=uH‹E H…ÀtH‹E H‰ÇèÅžÿÿ¸HƒÄx[ÉÃUH‰åSHƒìH‰}ÌH‰uÀH‰U¸HÇEàHÇEØÇEìƒ}Ìxƒ}Ì~!H‹Ãe
+H‹‹UÌH5¾&lt;H‰Ç¸èÁžÿÿH‹Ât
+H]ØH‹E¸A¸¹H‰ÞH‰ÇèžÙÿÿ‰Eìƒ}ìyPH‹E¸I‰À¹HI&gt;H57&gt;H=&lt;èhÏÿÿH‰Ãƒ}ìÿt‹Eìë¸ûÿÿÿ‰ÇèÎÿÿH‰ÞH‰Ç¸èCžÿÿH‹EØH‰EàH‹EàH‰Çèžÿÿ¸HƒÄH[ÉÃUH‰åSHƒìH‰}ÌH‰uÀH‰U¸HÇEàHÇEØÇEìƒ}Ìxƒ}Ì~!H‹Íd
+H‹‹UÌH5È;H‰Ç¸èËÿÿH‹Ìs
+H]ØH‹E¸A¸¹H‰ÞH‰Çè¨Øÿÿ‰Eìƒ}ìyPH‹E¸I‰À¹H^=H5A=H=;èrÎÿÿH‰Ãƒ}ìÿt‹Eìë¸ûÿÿÿ‰ÇèÍÿÿH‰ÞH‰Ç¸èMÿÿH‹EØH‰EàH‹EàH‰Çè™šÿÿ¸HƒÄH[ÉÃUH‰åSHƒìX‰}¼H‰u°H‰U¨HÇEØHÇEÐHÇEÈÇEìHÇEÀÇEäƒ}¼~ƒ}¼~!H‹Àc
+H‹‹U¼H5›:H‰Ç¸è¾œÿÿH‹¿r
+H]ÈH‹E¨A¸¹H‰ÞH‰Çè›×ÿÿ‰Eìƒ}ìyPH‹E¨I‰À¹H[&lt;H54&lt;H=:èeÍÿÿH‰Ãƒ}ìÿt‹Eìë¸ûÿÿÿ‰ÇèÌÿÿH‰ÞH‰Ç¸è@œÿÿH‹EÈH‰EØH‹E°H‹HUäH]ÀH‰ÑºH‰ÞH‰ÇèÉÞÿÿ‰Eèƒ}èySH‹E°H‹I‰À¹HÕ;H5Ÿ:H={9èßÌÿÿH‰Ãƒ}èÿt‹Eèë¸ûÿÿÿ‰Çè‹ËÿÿH‰ÞH‰Ç¸èº›ÿÿH‹EÀH‰EÐH‹UÐH‹EØH‰ÖH‰Çè”ÿÿ‹Eä=uH‹EÀH…ÀtH‹EÀH‰Çè
+›ÿÿ¸HƒÄX[ÉÃUH‰åATSHƒì`‰}¬H‰u H‰U˜HÇEàHÇEØÇEìHEÐH‰Çè{•ÿÿHÇEÈƒ}¬xƒ}¬~!H‹b
+H‹‹U¬H59H‰Ç¸è›ÿÿH‹q
+H]ØH‹E˜A¸¹H‰ÞH‰ÇèãÕÿÿ‰Eìƒ}ìyPH‹E˜I‰À¹H¬:H5|:H=I8è­ËÿÿH‰Ãƒ}ìÿt‹Eìë¸ûÿÿÿ‰ÇèYÊÿÿH‰ÞH‰Ç¸èˆšÿÿH‹EØH‰EàHE°H‹UàH‰ÖH‰Çèý“ÿÿHU°HEÐH‰ÖH‰Çè›ÿÿë‰ÓI‰ÄHE°H‰Çè“ÿÿL‰àHcÓë{HE°H‰Çè“ÿÿL‹%Dp
+HEÐH‰ÇèšÿÿH‰Ã¿èƒ›ÿÿH‰ÂH‰ÐH‹H‰H‹KH‰HH‹KH‰HH‰ÐºL‰æH‰Çè1ÒÿÿH‰EÈH‹]ÈHEÐH‰Çè@–ÿÿH‰ØHƒÄ`[A\ÉÃ‰ÓI‰ÄHEÐH‰Çè#–ÿÿL‰àHcÓH‰Çè%›ÿÿUH‰åSHƒìh‰}¬H‰u H‰U˜HÇEØHÇEÐHÇEÈÇEìHÇEÀÇEäHÇE¸HÇE°ƒ}¬~ƒ}¬~!H‹(`
+H‹‹U¬H57H‰Ç¸è&amp;™ÿÿH‹&#8217;o
+H]ÈH‹E˜A¸¹H‰ÞH‰ÇèÔÿÿ‰Eìƒ}ìyPH‹E˜I‰À¹HÖ8H5œ8H=i6èÍÉÿÿH‰Ãƒ}ìÿt‹Eìë¸ûÿÿÿ‰ÇèyÈÿÿH‰ÞH‰Ç¸è¨˜ÿÿH‹EÈH‰EØH‹E H‹HUäH]ÀH‰ÑºH‰ÞH‰Çè1Ûÿÿ‰Eèƒ}èySH‹E H‹I‰À¹HP8H57H=ã5èGÉÿÿH‰Ãƒ}èÿt‹Eèë¸ûÿÿÿ‰ÇèóÇÿÿH‰ÞH‰Ç¸è&quot;˜ÿÿH‹EÀH‰EÐH‹UÐH‹EØH‰ÖH‰Çèç’ÿÿH‰E¸H‹E¸H‰ÇèÜÿÿH‰E°‹Eä=uH‹EÀH…ÀtH‹EÀH‰Çèt—ÿÿH‹E°HƒÄh[ÉÃUH‰åAUATSHƒìH‰}¼H‰u°H‰U¨HÇEÐHÇEÈÇEÜHÇEÀƒ}¼~ƒ}¼~!H‹g^
+H‹‹U¼H5B5H‰Ç¸èe—ÿÿH‹†m
+H‹E°H‹H]ÈA¸¹H‰ÞH‰Çè?Òÿÿ‰EÜƒ}ÜySH‹E°H‹I‰À¹H7H5ÿ5H=¢4èÈÿÿH‰Ãƒ}Üÿt‹EÜë¸ûÿÿÿ‰Çè²ÆÿÿH‰ÞH‰Ç¸èá–ÿÿH‹EÈH‰EÐ¿è?˜ÿÿH‰ÃH‰ØH‹UÐH‰ÖH‰Çèz’ÿÿëA‰ÔI‰ÅH‰ßè
+ÿÿL‰èIcÔH‰Çè˜ÿÿH‰]ÀH‹E¨H‹UÀH‰P H‹E¨HƒÄH[A\A]ÉÃUH‰åHƒì H‰}èH‹zl
+H‹EèH‰ÖH‰ÇèˆÐÿÿH‰EøH‹EøÉÃUH‰åAUATSHƒì8‰}ÌH‰uÀH‰U¸HÇEØƒ}Ìxƒ}Ì~!H‹]
+H‹‹UÌH54H‰Ç¸è–ÿÿ¿èj—ÿÿH‰ÃH‰Ø¾H‰Çè§‘ÿÿëA‰ÔI‰ÅH‰ßè7ÿÿL‰èIcÔH‰ÇèI—ÿÿH‰]ØH‹E¸H‹UØH‰P
+H‹E¸HƒÄ8[A\A]ÉÃUH‰åSHƒìX‰}¼H‰u°H‰U¨‹E¼‰Eìƒ}ì½ÇEèë‹Mè‹EèH˜HÁàHE°H‹HcÁH‰TÅÐƒEè‹Eè;EìœÀ„ÀuÔƒ}ìuH‹U¨H‹M°‹E¼H‰Î‰Çèåþÿÿé‹ƒ}ìucHÇEÈH‹Dk
+H‹EÐH]ÈA¸¹H‰ÞH‰ÇèÐÿÿ‰Eàƒ}àx¸ë¸‰Eäƒ}ätH‹U¨H‹M°‹E¼H‰Î‰Çèýÿÿë#‹EìHÆ4H5¾‰Çè-Èÿÿ¸HƒÄX[ÉÃUH‰åSHƒìH‰}èH‹]èH…ÛtH‰ßè1ÿÿH‰ßèÙÿÿHƒÄ[ÉÃUH‰åSHƒìX‰}¼H‰u°H‰U¨HÇEØHÇEÐHÇEÈÇEìHÇEÀÇEäƒ}¼~ƒ}¼~!H‹[
+H‹‹U¼H5à1H‰Ç¸è”ÿÿH‹j
+H]ÈH‹E¨A¸¹H‰ÞH‰ÇèàÎÿÿ‰Eìƒ}ìyPH‹E¨I‰À¹H‰2H54H=F1èªÄÿÿH‰Ãƒ}ìÿt‹Eìë¸ûÿÿÿ‰ÇèVÃÿÿH‰ÞH‰Ç¸è…“ÿÿH‹EÈH‰EØH‹E°H‹HUäH]ÀH‰ÑºH‰ÞH‰ÇèÖÿÿ‰Eèƒ}èySH‹E°H‹I‰À¹H2H5ä1H=À0è$ÄÿÿH‰Ãƒ}èÿt‹Eèë¸ûÿÿÿ‰ÇèÐÂÿÿH‰ÞH‰Ç¸èÿ’ÿÿH‹EÀH‰EÐH‹UÐH‹EØH‰ÖH‰ÇèT‘ÿÿ‹Eä=uH‹EÀH…ÀtH‹EÀH‰Çèe’ÿÿ¸HƒÄX[ÉÃUH‰åSHƒìH‰}ÌH‰uÀH‰U¸HÇEØHÇEÐÇEèÇEàƒ}Ì~ƒ}Ì~!H‹\Y
+H‹‹UÌH570H‰Ç¸èZ’ÿÿH‹ch
+H]ÐH‹E¸A¸¹H‰ÞH‰Çè7Íÿÿ‰Eèƒ}èyPH‹E¸I‰À¹Hƒ2H5m2H=/èÃÿÿH‰Ãƒ}èÿt‹Eèë¸ûÿÿÿ‰Çè­ÁÿÿH‰ÞH‰Ç¸èÜ‘ÿÿH‹EÐH‰EØH‹EÀH‹HUäH‰ÖH‰Çè&gt;Óÿÿ‰Eàƒ}àySH‹EÀH‹I‰À¹H
+2H5&amp;/H=#/è‡ÂÿÿH‰Ãƒ}àÿt‹Eàë¸ûÿÿÿ‰Çè3ÁÿÿH‰ÞH‰Ç¸èb‘ÿÿ‹Eä‰Eì‹UìH‹EØ‰ÖH‰Çè«‰ÿÿ¸HƒÄH[ÉÃUH‰åATSHìÐ‰½&lt;ÿÿÿH‰µ0ÿÿÿH‰•(ÿÿÿHÇEØHÇEÐÇEèÇEàHE€º¾H‰Çè‰ÿÿHÇEÈƒ½&lt;ÿÿÿ~
+ƒ½&lt;ÿÿÿ~$H‹°W H‹‹•&lt;ÿÿÿH5ˆ.H‰Ç¸è«ÿÿH‹´f
+H]ÐH‹…(ÿÿÿA¸¹H‰ÞH‰Çè…Ëÿÿ‰Eèƒ}èySH‹…(ÿÿÿI‰À¹HÚ0H5¸0H=è-èLÁÿÿH‰Ãƒ}èÿt‹Eèë¸ûÿÿÿ‰Çèø¿ÿÿH‰ÞH‰Ç¸è&#8217;ÿÿH‹EÐH‰EØH‹…0ÿÿÿH‹HUäH‰ÖH‰Çè†Ñÿÿ‰Eàƒ}àyVH‹…0ÿÿÿH‹I‰À¹HZ0H5k-H=h-èÌÀÿÿH‰Ãƒ}àÿt‹Eàë¸ûÿÿÿ‰Çèx¿ÿÿH‰ÞH‰Ç¸è§ÿÿ‹Eä‰EìH…@ÿÿÿ‹UìH‹MØH‰ÎH‰Çèˆ‹ÿÿH…@ÿÿÿHU€H9ÂtHM€º&lt;H‰ÆH‰ÏèdÿÿH…@ÿÿÿH‰ÇèÅŒÿÿH‹Ve
+¿@è´ÿÿH‰ÂH‰ÐH‹M€H‰H‹MˆH‰HH‹MH‰HH‹M˜H‰HH‹M H‰H
+H‹M¨H‰H(H‹M°H‰H0‹M¸‰H8H‰ÐºH‰ÞH‰Çè;ÇÿÿH‰EÈH‹]ÈHE€H‰ÇèJŒÿÿH‰ØHÄÐ[A\ÉÃ‰ÓI‰ÄHE€H‰Çè*ŒÿÿL‰àHcÓH‰Çè,ÿÿUH‰åSHƒìH‰}ÌH‰uÀH‰U¸HÇEàHÇEØÇEìHÇEÐƒ}Ìxƒ}Ì~!H‹NU
+H‹‹UÌH5I,H‰Ç¸èLŽÿÿH‹Ud
+H]ØH‹E¸A¸¹H‰ÞH‰Çè)Éÿÿ‰Eìƒ}ìyPH‹E¸I‰À¹HŠ.H5_.H=+èó¾ÿÿH‰Ãƒ}ìÿt‹Eìë¸ûÿÿÿ‰ÇèŸ½ÿÿH‰ÞH‰Ç¸èÎÿÿH‹EØH‰EàH‹EàH‰ÇèÚÿÿ‰Eè‹Eè‰Çè|ÒÿÿH‰EÐH‹EÐHƒÄH[ÉÃUH‰åSHƒìX‰}¼H‰u°H‰U¨HÇEàHÇEØHÇEÐÇEìHÇEÈÇEèƒ}¼~ƒ}¼~!H‹1T
+H‹‹U¼H5+H‰Ç¸è/ÿÿH‹c
+H]ÐH‹E¨A¸¹H‰ÞH‰ÇèÈÿÿ‰Eìƒ}ìyPH‹E¨I‰À¹Hs-H5q-H=r*èÖ½ÿÿH‰Ãƒ}ìÿt‹Eìë¸ûÿÿÿ‰Çè‚¼ÿÿH‰ÞH‰Ç¸è±ŒÿÿH‹EÐH‰EàH‹’b
+H‹E°H‹H]ÈA¸¹H‰ÞH‰ÇèƒÇÿÿ‰Eèƒ}èySH‹E°H‹I‰À¹Hç,H5ë,H=æ)èJ½ÿÿH‰Ãƒ}èÿt‹Eèë¸ûÿÿÿ‰Çèö»ÿÿH‰ÞH‰Ç¸è%ŒÿÿH‹EÈH‰EØHƒ}àtH‹EàH‹UØH‰¸HƒÄX[ÉÃUH‰åSHƒìX‰}¼H‰u°H‰U¨HÇEàHÇEØÇEìHÇEÐHÇEÈƒ}¼xƒ}¼~!H‹™R
+H‹‹U¼H5”)H‰Ç¸è—‹ÿÿH‹pa
+H]ØH‹E¨A¸¹H‰ÞH‰ÇètÆÿÿ‰Eìƒ}ìyPH‹E¨I‰À¹HÛ+H5Ù+H=Ú(è&gt;¼ÿÿH‰Ãƒ}ìÿt‹Eìë¸ûÿÿÿ‰ÇèêºÿÿH‰ÞH‰Ç¸è‹ÿÿH‹EØH‰EàH‹EàH‹H‰EÐH‹ï`
+H‹EÐºH‰ÎH‰Çè8ÃÿÿH‰EÈH‹EÈHƒÄX[ÉÃUH‰åSHƒìX‰}¼H‰u°H‰U¨HÇEàHÇEØHÇEÐÇEìHÇEÈÇEèƒ}¼~ƒ}¼~!H‹oQ
+H‹‹U¼H5J(H‰Ç¸èmŠÿÿH‹F`
+H]ÐH‹E¨A¸¹H‰ÞH‰ÇèJÅÿÿ‰Eìƒ}ìyPH‹E¨I‰À¹HÊ*H5¯*H=°&#8217;è»ÿÿH‰Ãƒ}ìÿt‹Eìë¸ûÿÿÿ‰ÇèÀ¹ÿÿH‰ÞH‰Ç¸èï‰ÿÿH‹EÐH‰EàH‹Ø_
+H‹E°H‹H]ÈA¸¹H‰ÞH‰ÇèÁÄÿÿ‰Eèƒ}èySH‹E°H‹I‰À¹H&gt;*H5=*H=$&#8217;èˆºÿÿH‰Ãƒ}èÿt‹Eèë¸ûÿÿÿ‰Çè4¹ÿÿH‰ÞH‰Ç¸èc‰ÿÿH‹EÈH‰EØHƒ}àtH‹EàH‹UØH‰P¸HƒÄX[ÉÃUH‰åSHƒìX‰}¼H‰u°H‰U¨HÇEàHÇEØÇEìHÇEÐHÇEÈƒ}¼xƒ}¼~!H‹ÖO
+H‹‹U¼H5Ñ&amp;H‰Ç¸èÔˆÿÿH‹­^
+H]ØH‹E¨A¸¹H‰ÞH‰Çè±Ãÿÿ‰Eìƒ}ìyPH‹E¨I‰À¹H1)H5)H=&amp;è{¹ÿÿH‰Ãƒ}ìÿt‹Eìë¸ûÿÿÿ‰Çè&#8217;¸ÿÿH‰ÞH‰Ç¸èVˆÿÿH‹EØH‰EàH‹EàH‹@H‰EÐH‹3^
+H‹EÐºH‰ÎH‰ÇètÀÿÿH‰EÈH‹EÈHƒÄX[ÉÃUH‰åHƒì H‰}èH‹å]
+H‹EèH‰ÖH‰Çè#ÂÿÿH‰EøH‹EøÉÃUH‰åHƒì0‰}ìH‰uàH‰UØHÇEøƒ}ìxƒ}ì~!H‹¦N
+H‹‹UìH5¡%H‰Ç¸è¤‡ÿÿ¿è ‰ÿÿH‰ÂH‰ÐHÇHÇ@H‰UøH‹EØH‹UøH‰P
+H‹EØÉÃUH‰åHƒìH‰}øH‹EøH‰Çè·€ÿÿÉÃUH‰åHƒì H‰}èH‹B]
+H‹EèH‰ÖH‰Çè`ÁÿÿH‰EøH‹EøÉÃUH‰åAUATSHƒìH‰}¼H‰u°H‰U¨HÇEÐHÇEÈÇEÜHÇEÀƒ}¼~ƒ}¼~!H‹ÇM
+H‹‹U¼H5¢$H‰Ç¸èÅ†ÿÿH‹î\
+H‹E°H‹H]ÈA¸¹H‰ÞH‰ÇèŸÁÿÿ‰EÜƒ}ÜySH‹E°H‹I‰À¹H.&#8217;H5s%H=$èf·ÿÿH‰Ãƒ}Üÿt‹EÜë¸ûÿÿÿ‰Çè¶ÿÿH‰ÞH‰Ç¸èA†ÿÿH‹EÈH‰EÐ¿xèŸ‡ÿÿH‰ÃH‰ØH‹UÐH‰ÖH‰ÇèjƒÿÿëA‰ÔI‰ÅH‰ßèjÿÿL‰èIcÔH‰Çè|‡ÿÿH‰]ÀH‹E¨H‹UÀH‰P
+H‹E¨HƒÄH[A\A]ÉÃUH‰åSHƒìH‰}èH‹]èH…ÛtH‰ßè¿†ÿÿH‰ßèÿÿHƒÄ[ÉÃUH‰åSHƒìH‰}ÌH‰uÀH‰U¸HÇEàHÇEØÇEìƒ}Ìxƒ}Ì~!H‹ZL
+H‹‹UÌH5U#H‰Ç¸èX…ÿÿH‹Q[
+H]ØH‹E¸A¸¹H‰ÞH‰Çè5Àÿÿ‰Eìƒ}ìyPH‹E¸I‰À¹Hë$H5Ï%H=›&quot;èÿµÿÿH‰Ãƒ}ìÿt‹Eìë¸ûÿÿÿ‰Çè«´ÿÿH‰ÞH‰Ç¸èÚ„ÿÿH‹EØH‰EàH‹EàH‰Çè¦€ÿÿ¸HƒÄH[ÉÃUH‰åSHƒìx‰}œH‰uH‰UˆHÇE¸HÇE°HÇE¨ÇEàHÇE ÇEØÇEÐÇEÈÇEÀƒ}œ~ƒ}œ~!H‹8K
+H‹‹UœH5Ó#H‰Ç¸è6„ÿÿH‹/Z
+H]¨H‹EˆA¸¹H‰ÞH‰Çè¿ÿÿ‰Eàƒ}àyPH‹EˆI‰À¹HÅ$H5­$H=y!èÝ´ÿÿH‰Ãƒ}àÿt‹Eàë¸ûÿÿÿ‰Çè‰³ÿÿH‰ÞH‰Ç¸è¸ƒÿÿH‹E¨H‰E¸H‹EH‹HUØH] H‰ÑºH‰ÞH‰ÇèAÆÿÿ‰EÜƒ}ÜySH‹EH‹I‰À¹H?$H5&quot;H=ó
+èW´ÿÿH‰Ãƒ}Üÿt‹EÜë¸ûÿÿÿ‰Çè³ÿÿH‰ÞH‰Ç¸è2ƒÿÿH‹E H‰E°H‹EHƒÀH‹HUÔH‰ÖH‰ÇèÄÿÿ‰EÐƒ}ÐyWH‹EHƒÀH‹I‰À¹H½#H5t
+H=q
+èÕ³ÿÿH‰Ãƒ}Ðÿt‹EÐë¸ûÿÿÿ‰Çè²ÿÿH‰ÞH‰Ç¸è°‚ÿÿ‹EÔ‰EìH‹EHƒÀH‹HUÌH‰ÖH‰ÇèÄÿÿ‰EÈƒ}ÈyWH‹EHƒÀH‹I‰À¹H=#H5ôH=ñèU³ÿÿH‰Ãƒ}Èÿt‹EÈë¸ûÿÿÿ‰Çè²ÿÿH‰ÞH‰Ç¸è0‚ÿÿ‹EÌ‰EèH‹EHƒÀH‹HUÄH‰ÖH‰ÇèÃÿÿ‰EÀƒ}ÀyWH‹EHƒÀH‹I‰À¹H½&quot;H5tH=qèÕ²ÿÿH‰Ãƒ}Àÿt‹EÀë¸ûÿÿÿ‰Çè±ÿÿH‰ÞH‰Ç¸è°ÿÿ‹EÄ‰Eä‹uä‹Mè‹UìH‹]°H‹E¸A‰ðH‰ÞH‰Çè[ÿÿ‹EØ=uH‹E H…ÀtH‹E H‰Çèÿÿ¸HƒÄx[ÉÃUH‰åHƒì
+H‰}èH‹eW
+H‹EèH‰ÖH‰Çèk»ÿÿH‰EøH‹EøÉÃUH‰åAUATSHƒìX‰}¬H‰u H‰U˜HÇEÐHÇEÈHÇEÀÇEÜHÇE¸ÇEØHÇE°ƒ}¬~ƒ}¬~!H‹»G
+H‹‹U¬H5vH‰Ç¸è¹€ÿÿH‹ÚV
+H‹E H‹H]ÀA¸¹H‰ÞH‰Çè“»ÿÿ‰EÜƒ}ÜySH‹E H‹I‰À¹HL!H5SH=öèZ±ÿÿH‰Ãƒ}Üÿt‹EÜë¸ûÿÿÿ‰Çè°ÿÿH‰ÞH‰Ç¸è5€ÿÿH‹EÀH‰EÐH‹VV
+H‹E HƒÀH‹H]¸A¸¹H‰ÞH‰Çè»ÿÿ‰EØƒ}ØyWH‹E HƒÀH‹I‰À¹H¸
+H5ÓH=bèÆ°ÿÿH‰Ãƒ}Øÿt‹EØë¸ûÿÿÿ‰Çèr¯ÿÿH‰ÞH‰Ç¸è¡ÿÿH‹E¸H‰EÈ¿èÿ€ÿÿH‰ÃH‰ØH‹UÈH‹MÐH‰ÎH‰Çè&amp;yÿÿëA‰ÔI‰ÅH‰ßèÆxÿÿL‰èIcÔH‰ÇèØ€ÿÿH‰]°H‹E˜H‹U°H‰P
+H‹E˜HƒÄX[A\A]ÉÃUH‰åSHƒìH‰}èH‹]èH…ÛtH‰ßèëwÿÿH‰ßèsxÿÿHƒÄ[ÉÃUH‰åSHƒìH‰}ÌH‰uÀH‰U¸HÇEØHÇEÐÇEèÇEàƒ}Ì~ƒ}Ì~!H‹¯E
+H‹‹UÌH5ŠH‰Ç¸è­~ÿÿH‹¾T
+H]ÐH‹E¸A¸¹H‰ÞH‰ÇèŠ¹ÿÿ‰Eèƒ}èyPH‹E¸I‰À¹HUH5YH=ðèT¯ÿÿH‰Ãƒ}èÿt‹Eèë¸ûÿÿÿ‰Çè®ÿÿH‰ÞH‰Ç¸è/~ÿÿH‹EÐH‰EØH‹EÀH‹HUäH‰ÖH‰Çè‘¿ÿÿ‰Eàƒ}àySH‹EÀH‹I‰À¹HÛH5yH=vèÚ®ÿÿH‰Ãƒ}àÿt‹Eàë¸ûÿÿÿ‰Çè†­ÿÿH‰ÞH‰Ç¸èµ}ÿÿ‹Eä‰Eì‹UìH‹EØ‰ÖH‰Çè.yÿÿ¸HƒÄH[ÉÃUH‰åSHƒìH‰}ÌH‰uÀH‰U¸HÇEàHÇEØÇEìƒ}Ìxƒ}Ì~!H‹&lt;D
+H‹‹UÌH57H‰Ç¸è:}ÿÿH‹KS
+H]ØH‹E¸A¸¹H‰ÞH‰Çè¸ÿÿ‰Eìƒ}ìyPH‹E¸I‰À¹HþH5æH=}èá­ÿÿH‰Ãƒ}ìÿt‹Eìë¸ûÿÿÿ‰Çè¬ÿÿH‰ÞH‰Ç¸è¼|ÿÿH‹EØH‰EàH‹EàH‰Çè˜wÿÿ¸HƒÄH[ÉÃUH‰åSHƒìH‰}ÌH‰uÀH‰U¸HÇEàHÇEØÇEìƒ}Ìxƒ}Ì~!H‹FC
+H‹‹UÌH5AH‰Ç¸èD|ÿÿH‹UR
+H]ØH‹E¸A¸¹H‰ÞH‰Çè!·ÿÿ‰Eìƒ}ìyPH‹E¸I‰À¹HH5ðH=‡èë¬ÿÿH‰Ãƒ}ìÿt‹Eìë¸ûÿÿÿ‰Çè—«ÿÿH‰ÞH‰Ç¸èÆ{ÿÿH‹EØH‰EàH‹EàH‰ÇèBzÿÿ¸HƒÄH[ÉÃUH‰åSHƒìH‰}ÌH‰uÀH‰U¸HÇEàHÇEØÇEìƒ}Ìxƒ}Ì~!H‹PB
+H‹‹UÌH5KH‰Ç¸èN{ÿÿH‹_Q
+H]ØH‹E¸A¸¹H‰ÞH‰Çè+¶ÿÿ‰Eìƒ}ìyPH‹E¸I‰À¹HH5úH=‘èõ«ÿÿH‰Ãƒ}ìÿt‹Eìë¸ûÿÿÿ‰Çè¡ªÿÿH‰ÞH‰Ç¸èÐzÿÿH‹EØH‰EàH‹EàH‰ÇèÌwÿÿ¸HƒÄH[ÉÃUH‰åSHƒìH‰}ÌH‰uÀH‰U¸HÇEØHÇEÐÇEèÇEàƒ}Ì~ƒ}Ì~!H‹SA
+H‹‹UÌH5.H‰Ç¸èQzÿÿH‹bP
+H]ÐH‹E¸A¸¹H‰ÞH‰Çè.µÿÿ‰Eèƒ}èyPH‹E¸I‰À¹H%H5ýH=”èøªÿÿH‰Ãƒ}èÿt‹Eèë¸ûÿÿÿ‰Çè¤©ÿÿH‰ÞH‰Ç¸èÓyÿÿH‹EÐH‰EØH‹EÀH‹HUäH‰ÖH‰Çè5»ÿÿ‰Eàƒ}àySH‹EÀH‹I‰À¹H«H5H=è~ªÿÿH‰Ãƒ}àÿt‹Eàë¸ûÿÿÿ‰Çè*©ÿÿH‰ÞH‰Ç¸èYyÿÿ‹Eä‰Eì‹UìH‹EØ‰ÖH‰Çè‚qÿÿ¸HƒÄH[ÉÃUH‰åSHƒìH‰}ÌH‰uÀH‰U¸HÇEØHÇEÐÇEèÇEàƒ}Ì~ƒ}Ì~!H‹Ù?
+H‹‹UÌH5´H‰Ç¸è×xÿÿH‹èN
+H]ÐH‹E¸A¸¹H‰ÞH‰Çè´³ÿÿ‰Eèƒ}èyPH‹E¸I‰À¹H¶H5ƒH=è~©ÿÿH‰Ãƒ}èÿt‹Eèë¸ûÿÿÿ‰Çè*¨ÿÿH‰ÞH‰Ç¸èYxÿÿH‹EÐH‰EØH‹EÀH‹HUäH‰ÖH‰Çè¾ÿÿ‰Eàƒ}àySH‹EÀH‹I‰À¹H&lt;H5AH= è©ÿÿH‰Ãƒ}àÿt‹Eàë¸ûÿÿÿ‰Çè°§ÿÿH‰ÞH‰Ç¸èßwÿÿ‹Eä‰EìóEìH‹EØH‰Çèhrÿÿ¸HƒÄH[ÉÃUH‰åSHƒìH‰}ÌH‰uÀH‰U¸HÇEàHÇEØÇEìHÇEÐƒ}Ìxƒ}Ì~!H‹^&gt;
+H‹‹UÌH5YH‰Ç¸è\wÿÿH‹mM
+H]ØH‹E¸A¸¹H‰ÞH‰Çè9²ÿÿ‰Eìƒ}ìyPH‹E¸I‰À¹HMH5H=Ÿè¨ÿÿH‰Ãƒ}ìÿt‹Eìë¸ûÿÿÿ‰Çè¯¦ÿÿH‰ÞH‰Ç¸èÞvÿÿH‹EØH‰EàH‹EàH‰ÇèŠxÿÿóEèóEèè½ÿÿH‰EÐH‹EÐHƒÄH[ÉÃUH‰åHƒìPH‰}¸H‹éB
+H…Àu3HF H‰ÞB H_I H‰ØB H±B H‰ºB ÇEøëÇEøèé´ÿÿH‰EèHƒ}èuH=ƒB
+èPµÿÿHwB H‰EèëhÇEüH‹EèH‰EàH[B H9Eàu
+ÇEüëH‹EàH‹@H‰EàH‹EàH;Eè•À„ÀuÏƒ}ü…JH‹EèH‹@H‰(B H‹EèHB
+H‰Pƒ}ø„%HÇEðéäHÇEØH‹óA HÜA H9Ât2H‹èA H‹UðHÁâHÐH‹H‹H‹ÈA H5±A
+H‰ÇèžÿÿH‰EØHƒ}ØtAH‹¯A H‹UðHÁâHÐH‹H‹@ H…Àt&lt;H‹‘A H‹UðHÁâHÐH‹H‹P
+H‹EØH‰P ëH‹nA H‹UðHÁâHÐH‹H‰EØH‹]A H‹UðHÁâHÐH‹H‰EÈéäHÇEÐH‹&#8217;A
+HA H9Ât$H‹EÈH‹H‹H‹ A H5ó@ H‰ÇèQÿÿH‰EÐHƒ}ÐtYH‹ñ@
+H‹UðHÁâHÐH‹H;EØuH‹EÈH‹UÐH‰HÇEÐë)H‹EÐH‹H‹UØH‰ÖH‰Çè™ÿÿH‰EÀHƒ}ÀuHÇEÐHƒ}Ðu9H‹EØH‹@H…Àt
+H‹EØH‹@H‹UÈH‰PH‹EØH‹PH‹EÈH‰PH‹EØH‹UÈH‰PHƒEÈ
+H‹EÈH‹H…À•À„À…ÿÿÿH‹&amp;@ H‹UðHÁâHH‹EØH‰HƒEðH‹@
+H;Eð—À„À…þÿÿH‹ñ? H‹UðHÁâHÐHÇëëÉÃUH‰åHƒì‹ÝI …À…áÇËI
+HÇEøé²H‹£? H‹UøHÁâHÐH‹H‹@ H…À„‹H‹?
+H‹UøHÁâHÐH‹H‹@H‰Eðë`H‹EðH‹@H…ÀuGH‹EðH‹H…Àt;H‹EðH‹H‹@ H…Àu+H‹9?
+H‹UøHÁâHÐH‹H‹P H‹EðH‹H‰ÖH‰ÇèÏšÿÿH‹EðH‹@H‰EðHƒ}ð•À„Àu”HƒEøH‹ù&gt;
+H;Eø—À„À…8ÿÿÿëÉÃUH‰åHƒìèÆ©ÿÿH=oèoÿÿH‰ÅH ¿èÇûÿÿHÇEøë&quot;H‹¢&gt;
+H‹UøHÁâHÐH‹H‰ÇèÎ©ÿÿHƒEøH‹ˆ&gt; H;Eø—À„ÀuÌè¦ÿÿH‹!9 H‹H‹gH
+H5ŸH‰ÇèkÿÿH‹a8 H‰H‹çG H‹P8 H‰ÖH‰Çèç™ÿÿH‹&gt;8
+H‹H5²½ÿÿH‰Çè”qÿÿH€¾ÿÿH‹8 H‹¹ÿÿÿÿH5¤H‰Çè¿lÿÿHæÀÿÿH‹ù7
+H‹¹ÿÿÿÿH5+H‰ÇèšlÿÿHBÃÿÿH‹Ô7 H‹¹ÿÿÿÿH5)H‰ÇèulÿÿH6ÄÿÿH‹¯7
+H‹¹ÿÿÿÿH5H‰ÇèPlÿÿH÷ÆÿÿH‹Š7 H‹¹ÿÿÿÿH5óH‰Çè+lÿÿH‹l7 HÇ@HÀÿÿH‹V7
+H‰PH‹K7 Ç@ H‹Ý7 H‹H‹G H5³H‰ÇèLjÿÿH‹M7 H‰H‹ÃF H‹&lt;7
+H‰ÖH‰Çè£˜ÿÿH‹*7 H‹H5[ËÿÿH‰ÇèPpÿÿH$ÌÿÿH‹ 7
+H‹¹ÿÿÿÿH5`H‰Çè{kÿÿHñÍÿÿH‹å6 H‹¹ÿÿÿÿH5ýH‰ÇèVkÿÿH&amp;ÑÿÿH‹À6
+H‹¹ÿÿÿÿH5òH‰Çè1kÿÿH÷ÑÿÿH‹›6 H‹¹ÿÿÿÿH5ØH‰ÇèkÿÿHÈÒÿÿH‹v6
+H‹¹ÿÿÿÿH5½H‰ÇèçjÿÿH\ÔÿÿH‹Q6 H‹¹ÿÿÿÿH5¡H‰ÇèÂjÿÿHÖÿÿH‹,6
+H‹¹ÿÿÿÿH5†H‰ÇèjÿÿH‹6 HÇ@H×ÌÿÿH‹ø5 H‰PH‹í5 Ç@ H‹O6 H‹H‹•E
+H5?H‰Çè¾hÿÿH‹ß5 H‰H‹=E H‹Î5 H‰ÖH‰Çè—ÿÿH‹¼5
+H‹H5ØÿÿH‰ÇèÂnÿÿHQÙÿÿH‹œ5 H‹¹ÿÿÿÿH5ÒH‰ÇèíiÿÿHdÚÿÿH‹w5
+H‹¹ÿÿÿÿH5‡H‰ÇèÈiÿÿHøÛÿÿH‹R5 H‹¹ÿÿÿÿH5H‰Çè£iÿÿHMÝÿÿH‹-5
+H‹¹ÿÿÿÿH5ìH‰Çè~iÿÿH»ßÿÿH‹5 H‹¹ÿÿÿÿH5ÐH‰ÇèYiÿÿH‹ê4 HÇ@H”ÙÿÿH‹Ô4
+H‰PH‹É4 Ç@ H‹5 H‹H‹QD H5úH‰ÇèzgÿÿH‹£4 H‰H‹ÉC H‹’4
+H‰ÖH‰ÇèÑ•ÿÿH‹€4 H‹H5®åÿÿH‰Çè~mÿÿHËåÿÿH‹`4
+H‹¹ÿÿÿÿH5ŽH‰Çè©hÿÿHôßÿÿH‹;4 H‹¹ÿÿÿÿH5xH‰Çè„hÿÿHnáÿÿH‹4
+H‹¹ÿÿÿÿH5ÜH‰Çè_hÿÿHlâÿÿH‹ñ3 H‹¹ÿÿÿÿH54H‰Çè:hÿÿHçãÿÿH‹Ì3
+H‹¹ÿÿÿÿH5«H‰ÇèhÿÿH‹®3 HÇ@H€åÿÿH‹˜3 H‰PH‹3 Ç@ H‹Ç3 H‹H‹C
+H5nH‰Çè6fÿÿH‹Ÿ3 H‰H‹¥B H‹Ž3 H‰ÖH‰Çè”ÿÿH‹|3
+H‹H5-åÿÿH‰Çè:lÿÿHJåÿÿH‹\3 H‹¹ÿÿÿÿH5JH‰ÇèegÿÿHžæÿÿH‹73
+H‹¹ÿÿÿÿH5H‰Çè@gÿÿHoçÿÿH‹3 H‹¹ÿÿÿÿH5ãH‰ÇègÿÿH‹ô2 HÇ@HæÿÿH‹Þ2
+H‰PH‹Ó2 Ç@ H‹Í2 H‹H‹B H5žH‰Çè&lt;eÿÿH‹í1 H‰H‹ÃA H‹Ü1
+H‰ÖH‰Çè““ÿÿH‹Ê1 H‹H5(êÿÿH‰Çè@kÿÿHEêÿÿH‹ª1
+H‹¹ÿÿÿÿH5PH‰ÇèkfÿÿHHìÿÿH‹…1 H‹¹ÿÿÿÿH5&#8217;H‰ÇèFfÿÿHíÿÿH‹`1
+H‹¹ÿÿÿÿH5H‰Çè!fÿÿHnîÿÿH‹;1 H‹¹ÿÿÿÿH5þH‰ÇèüeÿÿH?ïÿÿH‹1
+H‹¹ÿÿÿÿH5ßH‰Çè×eÿÿHðÿÿH‹ñ0 H‹¹ÿÿÿÿH5¿H‰Çè²eÿÿHeñÿÿH‹Ì0
+H‹¹ÿÿÿÿH5¥H‰ÇèeÿÿHºòÿÿH‹§0 H‹¹ÿÿÿÿH5’H‰ÇèheÿÿH‹‰0 HÇ@H ëÿÿH‹s0
+H‰PH‹h0 Ç@ ÉÃUH‰åHƒì‰}ü‰uøƒ}üu2}øÿÿu)H=S@ èÎcÿÿH‹W0 H‹0 H59@
+H‰Çè‘dÿÿÉÃUH‰å¾ÿÿ¿è¥ÿÿÿÉÃUH‰åHƒìH‰}øH‹EøH‰ÇèòeÿÿÉÃUH‰åHƒìH‰}øH‹Eø¾H‰ÇèjÿÿÉÃUH‰åSHƒìH‰}èH‹EèH‹H…ÛtH‰ßè?bÿÿH‰ßèÇbÿÿHƒÄ[ÉÃUH‰åATSHƒì
+H‰}ØH‰uÐ¿è³jÿÿH‰ÁH‰ÈH‹UÐH‹H‰H‹ZH‰XH‹RH‰PH‰ÊHEàH‰ÖH‰Çè‘iÿÿH‹EØHUàH‰ÖH‰ÇèîgÿÿH‹]ØHEàH‰Çè.eÿÿH‰ØHƒÄ
+[A\ÉÃ‰ÓI‰ÄHEàH‰ÇèeÿÿL‰àHcÓH‰ÇèCjÿÿUH‰åH‰}øH‹EøH‹ÉÃUH‰åH‰}øH‰uðH‹EøH‹UðH‰ÉÃUH‰åSHƒì(H‰}ØH‰uÐH‹EØH‹H‰EèH‹EØHÇH‹]èH…ÛtH‰ßè.aÿÿH‰ßè¶aÿÿH‹EÐH‹H‹EØH‰H‹EÐHÇH‹EØHƒÄ([ÉÃUH‰åSHƒìH‹8,
+HƒøÿtH+,
+ëHƒëÿÐH‹HƒøÿuñHƒÄ[ÉÃHƒìèïiÿÿHƒÄÃVLCExceptioncan&#8216;t create
+istancemedia is NULLvlcdummyoutput.cppid == __nullRV32cannot initialize
+SDLVLCExceptioncan&#8216;t create mediaRV16cannot set video modevoid
+display(void*, void*)void unlock(void*, void*, void*
+const*)VLCExceptioncan&#8216;t create istancemedia doesn&#8216;t existmedia
+doesn&#8216;t exist in listVLCExceptioncan&#8216;t create istancermedia
+doesn&#8216;t existTitleArtistDescriptionUrlmeta not foundmedia is not
+initialitiatedVLCExceptioncan&#8216;t create istancermedia doesn&#8216;t
+existNULLNullReferenceErrorObjectPreviouslyDeleted\–ÿÿw–ÿÿw–ÿÿw–ÿÿw–ÿÿw–ÿÿw–ÿÿw–ÿÿw–ÿÿw–ÿÿw–ÿÿw–ÿÿw–ÿÿw–ÿÿw–ÿÿw–ÿÿw–ÿÿw–ÿÿw–ÿÿw–ÿÿw–ÿÿw–ÿÿw–ÿÿw–ÿÿw–ÿÿw–ÿÿw–ÿÿw–ÿÿw–ÿÿw–ÿÿw–ÿÿw–ÿÿw–ÿÿw–ÿÿw–ÿÿw–ÿÿw–ÿÿw–ÿÿw–ÿÿw–ÿÿw–ÿÿw–ÿÿw–ÿÿw–ÿÿw–ÿÿw–ÿÿw–ÿÿw–ÿÿw–ÿÿw–ÿÿw–ÿÿw–ÿÿw–ÿÿw–ÿÿw–ÿÿw–ÿÿw–ÿÿw–ÿÿw–ÿÿw–ÿÿw–ÿÿw–ÿÿw–ÿÿw–ÿÿw–ÿÿw–ÿÿw–ÿÿw–ÿÿw–ÿÿw–ÿÿw–ÿÿw–ÿÿw–ÿÿw–ÿÿw–ÿÿw–ÿÿw–ÿÿw–ÿÿw–ÿÿw–ÿÿw–ÿÿw–ÿÿw–ÿÿw–ÿÿw–ÿÿw–ÿÿw–ÿÿQ–ÿÿ•ÿÿA–ÿÿ1–ÿÿ!–ÿÿ–ÿÿ–ÿÿî•ÿÿÛ•ÿÿÈ•ÿÿµ•ÿÿ¢•ÿÿg–ÿÿExpected
+argument %d of type , but got  &#8230;
+</p>
+<pre>
+        in SWIG method '\'\Wrong # of arguments\Wrong arguments\\\\\\\%s for overloaded method '%s'.
+</pre>
+<p>
+Possible C/C++ prototypes are:
+%s@<em>trackings</em>VERBOSEdeleteExceptionSWIGcallarityTYPE%sPointernew@<em>swigtype</em>libvlc_wrap.cxx!newmemory$swig_runtime_data_type_pointer4swig_runtime_data_p_charwrong
+# of arguments(%d for 3)LibVLCintchar const *const *boolwrong # of
+arguments(%d for 2)wrong # of arguments(%d for 1)wrong # of arguments(%d
+for 0) LibVLC.new(int, char const *const *, bool)
+</p>
+<pre>
+    LibVLC.new(int, char const *const *)
+    LibVLC.new(int)
+    LibVLC.new()
+</pre>
+<p>
+LibVLC.newsetUserAgentLibVLC *char const
+*getVersionaddMediacreatePlayListVLCMedialibvlc_instance_t *libvlc_media_t
+* VLCMedia.new(libvlc_instance_t *, libvlc_media_t *)
+</p>
+<pre>
+    VLCMedia.new(libvlc_instance_t *)
+    VLCMedia.new()
+</pre>
+<p>
+VLCMedia.newwrong # of arguments(%d for 4)setVideoFormatVLCMedia
+*pauseMediaplayMediasetMediagetPlayergetMetaVLCMediaList
+VLCMediaList.new(libvlc_instance_t *)
+</p>
+<pre>
+    VLCMediaList.new()
+</pre>
+<p>
+VLCMediaList.newVLCMediaList *removeMediagetMediacountsurfCtx *SDL_Surface
+*mutexSDL_mutex *VLCDummyOutputVLCDummyOutput
+*setOptionVLCMediaPlayersetXWindowVLCMediaPlayer
+*playpausestopsetChaptersetPositionfloatgetFps_p_Ctx_p_LibVLC_p_SDL_Surface_p_SDL_mutex_p_VLCDummyOutput_p_VLCMedia_p_VLCMediaList_p_VLCMediaPlayerchar
+*_p_libvlc_instance_t_p_libvlc_media_t_p_p_charchar
+**LibvlcinitializeCtxsurf=mutex=int SWIG_Ruby_ConvertPtrAndOwn(VALUE,
+void**, swig_type_info*, int, void
+(**)(void*))0123456789abcdefàÿÿïÇàÿÿïG;Ä·`ÿÿèÚaÿÿ°cÿÿXêcÿÿx$dÿÿ˜Jdÿÿ¸hdÿÿØ†dÿÿø¤dÿÿÊdÿÿ8òdÿÿX
+eÿÿxpeÿÿ˜Þeÿÿ¸fÿÿØòfÿÿøÎgÿÿkÿÿ@Òkÿÿ`
+lÿÿ€nlÿÿ ¶lÿÿÀÌlÿÿàæmÿÿ oÿÿ0 :oÿÿP toÿÿp †pÿÿ˜ Ìpÿÿ¸ êpÿÿØ åqÿÿ -rÿÿ
+Drÿÿ@ ²sÿÿh  uÿÿ Zuÿÿ° ”uÿÿÐ ¤vÿÿø 8wÿÿ
+Vwÿÿ@˜wÿÿ`¸yÿÿˆzÿÿ°åzÿÿÐüzÿÿð|ÿÿ
+}ÿÿ@Z}ÿÿ`”}ÿÿ€Æ}ÿÿ Ú}ÿÿÀî~ÿÿè!ÿÿiÿÿ(€ÿÿHx€ÿÿhHÿÿˆ‚ÿÿ¨ƒÿÿÈ„ÿÿèZ„ÿÿÚ„ÿÿ(R…ÿÿHÎ…ÿÿhþ…ÿÿˆ‡ÿÿ°
+ˆÿÿÐ‹ˆÿÿðc‰ÿÿ
+Šÿÿ8vŠÿÿX,‹ÿÿx¦‹ÿÿ˜#Œÿÿ¸—ŒÿÿØØŒÿÿøÿÿSŽÿÿ8ÚÿÿX&lt;‘ÿÿxð‘ÿÿ˜
+’ÿÿ¸$’ÿÿØR’ÿÿøž’ÿÿð’ÿÿ8&gt;“ÿÿXo“ÿÿxã“ÿÿ˜,”ÿÿ¸Ž”ÿÿØÚ”ÿÿø¥•ÿÿ…—ÿÿ8ñ—ÿÿX&quot;˜ÿÿxZ˜ÿÿ˜Tšÿÿ¸H›ÿÿØì›ÿÿøjœÿÿÒœÿÿ8ÿÿXÀÿÿxËÿÿ˜Ežÿÿ¸ØžÿÿØ;ŸÿÿøÉŸÿÿ ÿÿ8ƒ¡ÿÿXð¡ÿÿx&#8217;¢ÿÿ˜A¢ÿÿ¸“¢ÿÿØ-£ÿÿø­£ÿÿÉ£ÿÿ8(¦ÿÿ`¨ÿÿˆ.©ÿÿ°Z©ÿÿÐªÿÿøi¬ÿÿ–¬ÿÿ8¯ÿÿX0°ÿÿx³ÿÿ Ï´ÿÿÈÊ¶ÿÿð¸ÿÿG¸ÿÿ8ó¸ÿÿ`¸ºÿÿ€åºÿÿ ?¾ÿÿÀ5¿ÿÿà+ÀÿÿäÁÿÿ@³ÃÿÿhÅÿÿˆÛÆÿÿ°ÇÿÿÐ®Çÿÿø¹ÈÿÿæÈÿÿ8ŸÊÿÿXÌÿÿx¬Îÿÿ ºÏÿÿÀYÑÿÿà|ÒÿÿÔÿÿ
+@Õÿÿ@lÕÿÿ`éÕÿÿ€Öÿÿ /ÖÿÿÀ{×ÿÿè¨×ÿÿžØÿÿ(øÛÿÿH$ÜÿÿhÞÿÿLÞÿÿ°ÆßÿÿÐ¼àÿÿð²áÿÿ¨âÿÿ0&quot;äÿÿPœåÿÿp¬æÿÿÁéÿÿ°»êÿÿÐ1óÿÿ¸yóÿÿØŽóÿÿ
+¨óÿÿðÈóÿÿøóÿÿ0–ôÿÿX¨ôÿÿxÂôÿÿ˜zPLRx›…#
+$$ZÿÿÕAC†gƒŒ$LÂ[ÿÿÕùAC†gƒŒzPRx›#
+$P]ÿÿ9AC†Dj]ÿÿ9AC†d„]ÿÿ&amp;AC†„Š]ÿÿAC†¤ˆ]ÿÿAC†Ä†]ÿÿAC†ä„]ÿÿ&amp;AC†Š]ÿÿ(AC†$’]ÿÿ.AC†D ]ÿÿPAC†dÐ]ÿÿnAC†„^ÿÿ8AC†¤6^ÿÿÛAC†Äò^ÿÿÛAC†$T®_ÿÿÂAC†XƒŒHcÿÿAAC†,jcÿÿNAC†L˜cÿÿNAC†lÆcÿÿHAC†ŒîcÿÿAC†$äcÿÿfAC†cƒŒ$DÖdÿÿQAC†cƒŒüÈeÿÿ9AC†âeÿÿ9AC†$¬üeÿÿüAC†cƒŒdæfÿÿFAC†„gÿÿAC†$
+gÿÿû¦AC†LƒŒÌÝgÿÿHAC†ìhÿÿAC†$|ügÿÿnPAC†_ƒŒ$¤Biÿÿn;AC†_ƒŒ\ˆjÿÿ:AC†|¢jÿÿ:AC†$¼jÿÿæAC†cƒŒ$4¤kÿÿ“ÑAC†ZƒŒìlÿÿAC†lÿÿAAC†$œ0lÿÿyAC†bƒŒ$Ä(nÿÿåpAC†LƒŒ|ånÿÿHAC†œoÿÿAC†$,oÿÿAC†eƒŒ$TîoÿÿAC†eƒŒØpÿÿ9AC†,òpÿÿ9AC†Lqÿÿ1AC†lqÿÿAC†$üqÿÿqAC†LƒŒ´þqÿÿ3AC†HƒÔrÿÿHAC†ô9rÿÿAC†0rÿÿøAC†Vƒ4sÿÿÐAC†[ƒT¸sÿÿÐAC†[ƒthtÿÿAC†”OuÿÿóAC†´&quot;vÿÿHAC†ÔJvÿÿ€AC†ôªvÿÿxAC†wÿÿ|AC†4^wÿÿ0AC†$TnwÿÿAC†pƒŒŽ|KxÿÿAC†cƒœ2yÿÿAC†UƒŒ$¼“yÿÿØAC†WƒŒŽäCzÿÿ¦AC†dƒ
+ÉzÿÿmAC†$ {ÿÿ¶AC†D ¬{ÿÿzAC†d |ÿÿ}AC†„
+c|ÿÿtAC†¤ ·|ÿÿAAC†Ä Ø|ÿÿAAC†ä ù|ÿÿ:AC†
+~ÿÿ‡AC†$ z€ÿÿbAC†fƒD ¼€ÿÿ´AC†d PÿÿAC†„
+JÿÿAC†¤ Dÿÿ.AC†Ä RÿÿLAC†ä
+~ÿÿRAC†°ÿÿNAC†Pƒ$Þÿÿ1AC†DïÿÿtAC†dC‚ÿÿIAC†„l‚ÿÿbAC†¤®‚ÿÿLAC†ÄÚ‚ÿÿËAC†ä…ƒÿÿàAC†`ƒE…ÿÿlAC†$‘…ÿÿ1AC†D¢…ÿÿ8AC†dº…ÿÿúAC†„”‡ÿÿôAC†Gƒ¤hˆÿÿ¤AC†Äìˆÿÿ~AC†äJ‰ÿÿhAC†]ƒ’‰ÿÿ:AC†$¬‰ÿÿ´AC†D@ŠÿÿAC†d+ŠÿÿzAC†„…Šÿÿ“AC†Tƒ¤øŠÿÿcAC†Ä;‹ÿÿŽAC†ä©‹ÿÿBAC†Ë‹ÿÿxAC†\ƒ$#ÿÿmAC†Dpÿÿ7AC†d‡ÿÿAC†„ÿÿRAC†¤³ÿÿšAC†TƒÄ-Žÿÿ€AC†äŽÿÿAC†$t‰Žÿÿ_
+AC†GƒŒ$œÀÿÿØø AC†@ƒŒ$Äp’ÿÿ.ä
+AC†iƒŒ|v“ÿÿ,AC†$‚“ÿÿ±°
+AC†bƒŒÄ”ÿÿ^AC†`ƒäI–ÿÿ-AC†MƒV–ÿÿAC†[ƒ$·˜ÿÿAC†}ƒ$´°™ÿÿæ
+AC†`ƒŒ$Ünœÿÿ¹
+</p>
+<pre>
+        \\AC†xƒŒ\\\\\\$\\\\\ÿÿÿû\\ú\\AC†PƒŒ\\\$\\\,\\ÒŸÿÿQ\\æ\\AC†yƒŒ\\\\\\\ä\\û ÿÿ,\\\\AC†\\\\\\\$\\\t\\¡ÿÿ¬\\\²\\AC†bƒŒ\\\\\\\,\\‹¡ÿÿÅ\\\AC†`ƒ\\\\\\\L\\0£ÿÿ-\\\\AC†Mƒ\\\\\\\l\\=£ÿÿZ\\\AC†Yƒ\\\\\\Œ\\w¦ÿÿö\\\\AC†mƒ\\\\\\\¬\\M§ÿÿö\\\\AC†mƒ\\\\\\\Ì\\#¨ÿÿ¹\\\AC†Dƒ\\\\\\ì\\fÛÿÿ\\\\AC†\\\\\\\$\\\|\\œ©ÿÿÏ\\»\\AC†pƒŒ\\\\\\\\\4\\C«ÿÿÜ\\\AC†Tƒ\\\$\\\Ä\\ÿ¬ÿÿL\\—\\AC†yƒŒ\\\\\\\|\\#®ÿÿ,\\\\AC†\\\\\\\$\\\\\/®ÿÿ§\\\c\\AC†bƒŒ\\\\\\\Ä\\®®ÿÿ\\\AC†`ƒ\\\\\\\ä\\™¯ÿÿ-\\\\AC†Mƒ\\\\\\\\\¦¯ÿÿ¹\\\AC†Dƒ\\\\\\$\\?±ÿÿz\\\AC†tƒ\\\\$\\\´\\™²ÿÿ“\\Ì\\AC†MƒŒ\\\\\\\\l\\µÿÿ\\\AC†uƒ\\\\\\\Œ\\òµÿÿŸ\\\AC†Dƒ\\\\\\¬\\q·ÿÿ#\\\AC†}ƒ\\\\\\\Ì\\t¸ÿÿ \\\AC†Dƒ\\\\\\ì\\ô¹ÿÿ$\\\AC†}ƒ\\\\\\\\\øºÿÿ,\\\\AC†\\\\\\\\\\,\\»ÿÿ}\\\\AC†\\\\\\\\\\L\\a»ÿÿ\\\\AC†\\\\\\\\\\l\\[»ÿÿ,\\\\AC†\\\\\\\$\\\ü\\g»ÿÿL\\\\AC†yƒŒ\\\\\\\´\\‹¼ÿÿ-\\\\AC†Mƒ\\\\\\\Ô\\˜¼ÿÿö\\\\AC†mƒ\\\\\\\ô\\n½ÿÿZ\\\AC†Yƒ\\\\\\\\¨Àÿÿ,\\\\AC†\\\\\\\$\\\¤\\´Àÿÿû\\ \\AC†PƒŒ\\\\\\\\\‡Âÿÿ-\\\\AC†Mƒ\\\\\\\|\\”Âÿÿz\\\AC†tƒ\\\\\\\œ\\îÃÿÿö\\\\AC†mƒ\\\\\\\¼\\ÄÄÿÿö\\\\AC†mƒ\\\\\\\Ü\\šÅÿÿö\\\\AC†mƒ\\\\\\\ü\\pÆÿÿz\\\AC†tƒ\\\\\\\\\ÊÇÿÿz\\\AC†tƒ\\\\\\\&lt;\\$Éÿÿ\\\AC†uƒ\\\\\\\\\\Êÿÿ\\\AC†\\\\\\\\\\|\\  Íÿÿú\\\\AC†\\\\\\\\\\œ\\ãÍÿÿv\\\AC†\\\\\\\\\\¼\\°Öÿÿ\\\\AC†\\\\\\\\\\Ü\\°Öÿÿ0\\\\AC†Pƒ\\\\$\\\l\\ÀÖÿÿ\\\U\\AC†TƒŒ\\\\\\\\\$\\6×ÿÿ\\\\AC†\\\\\\\\\\D\\(×ÿÿ\\\\AC†\\\\\\\\\\d\\&quot;×ÿÿd\\\\AC†gƒ\\\\\\\„\\qÕÿÿH\\\\AC†\\\\\\\\\\¤\\™Õÿÿ\\\\AC†\\\\\\\\\\\ÿÿ&lt;\\–°\Ï \\ÂÜ\ûO\\ÿÿ&lt;\\–°\Ï \\ÂÜ\ûO\\ÿÿ\\v\¯›\\”®\Íê\\ÿÿ8\\’¬\Ë&lt;\\ÿÿ8\\’¬\Ë&lt;\\ÿÿ'\\w‘\°W\\ÿÿ'\\w‘\°:\\ÿÿu\\Ïé\ˆO\\ÿÿu\\Ïé\ˆO\\ÿÿ'#\\Ÿ¹\Ø \\ÿÿ#\\&lt;C\Z&amp;\\ÿÿM˜\\¦À\ß \\»Õ\ô \\ÿÿ:\\Œ¦\Å \\ÿÿ)\\ƒ\¼6\\ÿÿ)\\ƒ\¼6\\ÿÿ*\\ª\É:\\ÿÿmœ\\¤\»\\ÿÿf›\\–\´\\ÿÿO‡\\ìó\Š\\ÿÿH\\ov\\\ÿÿd\\¢ÝÄ\°\\á\\ÿÿ&lt;\\q‰š\‰\\´\\ÿÿv¯\\¹À\×\\ÿÿ_›\\–\­\\ÿÿH\\jq\ˆ\\ÿÿ 4\\iž°\•œ\¼T°\Ÿ\\Ê\\ÿÿ_›\\Š‘\¨\\ÿÿH\\el\ƒ\\ÿÿQ\\Âô\à\\Ž\\ÿÿ_›\\Š‘\¨\\ÿÿv¯\\¹À\×\\ÿÿ7\\]~\m\\˜\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ÿÿÿÿÿÿÿÿ&gt;X\\\\\\µ]\\\\\\mf\\\\\\ñj\\\\\\ß\\\\\\\\\\\\\\ÿÿÿÿÿÿÿÿ\\\\\\\\\\\\\\\\\\\\\\\Ã\\\\\\\\\\\\\Ï\\\\\\\\\\\\\ß\\\\\\\\\\\\\î\\\\\\\\\\\\\ø\\\\\\\\\\\\\\\\\\\\\\\\\\ø@\\\\\\\\\\\\\èà\\\\\\õþÿo\\\\ð\\\\\\\\\\\\\È\\\\\\\\\\\\\Ø\\\\\\
+</pre>
+<p>
+]è!pˆ2@)H  þÿÿoÀ(ÿÿÿoðÿÿo&amp;&#8217;ùÿÿoDà!
+!&amp;A6AFAVAfAvA†A–A¦A¶AÆAÖAæAöABB&amp;B6BFBVBfBvB†B–B¦B¶BÆBÖBæBöBCC&amp;C6CFCVCfCvC†C–C¦C¶CÆCÖCæCöCDD&amp;D6DFDVDfDvD†D–D¦D¶DÆDÖDæDöDEE&amp;E6EFEVEfEvE†E–E¦E¶EÆEÖEæEöEFF&amp;F6FFFVFfFvF†F–F¦F¶FÆFÖFæFöFGG&amp;G6GFGVGfGvG†G–G¦G¶GÆGÖGæGöGHH&amp;H6HFHVHfHvH†H–H¦H¶HÆHÖHæHöHII&amp;I6IFIVIfIvI†I–I¦I¶IÆIÖIæIöIJJ&amp;J6JFJVJfJvJ†J–J¦J¶Jà!À!êjé
+ê†ç*êpé9ê„éFêŸéXêžèdê;étêÔé;æ†êêÈç¢êÜç´ê¾ê`! !à! !`! !à!
+!`! !à! !`! !à! !`! !à! !`! !à!
+!À!!@!€!À!!@!€!À!!@!€!GCC: (Ubuntu/Linaro 4.4.4-14ubuntu5)
+4.4.5.symtab.strtab.shstrtab.note.gnu.build-id.gnu.hash.dynsym.dynstr.gnu.version.gnu.version_r.rela.dyn.rela.plt.init.text.fini.rodata.eh_frame_hdr.eh_frame.gcc_except_table.ctors.dtors.jcr.dynamic.got.got.plt.data.bss.commentÈÈ$.öÿÿoððè8ØØð@ÈÈ]Hÿÿÿo&amp;&#8217;&amp;&#8217;”UþÿÿoÀ(À(€d@)@)H
+nˆ2ˆ2p xø@ø@sAA° ~ÀJÀJ(–„èàèàŠááˆ 
+’ˆëˆëÄ PñPñ4ª„ „ ¯¼Ð!Ð8Ã!Ê!Ï !
+ÐØð!ðøÝè!èèæà!à@ ì ! X ñ0
++Kúˆ$P+ ØOô*ÈðØÈ&amp;&#8217;À(@)ˆ2
+ø@ AÀJèàáˆëPñ„ Ð!!! !ð!è!à!
+!ÀJñÿÐ!*!8!EàJ[ !j(!x`Kñÿ„!‘€
+Ÿ!«°àÁñÿÔ0!8!h@!¯H!øñÿP!àá(CÀáiX!–`!Åh!ðp!öWHM&gt;Xkñÿx!|€!²¨!æˆ! !&lt;!f˜!m]HŽµ]ªñÿ°!·¸!ù!9À!`ø!…È!«Ð!Óè!÷ð!Ø!Cà!%fHgmfñÿ!Š!¬(!Ì!ñ
+!©jHñj*ñÿ:køLlÐ[ÐlÐl m{§nóšoHžâo€³bpxÇÚp|ÛVq0ò†q‹r#’s1`ëItØYët¦j‘um}þu¶´vz£.w}¯«wt·ð!ÂxAÞh!
+p!7 `xA] X!Š `!Ï ¡x:é Ûy‡ b|b8 ø!Q ¨!l Ä|´‰
+x}¡ ’}¼ ¬}.× Ú}Lì
+&amp;~Rx~NÆ~10÷~tG![!°!’¸!¤kI¶H!ÓP!ÿ´b€L-b€ËD-à\ƒlwyƒ1‹ªƒ8 âƒú»ëVñÜ…ôÐ†¤
+t‡~4ò‡hHZˆ:]”ˆ´mÀ!h}
+!0Ž(!0!šH‰±S‰zÊÍ‰“â`ŠcùÃŠŽQ‹B-8!P@!s“‹x–m·x7Ð¯äÉRüŽšµŽ€/5EQ_g°‘Ø‰ˆ“.«¶”,Çâ”±é“•^ñ—-˜?Ÿš`¸›æžž¹¤W ûÈR¢Qì££,
+Ï£¬.{¤ÅJ@¦-gm¦ZŽÇ©ö±½ªöÓ³«¹ôl­Ï;¯Ü6±L^c²,€²§¨6³ÈA´-în´¹&#8217;¶z;¡·“`4º‚B»Ÿžá¼#º¾ ×¤¿$ôÈÀ,ôÀ}$qÁ6‹Á,Z·ÁL|Ã-¦0ÃöÎ&amp;ÄZö€Ç,¬Çû&lt;§É-fÔÉzNËö²DÌöÖ:Íöù0Îz&quot;ªÏzL$Ñq`!0„ !0šà!0µ
+!0Î`!0ì !0à!0  !0&gt;`!0R !0sà!0‘
+!0§`!`¾À!@Ñ!@ç@!@€!@À!@9!@Q@!@m€!@‹À!@Ÿ!@À@!@Þ€!@ôÀ!`4Ò!IÕú:4!¹ÞHbß}è!™ñÿè!¯à!¼!Éñÿ
+!Ò,P&amp;ô\F5COaiÌ]nž²¼ÂZ9ÒårO9ý
+âh99¨`:JYqvj3Ž„f£ ²
+ÆØëNi2€!(J`@eåy”bMÕÐèàÖéô0–gETaqCÖv}‘¤&quot;0ßÐ8O9èŒKÕ$/&lt;N\jzTX£RP(Æàê
+cÒO6Te@!(u€‹›©ºßðü ¬O&amp;* 4 E _
+nYˆ ” VSÂ´ Æ r\ûã ÷
+fQ8!!(!&quot;Pß0e!p!|!&quot;ß¨!¹!Í!:_n&quot;&quot;&quot;,&quot;5&quot;U&quot;u&quot;Š&quot;P¥&quot;¾&quot;É&quot;€!(Û&quot;å&quot;#zRÛ)#4#,b“M#â`:^#~#”#Ÿ#ª#À#Ë#Ö#ð#$$À!(+$D$Y$z$!(‡$œ$®$º$üZÙ$ˆZ9ï$ñÿ
+!û$%%ðO4%@%K%\%n%Š%¢%&quot;Jàdâ%ö%i1&amp;¨h9%&amp;øPn7&amp;K&amp;bic&amp;p&amp;…&amp;&amp;¯&amp;¾&amp;Ï&amp;žQÛ÷&amp;&#8217;&#8217;&#8217;&lt;&#8217;WAa&#8217;m&#8217;Œ&#8217;•&#8217;°&#8217;ñÿx!µ&#8217;T\Ï&#8217;à&#8217;õ&#8217;Àb((&quot;àK(&quot;0à‹(™(¥(®(&quot;€ßÞ(è(ò()¨WN)&#8217;)=)[)ÞbA)ZWN—)³)ñÿ
+!º)Û)þ)*!*9*¨PPF*b*o*@!(‡*“*ž*©*zP.Æ*
+ø@Ì*å*call_gmon_startcrtstuff.c<em>CTOR_LISTDTOR_LISTJCR_LIST</em>__do_global_dtors_auxcompleted.7424dtor_idx.7426frame_dummy<em>CTOR_ENDFRAME_ENDJCR_END</em>__do_global_ctors_auxvlcmediaplayer.cpp_ZGVZN14VLCMediaPlayerC1EP17libvlc_instance_tP14libvlc_media_tE8vlcerror_ZGVZN14VLCMediaPlayerC1EP17libvlc_instance_tP14libvlc_media_tE8vlcerror_0_ZZN14VLCMediaPlayerC1EP17libvlc_instance_tP14libvlc_media_tE8vlcerror_ZZN14VLCMediaPlayerC1EP17libvlc_instance_tP14libvlc_media_tE8vlcerror_0vlcdummyoutput.cpp_ZStL8__ioinit_ZZ6unlockPvS_PKS_E19__PRETTY_FUNCTION___ZZ7displayPvS_E19__PRETTY_FUNCTION___ZGVZN14VLCDummyOutput9playMediaEvE8vlcerror_ZGVZN14VLCDummyOutput9playMediaEvE8vlcerror_0_ZZN14VLCDummyOutput9playMediaEvE8vlcerror_ZZN14VLCDummyOutput9playMediaEvE8vlcerror_0_Z41__static_initialization_and_destruction_0ii_GLOBAL__I_vlcdummyoutput.cppvlcmedialist.cpp_ZGVZN12VLCMediaListC1EP17libvlc_instance_tE8vlcerror_ZZN12VLCMediaListC1EP17libvlc_instance_tE8vlcerror_ZGVZN12VLCMediaList8addMediaEPKcE8vlcerror_ZZN12VLCMediaList8addMediaEPKcE8vlcerror_ZGVZN12VLCMediaList8getMediaEiE8vlcerror_ZZN12VLCMediaList8getMediaEiE8vlcerror_GLOBAL__I_vlcmedialist.cppvlcmedia.cpp_ZGVZN8VLCMediaC1EP17libvlc_instance_tP14libvlc_media_tE8vlcerror_ZZN8VLCMediaC1EP17libvlc_instance_tP14libvlc_media_tE8vlcerror_ZGVZN8VLCMedia8setMediaEPKcE8vlcerror_ZZN8VLCMedia8setMediaEPKcE8vlcerror_ZGVZN8VLCMedia7getMetaEPKcE8vlcerror_ZGVZN8VLCMedia7getMetaEPKcE8vlcerror_0_ZZN8VLCMedia7getMetaEPKcE8vlcerror_ZZN8VLCMedia7getMetaEPKcE8vlcerror_0_ZGVZN8VLCMedia9getPlayerEvE8vlcerror_ZZN8VLCMedia9getPlayerEvE8vlcerror_GLOBAL__I_vlcmedia.cpplibvlc.cpp_ZGVZN6LibVLCC1EiPKPKcbE8vlcerror_ZZN6LibVLCC1EiPKPKcbE8vlcerror_ZGVZN6LibVLC8addMediaEPKcE8vlcerror_ZZN6LibVLC8addMediaEPKcE8vlcerror_GLOBAL__I_libvlc.cpplibvlc_wrap.cxxSWIG_TypeNameCompSWIG_TypeEquivSWIG_TypeCompareSWIG_TypeCheckSWIG_TypeCheckStructSWIG_TypeCastSWIG_TypeDynamicCastSWIG_TypePrettyNameSWIG_TypeClientDataSWIG_TypeNewClientDataSWIG_MangledTypeQueryModuleSWIG_TypeQueryModuleSWIG_PackData_ZZ13SWIG_PackDataE3hexSWIG_UnpackDataSWIG_PackVoidPtrSWIG_UnpackVoidPtrSWIG_PackDataNameSWIG_UnpackDataNamerb_class_ofrb_type_ZL6_mSWIG_ZL21getNullReferenceErrorv_ZZL21getNullReferenceErrorvE4init_ZZL21getNullReferenceErrorvE22rb_eNullReferenceError_ZL31getObjectPreviouslyDeletedErrorv_ZZL31getObjectPreviouslyDeletedErrorvE4init_ZZL31getObjectPreviouslyDeletedErrorvE27rb_eObjectPreviouslyDeleted_ZL19SWIG_Ruby_ErrorTypei_ZL21Ruby_Format_TypeErrorPKcS0_S0_im_ZL27Ruby_Format_OverloadedErroriiPKcS0__ZL19swig_ruby_trackings_ZL21swig_ruby_hash_deleteSWIG_RubyInitializeTrackingsSWIG_RubyPtrToReferenceSWIG_RubyObjectToReferenceSWIG_RubyReferenceToObjectSWIG_RubyAddTrackingSWIG_RubyInstanceForSWIG_RubyRemoveTrackingSWIG_RubyUnlinkObjectsSWIG_Ruby_AppendOutput_ZL14_cSWIG_Pointer_ZL30swig_runtime_data_type_pointer_ZL13swig_arity_id_ZL12swig_call_idgetExceptionClass_ZZ17getExceptionClassE4init_ZZ17getExceptionClassE18rubyExceptionClassSWIG_Ruby_ExceptionTypeSWIG_Ruby_InitRuntimeSWIG_Ruby_define_classSWIG_Ruby_NewPointerObjSWIG_Ruby_NewClassInstanceSWIG_Ruby_MangleStrSWIG_Ruby_AcquirePtrSWIG_Ruby_ConvertPtrAndOwn_ZZ26SWIG_Ruby_ConvertPtrAndOwnE19__PRETTY_FUNCTION__SWIG_Ruby_NewPackedObjSWIG_Ruby_ConvertPackedSWIG_Ruby_GetModuleSWIG_Ruby_SetModuleSWIG_Ruby_isCallableSWIG_Ruby_arity_ZL10swig_types_ZL11swig_module_ZL7mLibvlc_ZL16SWIG_ruby_failedv_ZL17SWIG_AUX_NUM2LONGPm_ZL15SWIG_AsVal_longmPl_ZL14SWIG_AsVal_intmPi_ZL15SWIG_AsVal_boolmPb_ZL21SWIG_pchar_descriptorv_ZZL21SWIG_pchar_descriptorvE4init_ZZL21SWIG_pchar_descriptorvE4info_ZL21SWIG_AsCharPtrAndSizemPPcPmPi_ZL23SWIG_FromCharPtrAndSizePKcm_ZL16SWIG_FromCharPtrPKc_ZL13SWIG_From_inti_ZL16SWIG_AUX_NUM2DBLPm_ZL17SWIG_AsVal_doublemPd_ZL16SWIG_AsVal_floatmPf_ZL15SWIG_From_floatf_ZL24_wrap_new_LibVLC__SWIG_0iPmm_ZL24_wrap_new_LibVLC__SWIG_1iPmm_ZL24_wrap_new_LibVLC__SWIG_2iPmm_ZL21_wrap_LibVLC_allocatem_ZL24_wrap_new_LibVLC__SWIG_3iPmm_ZL16_wrap_new_LibVLCiPmm_ZL11free_LibVLCP6LibVLC_ZL25_wrap_LibVLC_setUserAgentiPmm_ZL23_wrap_LibVLC_getVersioniPmm_ZL21_wrap_LibVLC_addMediaiPmm_ZL27_wrap_LibVLC_createPlayListiPmm_ZL26_wrap_new_VLCMedia__SWIG_0iPmm_ZL26_wrap_new_VLCMedia__SWIG_1iPmm_ZL23_wrap_VLCMedia_allocatem_ZL26_wrap_new_VLCMedia__SWIG_2iPmm_ZL18_wrap_new_VLCMediaiPmm_ZL13free_VLCMediaP8VLCMedia_ZL29_wrap_VLCMedia_setVideoFormatiPmm_ZL25_wrap_VLCMedia_pauseMediaiPmm_ZL24_wrap_VLCMedia_playMediaiPmm_ZL23_wrap_VLCMedia_setMediaiPmm_ZL24_wrap_VLCMedia_getPlayeriPmm_ZL22_wrap_VLCMedia_getMetaiPmm_ZL30_wrap_new_VLCMediaList__SWIG_0iPmm_ZL27_wrap_VLCMediaList_allocatem_ZL30_wrap_new_VLCMediaList__SWIG_1iPmm_ZL22_wrap_new_VLCMediaListiPmm_ZL17free_VLCMediaListP12VLCMediaList_ZL27_wrap_VLCMediaList_addMediaiPmm_ZL30_wrap_VLCMediaList_removeMediaiPmm_ZL27_wrap_VLCMediaList_getMediaiPmm_ZL24_wrap_VLCMediaList_countiPmm_ZL18_wrap_Ctx_surf_setiPmm_ZL18_wrap_Ctx_surf_getiPmm_ZL19_wrap_Ctx_mutex_setiPmm_ZL19_wrap_Ctx_mutex_getiPmm_ZL18_wrap_Ctx_allocatem_ZL13_wrap_new_CtxiPmm_ZL8free_CtxP3Ctx_ZL29_wrap_VLCDummyOutput_allocatem_ZL24_wrap_new_VLCDummyOutputiPmm_ZL19free_VLCDummyOutputP14VLCDummyOutput_ZL30_wrap_VLCDummyOutput_playMediaiPmm_ZL30_wrap_VLCDummyOutput_setOptioniPmm_ZL29_wrap_VLCMediaPlayer_allocatem_ZL24_wrap_new_VLCMediaPlayeriPmm_ZL19free_VLCMediaPlayerP14VLCMediaPlayer_ZL31_wrap_VLCMediaPlayer_setXWindowiPmm_ZL25_wrap_VLCMediaPlayer_playiPmm_ZL26_wrap_VLCMediaPlayer_pauseiPmm_ZL25_wrap_VLCMediaPlayer_stopiPmm_ZL31_wrap_VLCMediaPlayer_setChapteriPmm_ZL32_wrap_VLCMediaPlayer_setPositioniPmm_ZL27_wrap_VLCMediaPlayer_getFpsiPmm_ZL13_swigt__p_Ctx_ZL16_swigt__p_LibVLC_ZL21_swigt__p_SDL_Surface_ZL19_swigt__p_SDL_mutex_ZL24_swigt__p_VLCDummyOutput_ZL18_swigt__p_VLCMedia_ZL22_swigt__p_VLCMediaList_ZL24_swigt__p_VLCMediaPlayer_ZL14_swigt__p_char_ZL27_swigt__p_libvlc_instance_t_ZL24_swigt__p_libvlc_media_t_ZL16_swigt__p_p_char_ZL17swig_type_initial_ZL13_swigc__p_Ctx_ZL16_swigc__p_LibVLC_ZL21_swigc__p_SDL_Surface_ZL19_swigc__p_SDL_mutex_ZL24_swigc__p_VLCDummyOutput_ZL18_swigc__p_VLCMedia_ZL22_swigc__p_VLCMediaList_ZL24_swigc__p_VLCMediaPlayer_ZL14_swigc__p_char_ZL27_swigc__p_libvlc_instance_t_ZL24_swigc__p_libvlc_media_t_ZL16_swigc__p_p_char_ZL17swig_cast_initialSWIG_InitializeModuleSWIG_PropagateClientData_ZZ24SWIG_PropagateClientDataE8init_run_GLOBAL__I_libvlc_wrap.cxxDW.ref.__gxx_personality_v0<em>GLOBAL_OFFSET_TABLE</em>__dso_handle<em>DTOR_END</em>_DYNAMIC_ZN14VLCMediaPlayer10setChapterEirb_eSyntaxErrorSDL_FreeSurface_ZN12VLCMediaList11removeMediaEirb_eTypeErrorrb_ivar_set_ZN8VLCMedia8setMediaEPKc_ZN8VLCMediaC2EP17libvlc_instance_tP14libvlc_media_tmemset@@GLIBC_2.2.5rb_iv_set_ZN12VLCMediaListD1Evlibvlc_media_parse_ZN14VLCMediaPlayerD1Evrb_const_get_ZN6LibVLCD1Ev__cxa_guard_acquire@@CXXABI_1.3_ZN8VLCMediaD2Evrb_eRangeErrorlibvlc_media_player_new_ZN6LibVLC14createPlayListEv_ZN6LibVLCC2EiPKPKcb<em>gmon_start</em>_Jv_RegisterClassesputs@@GLIBC_2.2.5_Znam@@GLIBCXX_3.4libvlc_media_player_pause_ZdlPv@@GLIBCXX_3.4_ZN6LibVLC10getVersionEvSwigClassVLCMediaPlayerrb_define_class_under_ZN8VLCMedia9getPlayerEv__assert_fail@@GLIBC_2.2.5_ZN14VLCMediaPlayerC1EP17libvlc_instance_tP14libvlc_media_t_finilibvlc_get_versionrb_cFixnum_ZNSt8ios_base4InitC1Ev@@GLIBCXX_3.4libvlc_media_list_lock_ZN6LibVLCC1EiPKPKcbrb_eNoMemErrorrb_hash_areflibvlc_log_openInit_libvlcmalloc@@GLIBC_2.2.5fopen@@GLIBC_2.2.5_ZN16SwigValueWrapperI14VLCMediaPlayerEC1Ev_ZN14VLCMediaPlayerD2Ev_ZN14VLCMediaPlayerC2EP17libvlc_instance_tP14libvlc_media_trb_funcallrb_hash_asetSDL_UnlockSurfaceSDL_PollEventrb_cTrueClassSDL_LockSurface_ZN12VLCMediaListC2EP17libvlc_instance_t_ZN14VLCMediaPlayer11setPositionEf__cxa_atexit@@GLIBC_2.2.5rb_gv_getlibvlc_video_set_format_ZN8VLCMedia7getMetaEPKc_ZN14VLCMediaPlayer4playEvlibvlc_media_player_set_mediarb_define_methodSwigClassLibVLCrb_fix2intrb_str_newrb_define_classrb_str_appendSDL_SetVideoMode_ZNSt8ios_base4InitD1Ev@@GLIBCXX_3.4rb_eRuntimeErrorrb_str_cat2rb_big2long_ZN14VLCMediaPlayer10setXWindowEirb_rescuerb_eZeroDivErrorlibvlc_media_list_release_ZN12VLCMediaListC1EP17libvlc_instance_trb_exc_new3_ZN14VLCDummyOutput9playMediaEvfree@@GLIBC_2.2.5_ZN12VLCMediaList8getMediaEistrlen@@GLIBC_2.2.5_Z7displayPvS_libvlc_media_get_metarb_hash_new_ZN16SwigValueWrapperI14VLCMediaPlayerE15SwigMovePointerD1Evlibvlc_newrb_int2inum_ZN16SwigValueWrapperI14VLCMediaPlayerED1Evrb_define_modulerb_string_value_ptr_ZN8VLCMediaC1EP17libvlc_instance_tP14libvlc_media_t__cxa_finalize@@GLIBC_2.2.5SDL_UpperBlitSDL_Initlibvlc_media_list_item_at_index__cxa_guard_release@@CXXABI_1.3sprintf@@GLIBC_2.2.5_ZN14VLCMediaPlayer4stopEvlibvlc_media_list_unlockSDL_mutexVSwigClassVLCMediarb_eFatallibvlc_media_player_release_ZN14VLCDummyOutputC1EP14libvlc_media_trb_cSymbol_ZN8VLCMedia9playMediaEv_ZN8VLCMediaD1Evlibvlc_media_player_set_chapterlibvlc_media_new_pathrb_str_catrb_num2intlibvlc_set_user_agentrb_inspectrb_num2dbllibvlc_media_new_locationmemcpy@@GLIBC_2.2.5rb_obj_classnameSwigClassVLCMediaListlibvlc_media_player_playSDL_CreateRGBSurfacelibvlc_media_player_set_positionSwigClassCtxlibvlc_media_releaserb_obj_is_kind_ofrb_eIOError_ZN12VLCMediaList8addMediaEPKc_ZN12VLCMediaListD2Ev__bss_startSDL_CreateMutexrb_cNilClass_ZN14VLCMediaPlayer5pauseEvrb_num2longrb_ary_newrb_obj_as_stringrb_eStandardError__stack_chk_fail@@GLIBC_2.4libvlc_media_list_count_ZN16SwigValueWrapperI14VLCMediaPlayerE15SwigMovePointeraSERS2_strcmp@@GLIBC_2.2.5_ZN6LibVLC12setUserAgentEPKcS1__ZN6LibVLCD2Ev_Z6unlockPvS_PKS_strcpy@@GLIBC_2.2.5_ZN6LibVLC8addMediaEPKcrb_float_newrb_data_object_allocrb_gv_setlibvlc_media_player_set_xwindowlibvlc_releaseSDL_DestroyMutex_ZN14VLCDummyOutputC2EP14libvlc_media_t_ZdaPv@@GLIBCXX_3.4rb_define_readonly_variablerb_define_alloc_func_ZN14VLCDummyOutput9setOptionEPKciiirb_ivar_getlibvlc_media_list_remove_indexrb_raiselibvlc_video_set_callbacks_end_ZN12VLCMediaList5countEvlibvlc_log_closestrncpy@@GLIBC_2.2.5_ZN8VLCMedia10pauseMediaEvSDL_Delay_ZNK16SwigValueWrapperI14VLCMediaPlayerEcvRS0_Ev_ZN16SwigValueWrapperI14VLCMediaPlayerE15SwigMovePointerC1EPS0_rb_respond_torb_str_new2SDL_Flip_ZN16SwigValueWrapperI14VLCMediaPlayerEaSERKS0_rb_internrb_iv_getrb_check_type_ZN14VLCDummyOutputD1Evrb_eIndexErrorlibvlc_media_list_new__cxa_guard_abort@@CXXABI_1.3_ZN8VLCMedia14setVideoFormatEPKciii_ZN14VLCDummyOutputD2Evlibvlc_media_player_get_fps_edata__gxx_personality_v0@@CXXABI_1.3libvlc_media_player_new_from_mediarb_undef_method_Znwm@@GLIBCXX_3.4_Unwind_Resume@@GCC_3.0_Z4lockPvPS_libvlc_media_list_add_mediarb_eArgErrorSwigClassVLCDummyOutputrb_ary_pushrb_cObjectSDL_mutexP_ZN14VLCMediaPlayer6getFpsEv_initlibvlc_media_player_stoprb_cFalseClass
+</p>
+
+    </div>
+
+
+   </div>
+
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

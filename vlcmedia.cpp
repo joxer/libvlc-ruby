@@ -70,11 +70,7 @@ void VLCMedia::playMedia(){
 
 }
 
-void VLCMedia::pauseMedia(){
 
-  libvlc_media_player_pause(current_player);
-
-}
 
 
 void VLCMedia::setVideoFormat(const char* cchroma, int w ,int h ,int p){
