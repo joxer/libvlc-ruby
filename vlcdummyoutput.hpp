@@ -1,4 +1,3 @@
-// data: lunedì, dicembre  6 2010
 
 
 #include <vlc/vlc.h>
@@ -11,7 +10,6 @@
 #include <SDL/SDL.h>
 #include <SDL/SDL_mutex.h>
 
-#include "exception.hpp"
 #include <ruby.h>
 #ifndef VLCDUMMYOUTPUT_HPP
 #define VLCDUMMYOUTPUT_HPP
@@ -43,11 +41,9 @@ class VLCDummyOutput {
  ~VLCDummyOutput();
   void playMedia();
   void setOption(const char*, int,int,int);
-private:
 
-  /*  void *lock(void *data, void **p_pixels);
-  void unlock(void *data, void *id, void *const *p_pixels);
-  void display(void *data, void *id);*/
+
+ 
 };
 
 

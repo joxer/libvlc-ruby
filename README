@@ -1,0 +1,9 @@
+Ruby-vlc, ruby vlc extension made by Diego Luca Candido
+
+Ruby-vlc is a ruby extension for libvlc written using swig and it's implemented with c++.
+The extension works on linux and with cygwin on windows.
+The rdoc-generator.rb holds wrapper classes to document in rdoc.
+
+To compile the extension you need libvlc-dev and libsdl-dev, to compile sources you have to invoke rake.
+
+For any suggestions or bugs ask to diego.luca.candido@gmail.com

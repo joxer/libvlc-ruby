@@ -9,9 +9,7 @@ task :default do
 
   headers = "";
   
-  if($host =~ /linux/)
-    
-    if(RbConfig::CONFIG["ruby_version"].slice(0,3) == "1.8")
+   if(RbConfig::CONFIG["ruby_version"].slice(0,3) == "1.8")
 
       headers +=  RbConfig::CONFIG['archdir']
       
@@ -36,5 +34,5 @@ g++ -shared vlcmediaplayer.o vlcdummyoutput.o vlcmedialist.o vlcmedia.o libvlc.o
 
 
 
-  end
+  
 end 

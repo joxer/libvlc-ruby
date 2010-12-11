@@ -1,8 +1,5 @@
-// data: sabato, dicembre  4 2010
-
 #include "vlcmedia.hpp"
 #include "vlcmedialist.hpp"
-#include "exception.hpp"
 #include <vlc/vlc.h>
 #include <cstdlib>
 
@@ -22,7 +19,6 @@ public:
   VLCMedia addMedia(const char* path);
   VLCMediaList createPlayList();
 };
-
 
 
 #endif

@@ -1,8 +1,5 @@
-// data: domenica, dicembre  5 2010
-
 #include <vlc/vlc.h>
 #include "vlcmedia.hpp"
-#include "exception.hpp"
 
 #ifndef VLCMEDIALIST_HPP
 #define VLCMEDIALIST_HPP

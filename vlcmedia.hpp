@@ -1,5 +1,3 @@
-// data: sabato, dicembre  4 2010
-
 #include <vlc/vlc.h>
 
 #include "vlcdummyoutput.hpp"

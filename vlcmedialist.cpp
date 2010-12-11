@@ -21,8 +21,6 @@ VLCMediaList::VLCMediaList(libvlc_instance_t* _instance){
 }
 VLCMediaList::~VLCMediaList(){
   
-  //if i enable this it will cause abort of program
-
   libvlc_media_list_release(current_list);  
   if(create_instance == true){
     libvlc_release(instance);
@@ -62,7 +60,6 @@ int VLCMediaList::count(){
 VLCMedia VLCMediaList::getMedia(int pos){
 
   libvlc_media_t* temp_media = libvlc_media_list_item_at_index(current_list, pos);
-  //CHECK if null
   if(temp_media == NULL){
      static VALUE vlcerror = rb_define_class("VLCException", rb_eStandardError);
     rb_raise(vlcerror, "media doesn't exist in list");

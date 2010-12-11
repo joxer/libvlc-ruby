@@ -58,8 +58,6 @@ void VLCMedia::setMedia(const char* path){
 
 void VLCMedia::playMedia(){
 
-  //for now it will use a dummy output done with sdl
-
   if(current_media != NULL){
 
     VLCDummyOutput* dummy = new VLCDummyOutput(current_media);

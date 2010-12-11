@@ -1,5 +1,3 @@
-// data: venerdì, dicembre 10 2010
-
 #include <vlc/vlc.h>
 #include <cstdlib>
 #include <ruby.h>

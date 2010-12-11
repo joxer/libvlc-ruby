@@ -12,7 +12,6 @@
 #include "vlcdummyoutput.hpp"
 #include "vlcmediaplayer.hpp"
 
-#include "exception.hpp"
 
 #include <vlc/vlc.h>
 #include <cstdlib>
@@ -106,9 +105,6 @@ const char* chroma;
    ~VLCDummyOutput();
   void playMedia();
   void setOption(const char*,int,int,int);
-  //  void pauseMedia();
-  
- private:
 
 };
 
