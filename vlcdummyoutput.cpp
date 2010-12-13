@@ -16,7 +16,7 @@ void unlock(void *data, void *id, void *const *p_pixels){
   Ctx *ctx = static_cast<Ctx*>(data);
 
  
-  uint16_t *pixels = static_cast<uint16_t*>(*p_pixels);
+  uint32_t *pixels = static_cast<uint32_t*>(*p_pixels);
   int x, y;
 
   SDL_UnlockSurface(ctx->surf);
@@ -37,7 +37,7 @@ void display(void *data, void *id){
 
 VLCDummyOutput::VLCDummyOutput(libvlc_media_t* media){
 
-  chroma = "RV32";
+  chroma = "RV16";
   width = 1024;
   height = 768;
   pitch = width*2;
@@ -53,8 +53,7 @@ VLCDummyOutput::VLCDummyOutput(libvlc_media_t* media){
       printf("cannot initialize SDL\n");
     }
   
-  empty = SDL_CreateRGBSurface(SDL_SWSURFACE, 640, 480,
-  32, 0, 0, 0, 0);
+  empty = SDL_CreateRGBSurface(SDL_HWSURFACE, width, height,  32, 0, 0, 0, 0);
 
 }
 void VLCDummyOutput::playMedia(){
@@ -69,14 +68,14 @@ void VLCDummyOutput::playMedia(){
 			     unlock,
 			     display,
 			     &ctx);
-  libvlc_video_set_format(mp, "RV16",width, height, pitch);
+  libvlc_video_set_format(mp, chroma,width, height, pitch);
   if(libvlc_media_player_play(mp) == -1){
     static VALUE vlcerror = rb_define_class("VLCException", rb_eStandardError);
     rb_raise(vlcerror, "can't create media");
   }
     
-    ctx.surf = SDL_CreateRGBSurface(SDL_SWSURFACE, width, height,
-				  16, 0x001f, 0x07e0, 0xf800, 0);
+    ctx.surf = SDL_CreateRGBSurface(SDL_HWSURFACE, width, height,
+				    16, 0, 0, 0, 0);
   
   ctx.mutex = SDL_CreateMutex();
 
