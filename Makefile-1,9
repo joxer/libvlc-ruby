@@ -1,9 +1,0 @@
-all: 
-	swig -ruby -c++ libvlc.i
-	g++ -c libvlc_wrap.cxx -fPIC -I/usr/include/ruby-1.9.1 -I/usr/include/ruby-1.9.1/x86_64-linux -lvcl
-	g++ -c vlcdummyoutput.cpp -fPIC -I/usr/include/ruby-1.9.1 -I/usr/include/ruby-1.9.1/x86_64-linux -lvlc `sdl-config --cflags --libs`
-	g++ -c libvlc.cpp -fPIC -I/usr/include/ruby-1.9.1 -I/usr/include/ruby-1.9.1/x86_64-linux -lvlc -lvlc `sdl-config --cflags --libs`
-	g++ -c vlcmedia.cpp -fPIC -I/usr/include/ruby-1.9.1 -I/usr/include/ruby-1.9.1/x86_64-linux -lvlc -lvlc `sdl-config --cflags --libs`
-	g++ -c vlcmedialist.cpp -fPIC -I/usr/lib64/ruby/1.9.1/x86_64-linux -lvlc-lvlc `sdl-config --cflags --libs`
-
-	g++ -shared vlcdummyoutput.o vlcmedialist.o vlcmedia.o libvlc.o libvlc_wrap.o -o libvlc.so -lvlc -lvlc `sdl-config --cflags --libs`
